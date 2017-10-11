@@ -1,0 +1,46 @@
+<style>
+.a, .b {
+  width: 256px;
+  height: 256px;
+}
+.a {
+  margin: 50px auto;
+}
+.b {
+  background: #f00;
+  border-radius: 70px;
+  position: absolute;
+}
+.c {
+  background: linear-gradient(to bottom right, #555, #111);
+}
+@supports (-webkit-mask-image: paint(smooth-corners)) {
+  .c {
+    border-radius: 0;
+    -webkit-mask-image: paint(smooth-corners);
+    --smooth-corners: 4;
+  }
+}
+</style>
+
+<div class="demo">
+  <div class="a">
+    <div class="b" id="shallowEl"></div>
+    <div class="b c" id="el"></div>
+  </div>
+  <div class="Control">
+    <label for="exponent">Smooth corners</label>
+    <input type="range" id="exponent" min="0" max="10" step="0.1" value="4">
+  </div>
+  <div class="Control">
+    <label for="shallow">Rounded rectangle comparison</label>
+    <input type="checkbox" id="shallow" checked>
+  </div>
+</div>
+<div class="Note">
+  <p><strong>Note:</strong> Squircle: N=4, iOS icons: N=5</p>
+</div>
+<pre class="Code">#el {
+  background: paint(smooth-corners);
+  --smooth-corners: <span id="valuesquircle">4</span>;
+}</pre>
