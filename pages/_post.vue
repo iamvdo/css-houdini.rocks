@@ -90,8 +90,9 @@ export default {
 }
 .Demo {
   background: linear-gradient(to bottom right, #333, #111);
-  padding: 50px 0;
-  margin: 25px auto 50px auto;
+  color: #eee;
+  padding: 25px 0;
+  margin: 25px auto 0 auto;
 }
 .Control {
   text-align: center;
@@ -104,11 +105,11 @@ export default {
   background: #3d464f;
   color: #eee;
   padding: .5rem;
-  margin: 50px auto;
+  margin: 0 auto 25px auto;
   white-space: pre-wrap;
 }
 .Code[contenteditable]::after {
-  content: 'LIVE';
+  content: 'LIVE EDIT';
   position: absolute;
   top: 0;
   right: 0;

@@ -12,7 +12,7 @@
     padding-left: 10px;
     border: 3px solid;
     background-color: #333;
-    margin: auto;
+    margin: 50px auto;
     background-image: paint(awesome-background);
 
     /* opacity */
@@ -36,15 +36,16 @@
   <div id="el">
     CSS is awesome
   </div>
+  <div class="Control">
+    <label for="backgroundopacity"><code>background-opacity</code></label>
+    <input id="backgroundopacity" type="range" min="0" max="1" step="0.05" value="1">
+  </div>
+  <div class="Control">
+    <label for="backgroundrotate"><code>background-rotate</code></label>
+    <input id="backgroundrotate" type="range" min="0" max="360" value="0">
+  </div>
 </div>
-<div class="Control">
-  <label for="backgroundopacity"><code>background-opacity</code></label>
-  <input id="backgroundopacity" type="range" min="0" max="1" step="0.05" value="1">
-</div>
-<div class="Control">
-  <label for="backgroundrotate"><code>background-rotate</code></label>
-  <input id="backgroundrotate" type="range" min="0" max="360" value="0">
-</div>
+
 <pre class="Code">#el {
   background: paint(awesome-background);
   --background-opacity: <span id="valueopacity">1</span>;
