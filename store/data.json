@@ -1,6 +1,11 @@
 {
   "posts": [
     {
+      "title": "Conic gradient",
+      "url": "conic-gradient",
+      "tags": ["paint", "props&val"]
+    },
+    {
       "title": "Smooth corners",
       "url": "smooth-corners",
       "properties": [
