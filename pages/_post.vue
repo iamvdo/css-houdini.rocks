@@ -41,7 +41,9 @@ export default {
       }
     }
     // execute JS
-    require(`~/static/posts/${this.id}/index.js`)()
+    try {
+      require(`~/static/posts/${this.id}/index.js`)()
+    } catch (e) {}
   },
   computed: {
     id () {
