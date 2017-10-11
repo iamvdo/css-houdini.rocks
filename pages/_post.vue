@@ -65,7 +65,7 @@ export default {
 
 <style>
 .Post {
-  flex: 1 0 auto;
+  flex: 1;
   padding: .5rem;
   margin-top: 2rem;
   border-top: 1px solid #ddd;
@@ -91,6 +91,7 @@ export default {
   color: #eee;
   padding: .5rem;
   margin: 50px auto;
+  white-space: pre-wrap;
 }
 .Code span {
   background: yellow;

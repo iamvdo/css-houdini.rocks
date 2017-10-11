@@ -23,6 +23,7 @@ export default {
 <style>
 .Navigation {
   width: 250px;
+  flex: 0 0 auto;
 }
 .Navigation-list {
   padding: .5rem;
