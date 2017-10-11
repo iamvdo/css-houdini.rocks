@@ -4,6 +4,7 @@
     <ul class="Post-tags">
       <li v-for="tag in tags" class="Post-tag">{{getTag(tag)}}</li>
     </ul>
+    <p v-html="post.desc" class="Post-desc"></p>
     <div class="Post-content" v-html="postContent"></div>
     <p><a :href="registerPaintURL">See registerPaint module</a></p>
   </div>
@@ -73,6 +74,9 @@ export default {
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
 }
+.Post-desc {
+  margin-top: 25px;
+}
 .Post-tags {
   padding: 0;
 }
@@ -85,7 +89,7 @@ export default {
 .Demo {
   background: linear-gradient(to bottom right, #333, #111);
   padding: 50px 0;
-  margin: 50px auto;
+  margin: 25px auto 50px auto;
 }
 .Control {
   text-align: center;

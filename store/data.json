@@ -2,11 +2,13 @@
   "posts": [
     {
       "title": "Conic gradient",
+      "desc": "Polyfill <code>conic-gradient</code> function",
       "url": "conic-gradient",
       "tags": ["paint", "props&val"]
     },
     {
       "title": "Smooth corners",
+      "desc": "Better rounded rectangle by drawing a superellipse",
       "url": "smooth-corners",
       "properties": [
         ["--smooth-corners", "<number>", false, 4]
@@ -15,6 +17,7 @@
     },
     {
       "title": "Background properties",
+      "desc": "Build your own background properties: <code>background-opacity</code>, <code>background-rotate</code>",
       "url": "background",
       "properties": [
         ["--background-source", "<image> | none", false, "none"],
