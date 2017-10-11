@@ -101,6 +101,8 @@ export default {
   vertical-align: middle;
 }
 .Code {
+  display: block;
+  font-family: monospace;
   position: relative;
   background: #3d464f;
   color: #eee;
