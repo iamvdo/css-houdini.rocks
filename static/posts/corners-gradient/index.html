@@ -1,0 +1,27 @@
+<style>
+#el {
+  width: 256px;
+  height: 256px;
+  margin: auto;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered),
+              linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
+  background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+}
+.Code {
+  display: block;
+  font-family: monospace;
+}
+</style>
+
+<div class="Demo">
+  <div id="el"></div>
+</div>
+
+<style class="Code" contenteditable spellcheck="false">#el {
+  /* faking corners-gradient first */
+  background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered), linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
+
+  /* only supported browsers */
+  background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+}</style>

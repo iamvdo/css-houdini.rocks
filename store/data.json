@@ -7,6 +7,12 @@
       "tags": ["paint", "props&val"]
     },
     {
+      "title": "Corners gradient",
+      "desc": "Draw a gradient by specifying 4 colors for each corners",
+      "url": "corners-gradient",
+      "tags": ["paint", "props&val"]
+    },
+    {
       "title": "Smooth corners",
       "desc": "Better rounded rectangle by drawing a superellipse",
       "url": "smooth-corners",

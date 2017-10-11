@@ -98,11 +98,22 @@ export default {
   vertical-align: middle;
 }
 .Code {
+  position: relative;
   background: #3d464f;
   color: #eee;
   padding: .5rem;
   margin: 50px auto;
   white-space: pre-wrap;
+}
+.Code[contenteditable]::after {
+  content: 'LIVE';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: yellow;
+  color: #111;
+  padding: 0 .25rem;
+  font-size: .85rem;
 }
 .Code span {
   background: yellow;
