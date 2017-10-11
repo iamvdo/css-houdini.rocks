@@ -5,7 +5,8 @@
       "url": "smooth-corners",
       "properties": [
         ["--smooth-corners", "<number>", false, 4]
-      ]
+      ],
+      "tags": ["paint", "props&val"]
     },
     {
       "title": "Background properties",
@@ -15,7 +16,15 @@
         ["--background-opacity", "<number>", false, 1],
         ["--background-transform", "<transform-list> | none", false, "none"],
         ["--background-rotate", "<angle>", false, "0deg"]
-      ]
+      ],
+      "tags": ["paint", "props&val"]
     }
-  ]
+  ],
+  "tags": {
+    "layout": "CSS Layout API",
+    "paint": "CSS Painting API",
+    "parser": "CSS Parser API",
+    "props&val": "CSS Properties and Values API",
+    "animation": "CSS Animation Worklet API"
+  }
 }

@@ -7,6 +7,9 @@ const getters = {
     return state.posts.filter(post => {
       return post.url === id
     })[0]
+  },
+  getTag: state => id => {
+    return state.tags[id]
   }
 }
 

@@ -1,6 +1,9 @@
 <template>
   <div class="Post">
     <h1 class="Post-title">{{post.title}}</h1>
+    <ul class="Post-tags">
+      <li v-for="tag in tags" class="Post-tag">{{getTag(tag)}}</li>
+    </ul>
     <div class="Post-content" v-html="postContent"></div>
     <p><a :href="registerPaintURL">See registerPaint module</a></p>
   </div>
@@ -45,8 +48,16 @@ export default {
     postContent () {
       return require(`~/static/posts/${this.id}/index.html`)
     },
+    tags () {
+      return this.post.tags
+    },
     registerPaintURL () {
       return `/posts/${this.id}/paint.js`
+    }
+  },
+  methods: {
+    getTag (id) {
+      return this.$store.getters.getTag(id)
     }
   }
 }
@@ -59,6 +70,15 @@ export default {
   margin-top: 2rem;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
+}
+.Post-tags {
+  padding: 0;
+}
+.Post-tag {
+  display: inline-block;
+  font-size: .75rem;
+  margin: 0 1rem 0 0;
+  color: #aaa;
 }
 .Control {
   text-align: center;
