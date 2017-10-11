@@ -13,6 +13,12 @@
       "tags": ["paint", "props&val"]
     },
     {
+      "title": "Simple tooltip",
+      "desc": "Draw a tooltip without extra elements nor pseudo-elements",
+      "url": "tooltip",
+      "tags": ["paint", "props&val"]
+    },
+    {
       "title": "Smooth corners",
       "desc": "Better rounded rectangle by drawing a superellipse",
       "url": "smooth-corners",
