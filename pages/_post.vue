@@ -24,14 +24,16 @@ export default {
     // registerProperties and addModule
     if (!loaded[this.id]) {
       loaded[this.id] = true
-      this.post.properties.forEach(property => {
-        CSS.registerProperty({
-          name: property[0],
-          syntax: property[1],
-          inherits: property[2],
-          initialValue: property[3]
+      if (this.post.properties) {
+        this.post.properties.forEach(property => {
+          CSS.registerProperty({
+            name: property[0],
+            syntax: property[1],
+            inherits: property[2],
+            initialValue: property[3]
+          })
         })
-      })
+      }
       var paintWorklet = CSS.paintWorklet || window.paintWorklet
       paintWorklet.addModule(this.registerPaintURL)
     }
