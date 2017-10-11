@@ -25,7 +25,7 @@ export default {
     // registerProperties and addModule
     if (!loaded[this.id]) {
       loaded[this.id] = true
-      if (this.post.properties) {
+      if (this.post.properties && CSS.registerProperty) {
         this.post.properties.forEach(property => {
           CSS.registerProperty({
             name: property[0],
@@ -36,7 +36,9 @@ export default {
         })
       }
       var paintWorklet = CSS.paintWorklet || window.paintWorklet
-      paintWorklet.addModule(this.registerPaintURL)
+      if (paintWorklet) {
+        paintWorklet.addModule(this.registerPaintURL)
+      }
     }
     // execute JS
     require(`~/static/posts/${this.id}/index.js`)()
