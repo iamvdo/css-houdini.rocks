@@ -4,6 +4,7 @@
       <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
       <small class="Title-note">experiments by <a href="https://twitter.com">@iamvdo</a></small>
     </h1>
+    <a href="https://ishoudinireadyyet.com" class="Support">Support?</a>
     <ul class="Navigation-list">
       <li v-for="post in posts" class="Navigation-item">
         <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
@@ -64,5 +65,11 @@ export default {
   vertical-align: 2px;
   color: #aaa;
   margin-left: .25rem;
+}
+.Support {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  font-size: .75rem;
 }
 </style>
