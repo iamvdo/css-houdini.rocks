@@ -80,6 +80,11 @@ export default {
   margin: 0 1rem 0 0;
   color: #aaa;
 }
+.Demo {
+  background: linear-gradient(to bottom right, #333, #111);
+  padding: 50px 0;
+  margin: 50px auto;
+}
 .Control {
   text-align: center;
 }
