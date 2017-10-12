@@ -1,0 +1,31 @@
+<style>
+#el {
+  width: 152px;
+  height: 152px;
+  background: url(http://iamvdo.me/images/apple-touch-152.png);
+  background-size: cover;
+  -webkit-mask-image: paint(avatar-polygon);
+  --avatar-sides: 10;
+  --avatar-angle: 0deg;
+  margin: 50px auto;
+}
+</style>
+
+<div class="Demo">
+  <div id="el"></div>
+  <div class="Control">
+    <label for="avatarsides"><code>--avatar-sides</code></label>
+    <input id="avatarsides" type="range" min="4" max="20" value="6">
+  </div>
+  <div class="Control">
+    <label for="avatarangle"><code>--avatar-angle</code></label>
+    <input id="avatarangle" type="range" min="0" max="360" value="0" step="10">
+  </div>
+</div>
+
+<pre class="Code">#el {
+  background: url(...)
+  mask-image: paint(avatar-polygon);
+  --avatar-sides: <span id="valuesides">10</span>;
+  --avatar-angle: <span id="valueangle">0deg</span>;
+}</pre>

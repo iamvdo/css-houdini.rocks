@@ -58,6 +58,15 @@
         ["--hue", "<angle>", false, "0deg"]
       ],
       "tags": ["paint", "props&val"]
+    },
+    {
+      "title": "Avatar polygons",
+      "url": "avatar-polygons",
+      "properties": [
+        ["--avatar-sides", "<integer>", false, 4],
+        ["--avatar-angle", "<angle>", false, "0deg"]
+      ],
+      "tags": ["paint", "props&val"]
     }
   ],
   "tags": {
