@@ -19,6 +19,12 @@
       "tags": ["paint", "props&val"]
     },
     {
+      "title": "Checkboxes",
+      "desc": "Draw your own checkbox tick",
+      "url": "checkboxes",
+      "tags": ["paint", "props&val"]
+    },
+    {
       "title": "Smooth corners",
       "desc": "Better rounded rectangle by drawing a superellipse",
       "url": "smooth-corners",

@@ -1,0 +1,53 @@
+<style>
+.Demo {
+	text-align: center;
+}
+input {
+	outline: 0;
+	vertical-align: middle;
+}
+label {
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+
+label:last-child {
+	margin-bottom: 0;
+}
+
+.Checkbox {
+	--checkbox-color: #e8e8e8;
+	margin: 0 1rem 0 2rem;
+	width: var(--checkbox-size, 40px);
+	height: var(--checkbox-size, 40px);
+	-webkit-appearance: none;
+	background-image: paint(checkbox);
+}
+
+.Checkbox:checked {
+	--checkbox-status: true;
+	--checkbox-color: #2ab1e8;
+}
+</style>
+
+<div class="Demo">
+	<label>
+		<input type="checkbox" class="Checkbox">Awesome
+	</label>
+	<label>
+		<input type="checkbox" class="Checkbox">Huge
+	</label>
+</div>
+
+<style class="Code" contenteditable spellcheck="false">.Checkbox {
+  background-image: paint(checkbox);
+  --checkbox-color: #aaa;
+}
+.Checkbox:checked {
+  --checkbox-status: true;
+  --checkbox-color: deeppink;
+}</style>
+
+<div class="Note">
+	<p><strong>Note:</strong> Code mostly from <a href="https://github.com/MatteoWebDesigner/css-paint-worklet">https://github.com/MatteoWebDesigner/css-paint-worklet</a></p>
+</div>
