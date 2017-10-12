@@ -67,6 +67,12 @@
         ["--avatar-angle", "<angle>", false, "0deg"]
       ],
       "tags": ["paint", "props&val"]
+    },
+    {
+      "title": "Ripple animation",
+      "desc": "Famous Google mateial design effect",
+      "url": "ripple",
+      "tags": ["paint", "props&val"]
     }
   ],
   "tags": {
