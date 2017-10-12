@@ -44,6 +44,10 @@ a {
   color: inherit;
 }
 
+.nuxt-progress {
+  top: 2rem;
+}
+
 .Content {
   display: flex;
   min-height: 100vh;
