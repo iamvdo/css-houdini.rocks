@@ -2,7 +2,7 @@
 #ripple {
   display: block;
   font-size: 4em;
-  background-color: deeppink;
+  background: linear-gradient(to bottom right, deeppink, orangered);
   border: 0;
   margin: 50px auto;
   padding: 1rem;
@@ -19,7 +19,7 @@
   outline: none;
 }
 #ripple.animating {
-  background-image: paint(ripple);
+  background-image: paint(ripple), linear-gradient(to bottom right, deeppink, orangered);
 }
 </style>
 
@@ -30,5 +30,9 @@
 </div>
 
 <pre class="Code">#ripple {
-  background: paint(ripple);
+  background: paint(ripple), linear-gradient(to bottom right, deeppink, orangered);
 }</pre>
+
+<div class="Note">
+  <p><strong>Note:</strong> Code mostly from <a href="https://github.com/GoogleChromeLabs/houdini-samples">https://github.com/GoogleChromeLabs/houdini-samples</a></p>
+</div>
