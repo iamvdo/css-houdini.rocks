@@ -129,7 +129,6 @@ registerPaint('conic-gradient', class {
     const conic = new ConicalGradient();
     args.forEach((color, i) => {
       const c = window.tinycolor(color.toString()).toRgb();
-      console.log(i / (args.length - 1));
       conic.addColorStop(i / (args.length - 1), [c.r, c.g, c.b]);
     })
     conic.fill(ctx, geom.width / 2, geom.height / 2, geom.width, - Math.PI / 2, Math.PI * 2 - Math.PI / 2, false);
