@@ -73,6 +73,18 @@
       "desc": "Famous Google mateial design effect",
       "url": "ripple",
       "tags": ["paint", "props&val"]
+    },
+    {
+      "title": "Wobble animation",
+      "desc": "Crazy (means \"don't do this\") background animation",
+      "url": "wobble",
+      "properties": [
+        ["--mouse-x", "<number>", false, 0],
+        ["--mouse-y", "<number>", false, 0],
+        ["--tick", "<number>", false, 0],
+        ["--border-width", "<length>", false, "0px"]
+      ],
+      "tags": ["paint", "props&val"]
     }
   ],
   "tags": {
