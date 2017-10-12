@@ -28,7 +28,7 @@
       "tags": ["paint", "props&val"]
     },
     {
-      "title": "Background properties",
+      "title": "Background opacity/rotate",
       "desc": "Build your own background properties: <code>background-opacity</code>, <code>background-rotate</code>",
       "url": "background",
       "properties": [
