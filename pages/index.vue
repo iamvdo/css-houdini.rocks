@@ -1,6 +1,10 @@
 <template>
-  <div class="post">
-    <p>Index</p>
+  <div class="Post">
+    <h1 class="Post-title">CSS Houdini Experiments</h1>
+    <p class="Post-desc"></p>
+    <div class="Post-content">
+      <p>Here is my experiments with the latest CSS Houdini spec</p>
+    </div>
   </div>
 </template>
 
