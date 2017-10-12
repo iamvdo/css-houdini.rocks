@@ -2,7 +2,7 @@
   <div class="Navigation">
     <h1 class="Title">
       <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
-      <small class="Title-note">naives experiments by <a href="https://twitter.com">@iamvdo</a></small>
+      <small class="Title-note">experiments by <a href="https://twitter.com">@iamvdo</a></small>
     </h1>
     <a href="https://ishoudinireadyyet.com" class="Support">Support?</a>
     <ul class="Navigation-list">
@@ -57,7 +57,6 @@ export default {
   //color: #3d464f;
   border-bottom: 1px solid #ddd;
   //border-right: 1px solid #ddd;
-  white-space: nowrap;
 }
 .Title-link {
   text-decoration: none;
