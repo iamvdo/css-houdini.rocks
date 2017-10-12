@@ -40,7 +40,8 @@
       "properties": [
         ["--corner-radius", "<length-percentage>", false, "0px"],
         ["--corner-shape", "<custom-ident>", false, "round"]
-      ]
+      ],
+      "tags": ["paint", "props&val"]
     },
     {
       "title": "Background opacity/rotate",
@@ -76,7 +77,7 @@
     },
     {
       "title": "Ripple animation",
-      "desc": "Famous Google mateial design effect",
+      "desc": "Famous Google material design effect",
       "url": "ripple",
       "tags": ["paint", "props&val"]
     },
