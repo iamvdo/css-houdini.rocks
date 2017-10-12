@@ -71,13 +71,6 @@ export default {
 </script>
 
 <style>
-.Post {
-  flex: 1;
-  padding: .5rem;
-}
-.Post-desc {
-  margin-top: 25px;
-}
 .Post-tags {
   padding: 0;
 }

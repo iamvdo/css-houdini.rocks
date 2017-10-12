@@ -48,9 +48,14 @@ a {
   top: 2rem;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .Content {
   display: flex;
-  min-height: 100vh;
+  flex: 1 0 auto;
 }
 @media (max-width: 800px) {
   .Content {
@@ -85,5 +90,12 @@ a {
   right: .5rem;
   top: .5rem;
   font-size: .75rem;
+}
+.Post {
+  flex: 1;
+  padding: .5rem;
+}
+.Post-desc {
+  margin-top: 25px;
 }
 </style>
