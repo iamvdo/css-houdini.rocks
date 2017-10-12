@@ -1,0 +1,45 @@
+<style>
+  .a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    color: #fff;
+    font-size: 4em;
+    background: paint(corner-shape, deeppink);
+    border-radius: 20px;
+  }
+  @supports (background: paint(corner-shape, deeppink)) {
+    #el {
+      border-radius: 0;
+      --corner-radius: 20px;
+      --corner-shape: bevel;
+    }
+  }
+  </style>
+
+<div class="Demo">
+  <div class="a" id="el">CSS!</div>
+  <div class="Control">
+    <label for="cornerRadius">corner-radius</label>
+    <input type="range" min="0" max="100" value="20" id="cornerRadius">
+  </div>
+  <div class="Control">
+    <label for="cornerShape">corner-shape</label>
+    <select name="" id="cornerShape">
+      <option>round</option>
+      <option selected>bevel</option>
+      <option>scoop</option>
+      <option>notch</option>
+      <option value="iPhoneX">Special: iPhoneX</option>
+    </select>
+  </div>
+</div>
+
+<pre class="Code">#el {
+  --corner-radius: <span id="valuecornerRadius">20px</span>;
+  --corner-shape: <span id="valuecornerShape">bevel</span>;
+  background: paint(corner-shape, deeppink);
+}</pre>

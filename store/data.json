@@ -28,6 +28,15 @@
       "tags": ["paint", "props&val"]
     },
     {
+      "title": "Corner shapes",
+      "desc": "Polyfill <code>corner-shape</code> from CSS L4",
+      "url": "corner-shape",
+      "properties": [
+        ["--corner-radius", "<length-percentage>", false, "0px"],
+        ["--corner-shape", "<custom-ident>", false, "round"]
+      ]
+    },
+    {
       "title": "Background opacity/rotate",
       "desc": "Build your own background properties: <code>background-opacity</code>, <code>background-rotate</code>",
       "url": "background",
