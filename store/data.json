@@ -38,6 +38,17 @@
         ["--background-rotate", "<angle>", false, "0deg"]
       ],
       "tags": ["paint", "props&val"]
+    },
+    {
+      "title": "Background filters",
+      "desc": "Apply CSS filters on background images",
+      "url": "background-filter",
+      "properties": [
+        ["--blur", "<length>", false, "0px"],
+        ["--grayscale", "<percentage>", false, "0%"],
+        ["--hue", "<angle>", false, "0deg"]
+      ],
+      "tags": ["paint", "props&val"]
     }
   ],
   "tags": {
