@@ -3,6 +3,11 @@
     <ul class="Navigation-list">
       <li v-for="post in posts" class="Navigation-item">
         <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
+        <!--
+        <span v-for="tag in post.tags" :title="getTag(tag)" class="Navigation-tag">
+          {{getAbbrTag(tag)}}
+        </span>
+        -->
       </li>
     </ul>
   </div>
@@ -12,7 +17,17 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapGetters(['posts'])
+  computed: mapGetters(['posts']),
+  methods: {
+    getAbbrTag (id) {
+      if (id === 'paint') {
+        return 'P'
+      }
+    },
+    getTag (id) {
+      return this.$store.getters.getTag(id)
+    }
+  }
 }
 </script>
 
@@ -43,6 +58,14 @@ export default {
 }
 .Navigation-link.nuxt-link-exact-active {
   --border-color: yellow;
+}
+.Navigation-tag {
+  font-size: .5rem;
+  border-radius: 50%;
+  background: deeppink;
+  color: #fff;
+  vertical-align: 2px;
+  cursor: default;
 }
 @media (max-width: 800px) {
   .Navigation {
