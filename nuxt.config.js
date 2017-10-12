@@ -34,12 +34,15 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-
-        
       }
       config.module.rules.push({
         test: /\.html$/,
-        loader: 'html-loader',
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minifyCSS: false
+          }
+        }],
         exclude: /(node_modules|\.nuxt)/
       })
     }
