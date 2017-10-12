@@ -1,4 +1,4 @@
-registerPaint('awesome-background', class {
+registerPaint('background', class {
     static get inputProperties() {
         return [
             '--background-source',
