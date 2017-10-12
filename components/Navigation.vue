@@ -34,14 +34,19 @@ export default {
   padding: .25rem 0;
 }
 .Navigation-link {
-  padding: 0 .5rem;
+  --border-color: transparent;
+  --border-size: 5px;
+  padding: 0 .25rem;
+  text-decoration: none;
+  background: linear-gradient(var(--border-color) var(--border-size), transparent var(--border-size));
+  background-position: 0 calc(100% - var(--border-size));
 }
 .Navigation-link:hover,
 .Navigation-link:focus {
-  background: rgba(0,0,0,.15);
+  --border-color: rgba(0,0,0,.1);
 }
 .Navigation-link.nuxt-link-exact-active {
-  background: radial-gradient(8px 8px at 4px 50%, yellow 50%, transparent 50%);
+  --border-color: yellow;
 }
 .Title {
   font-size: 1rem;
