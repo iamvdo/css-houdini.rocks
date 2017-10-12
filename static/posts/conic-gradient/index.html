@@ -2,16 +2,14 @@
 #el {
   width: 256px;
   height: 256px;
-  background: conic-gradient(rgb(255,0,0), rgb(255,0,255), rgb(0,0,255), rgb(0,255,255),
-    rgb(0,255,0), rgb(255,255,0), rgb(255,0,0));
+  background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
+  background: paint(conic-gradient, red magenta blue cyan lime yellow red);
   border-radius: 10px;
   margin: auto;
 }
-@supports not (background: conic-gradient(red, green)) {
+@supports (background: conic-gradient(red, green)) {
   #el {
-    background: paint(conic-gradient, 0% 16.6% 33.3% 50% 66.7% 83.3% 100%,
-      rgb(255,0,0) rgb(255,0,255) rgb(0,0,255) rgb(0,255,255)
-      rgb(0,255,0) rgb(255,255,0) rgb(255,0,0));
+    
   }
 }
 </style>
@@ -20,11 +18,7 @@
   <div id="el"></div>
 </div>
 
-<pre class="Code">#el {
-  background: conic-gradient(...)
-}
-@supports not (background: conic-gradient(...)) {
-  #el {
-    background: paint(conic-gradient, ...)
-  }
-}</pre>
+<style class="Code" contenteditable spellcheck="false">#el {
+  background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
+  background: paint(conic-gradient, red magenta blue cyan lime yellow red);
+}</style>
