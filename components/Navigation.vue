@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapState(['posts'])
+  computed: mapGetters(['posts'])
 }
 </script>
 
