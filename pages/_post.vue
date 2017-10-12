@@ -74,9 +74,6 @@ export default {
 .Post {
   flex: 1;
   padding: .5rem;
-  margin-top: 2rem;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
 }
 .Post-desc {
   margin-top: 25px;

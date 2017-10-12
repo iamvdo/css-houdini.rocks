@@ -1,10 +1,5 @@
 <template>
   <div class="Navigation">
-    <h1 class="Title">
-      <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
-      <small class="Title-note">experiments by <a href="https://twitter.com">@iamvdo</a></small>
-    </h1>
-    <a href="https://ishoudinireadyyet.com" class="Support">Support?</a>
     <ul class="Navigation-list">
       <li v-for="post in posts" class="Navigation-item">
         <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
@@ -25,6 +20,7 @@ export default {
 .Navigation {
   width: 250px;
   flex: 0 0 auto;
+  border-right: 1px solid #ddd;
 }
 .Navigation-list {
   padding: .5rem;
@@ -48,33 +44,15 @@ export default {
 .Navigation-link.nuxt-link-exact-active {
   --border-color: yellow;
 }
-.Title {
-  font-size: 1rem;
-  padding: .5rem;
-  line-height: 1;
-  text-transform: uppercase;
-  //background: yellow;
-  //color: #3d464f;
-  border-bottom: 1px solid #ddd;
-  //border-right: 1px solid #ddd;
-}
-.Title-link {
-  text-decoration: none;
-  background: yellow;
-  padding: 0 .25rem;
-}
-.Title-note {
-  text-transform: none;
-  font-size: .55rem;
-  font-weight: normal;
-  vertical-align: 2px;
-  color: #aaa;
-  margin-left: .25rem;
-}
-.Support {
-  position: absolute;
-  right: .5rem;
-  top: .5rem;
-  font-size: .75rem;
+@media (max-width: 800px) {
+  .Navigation {
+    width: auto;
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+  }
+  .Navigation-item {
+    display: inline-block;
+    margin-right: 1rem;
+  }
 }
 </style>
