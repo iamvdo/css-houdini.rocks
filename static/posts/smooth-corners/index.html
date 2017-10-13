@@ -29,7 +29,7 @@
     <div class="b c" id="el"></div>
   </div>
   <div class="Control">
-    <label for="exponent">Smooth corners</label>
+    <label for="exponent"><code>--smooth-corners</code></label>
     <input type="range" id="exponent" min="0" max="10" step="0.1" value="4">
   </div>
   <div class="Control">
@@ -38,7 +38,7 @@
   </div>
 </div>
 
-<pre class="Code">#el {
+<pre class="Code"><code>#el {
   background: ...;
   border-radius: 70px;
 }
@@ -46,9 +46,9 @@
   #el {
     border-radius: 0;
     mask-image: paint(smooth-corners);
-    --smooth-corners: <span id="valuesquircle">4</span>;
+    --smooth-corners: <mark id="valuesquircle">4</mark>;
   }
-}</pre>
+}</code></pre>
 
 <div class="Note">
   <p><strong>Note:</strong> Squircle: N=4, iOS icons: N=5</p>

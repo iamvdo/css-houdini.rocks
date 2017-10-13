@@ -14,7 +14,10 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Didact+Gothic' }
-    ]
+    ],
+    bodyAttrs: {
+      class: 'language-css'
+    }
   },
   /*
   ** Customize the progress bar color
@@ -46,8 +49,10 @@ module.exports = {
         }],
         exclude: /(node_modules|\.nuxt)/
       })
-    }
+    },
+    vendor: ['prismjs', '~/plugins/prismjs-keep-markup']
   },
+  css: ['@/assets/prismjs.css'],
   generate: {
     routes: function (cb) {
       const routes = state.posts.map(post => {

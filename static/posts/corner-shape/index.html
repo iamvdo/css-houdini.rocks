@@ -23,11 +23,11 @@
 <div class="Demo">
   <div class="a" id="el">CSS!</div>
   <div class="Control">
-    <label for="cornerRadius">corner-radius</label>
+    <label for="cornerRadius"><code>--corner-radius</code></label>
     <input type="range" min="0" max="100" value="20" id="cornerRadius">
   </div>
   <div class="Control">
-    <label for="cornerShape">corner-shape</label>
+    <label for="cornerShape"><code>--corner-shape</code></label>
     <select name="" id="cornerShape">
       <option>round</option>
       <option selected>bevel</option>
@@ -38,8 +38,8 @@
   </div>
 </div>
 
-<pre class="Code">#el {
-  --corner-radius: <span id="valuecornerRadius">20px</span>;
-  --corner-shape: <span id="valuecornerShape">bevel</span>;
+<pre class="Code"><code>#el {
+  --corner-radius: <mark id="valuecornerRadius">20px</mark>;
+  --corner-shape: <mark id="valuecornerShape">bevel</mark>;
   background: paint(corner-shape, deeppink);
-}</pre>
+}</code></pre>

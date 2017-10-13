@@ -21,6 +21,8 @@ for (let i = 0; i < state.posts.length; i++) {
 
 export default {
   mounted () {
+    // Prims all the thing
+    window.Prism.highlightAll()
     // if loaded for first time
     // registerProperties and addModule
     if (!loaded[this.id]) {
@@ -112,7 +114,7 @@ export default {
   padding: 0 .25rem;
   font-size: .85rem;
 }
-.Code span {
+.Code mark {
   background: yellow;
   color: #3d464f;
   padding: 0 .25rem;
