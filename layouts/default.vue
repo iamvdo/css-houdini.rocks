@@ -19,6 +19,16 @@ import Navigation from '~/components/Navigation.vue'
 export default {
   components: {
     Navigation
+  },
+  mounted () {
+    // load every module
+    var paintWorklet = CSS.paintWorklet || window.paintWorklet
+    if (paintWorklet) {
+      const state = require('~/store/data')
+      for (let i = 0; i < state.posts.length; i++) {
+        paintWorklet.addModule(`/posts/${state.posts[i].url}/paint.js`)
+      }
+    }
   }
 }
 </script>

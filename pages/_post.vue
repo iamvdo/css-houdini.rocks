@@ -39,7 +39,7 @@ export default {
       }
       var paintWorklet = CSS.paintWorklet || window.paintWorklet
       if (paintWorklet) {
-        paintWorklet.addModule(this.registerPaintURL)
+        // paintWorklet.addModule(this.registerPaintURL)
       }
     }
     // execute JS
