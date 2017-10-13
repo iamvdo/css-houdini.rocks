@@ -26,7 +26,10 @@
       "title": "Checkboxes",
       "desc": "Draw your own checkbox tick",
       "url": "checkboxes",
-      "tags": ["paint", "props&val"]
+      "properties": [
+        ["--checkbox-tick-color", "<color>", false, "transparent"]
+      ],
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Smooth corners",

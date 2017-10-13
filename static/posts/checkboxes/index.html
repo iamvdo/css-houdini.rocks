@@ -16,36 +16,47 @@ label:last-child {
 }
 
 .Checkbox {
-	--checkbox-color: #e8e8e8;
 	margin: 0 1rem 0 2rem;
-	width: var(--checkbox-size, 40px);
-	height: var(--checkbox-size, 40px);
+	width: 24px;
+	height: 24px;
 	-webkit-appearance: none;
+	border-radius: 2px;
+	background-color: #555;
 	background-image: paint(checkbox);
+	transition: --checkbox-tick-color 500ms, background-color 500ms;
 }
-
+.Checkbox:hover {
+	--checkbox-tick-color: rgba(255,255,255,.25);
+}
 .Checkbox:checked {
-	--checkbox-status: true;
-	--checkbox-color: deeppink;
+	--checkbox-tick-color: white;
+	background-color: deeppink;
 }
 </style>
 
 <div class="Demo" id="Demo">
 	<label>
-		<input type="checkbox" class="Checkbox">Awesome
+		<input type="checkbox" class="Checkbox">Such wow
 	</label>
 	<label>
-		<input type="checkbox" class="Checkbox">Huge
+		<input type="checkbox" class="Checkbox">Very awesome
+	</label>
+	<label>
+		<input type="checkbox" class="Checkbox">Much huge
 	</label>
 </div>
 
 <pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.Checkbox {
   background-image: paint(checkbox);
-  --checkbox-color: #aaa;
+  background-color: #555;
+  transition: --checkbox-tick-color 500ms, background-color 500ms;
+}
+.Checkbox:hover {
+  --checkbox-tick-color: rgba(255,255,255,.25);
 }
 .Checkbox:checked {
-  --checkbox-status: true;
-  --checkbox-color: deeppink;
+  --checkbox-tick-color: white;
+  background-color: deeppink;
 }</code></pre>
 
 <div class="Note">
