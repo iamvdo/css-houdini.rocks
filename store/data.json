@@ -4,13 +4,13 @@
       "title": "Conic gradient",
       "desc": "Polyfill <code>conic-gradient</code> function",
       "url": "conic-gradient",
-      "tags": ["paint", "props&val"]
+      "tags": ["paint"]
     },
     {
       "title": "Corners gradient",
       "desc": "Draw a gradient by specifying 4 colors for each corners",
       "url": "corners-gradient",
-      "tags": ["paint", "props&val"]
+      "tags": ["paint"]
     },
     {
       "title": "Simple tooltip",
@@ -20,7 +20,7 @@
         ["--tooltip-position", "<percentage>", false, "50%"],
         ["--tooltip-size", "<length>", false, "0px"]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Checkboxes",
@@ -38,7 +38,7 @@
       "properties": [
         ["--smooth-corners", "<number>", false, 4]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Corner shapes",
@@ -48,7 +48,7 @@
         ["--corner-radius", "<length-percentage>", false, "0px"],
         ["--corner-shape", "<custom-ident>", false, "round"]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Background properties",
@@ -63,7 +63,7 @@
         ["--grayscale", "<percentage>", false, "0%"],
         ["--hue", "<angle>", false, "0deg"]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Avatar polygons",
@@ -72,13 +72,13 @@
         ["--avatar-sides", "<integer>", false, 4],
         ["--avatar-angle", "<angle>", false, "0deg"]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Ripple animation",
       "desc": "Famous Google material design effect",
       "url": "ripple",
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Wobble animation",
@@ -90,7 +90,7 @@
         ["--tick", "<number>", false, 0],
         ["--border-width", "<length>", false, "0px"]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     },
     {
       "title": "Non-rectangular separators",
@@ -102,7 +102,7 @@
         ["--separator-shadow", "<number>", false, 0.25],
         ["--separator-shadow-color", "<color>", false, "black"]
       ],
-      "tags": ["paint", "props&val"]
+      "tags": ["paint", "vars", "props&val"]
     }
   ],
   "tags": {
@@ -110,6 +110,7 @@
     "paint": "CSS Painting API",
     "parser": "CSS Parser API",
     "props&val": "CSS Properties and Values API",
-    "animation": "CSS Animation Worklet API"
+    "animation": "CSS Animation Worklet API",
+    "vars": "CSS Custom Properties"
   }
 }
