@@ -87,12 +87,37 @@ export default {
   color: #eee;
   padding: 25px 0;
   margin: 25px auto 0 auto;
+  overflow: hidden;
 }
 .Control {
-  text-align: center;
+  //text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.Control label {
+  width: 250px;
+  text-align: left;
+}
+.Control input,
+.Control select {
+  width: 150px;
+}
+.Control p {
+  width: 400px;
+  text-align: left;
 }
 .Control * {
   vertical-align: middle;
+}
+@media (max-width: 450px) {
+  .Control {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .Control input {
+    flex: 1;
+    width: auto;
+  }
 }
 .Code {
   display: block;
