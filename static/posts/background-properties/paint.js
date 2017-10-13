@@ -4,16 +4,19 @@ registerPaint('background', class {
             '--background-source',
             '--background-opacity',
             '--background-rotate',
+            '--background-filter',
             'list-style-image'
         ]
     }
     paint(ctx, geom, properties) {
         let opacity = properties.get('--background-opacity').toString()
         let transform = properties.get('--background-rotate').value
+        let filters = properties.get('--background-filter').toString()
 
         let image = properties.get('list-style-image')
 
         ctx.globalAlpha = opacity
+        ctx.filter = filters
 
         // apply rotation from center
         ctx.translate(geom.width / 2, geom.height / 2)

@@ -48,22 +48,14 @@
       "tags": ["paint", "props&val"]
     },
     {
-      "title": "Background opacity/rotate",
-      "desc": "Build your own background properties: <code>background-opacity</code>, <code>background-rotate</code>",
-      "url": "background",
+      "title": "Background properties",
+      "desc": "Build your own background properties: <code>background-opacity</code>, <code>background-rotate</code>, <code>background-filter</code>",
+      "url": "background-properties",
       "properties": [
         ["--background-source", "<image> | none", false, "none"],
         ["--background-opacity", "<number>", false, 1],
         ["--background-transform", "<transform-list> | none", false, "none"],
-        ["--background-rotate", "<angle>", false, "0deg"]
-      ],
-      "tags": ["paint", "props&val"]
-    },
-    {
-      "title": "Background filters",
-      "desc": "Apply CSS filters on background images",
-      "url": "background-filter",
-      "properties": [
+        ["--background-rotate", "<angle>", false, "0deg"],
         ["--blur", "<length>", false, "0px"],
         ["--grayscale", "<percentage>", false, "0%"],
         ["--hue", "<angle>", false, "0deg"]
