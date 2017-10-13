@@ -23,6 +23,9 @@ export default {
   mounted () {
     // Prims all the thing
     window.Prism.highlightAll()
+    // LiveCoding
+    window.LiveCoding()
+
     // if loaded for first time
     // registerProperties and addModule
     if (!loaded[this.id]) {

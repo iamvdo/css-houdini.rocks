@@ -50,7 +50,11 @@ module.exports = {
         exclude: /(node_modules|\.nuxt)/
       })
     },
-    vendor: ['prismjs', '~/plugins/prismjs-keep-markup']
+    vendor: [
+      'prismjs',
+      '~/plugins/prismjs-keep-markup',
+      '~/assets/livecoding.js'
+    ]
   },
   css: ['@/assets/prismjs.css'],
   generate: {
