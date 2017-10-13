@@ -1,6 +1,6 @@
 <style>
 .Demo {
-  padding: 50px 0 75px 0;
+  //padding: 50px 0 75px 0;
 }
 .hello {
   display: flex;
@@ -10,28 +10,47 @@
   color: #222;
   height: 150px;
   width: 200px;
-  margin: auto;
+  margin: 50px auto;
   border-radius: 10px;
 }
 .bubble {
-  background: deeppink;
-  border-bottom: 30px solid transparent;
-  border-top: 30px solid transparent;
+  background: #00c6ff;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
   border-image-source: paint(tooltip);
   border-image-slice: 0 0 100% 0;
-  border-image-width: 20px;
-  border-image-outset: 20px;
+  border-image-width: var(--border-width);
+  border-image-outset: var(--border-width);
+  --tooltip-position: 50%;
+  --tooltip-size: 30px;
+  --border-width: 20px;
 }
 </style>
 
 <div class="Demo">
   <div class="hello bubble" id="el">HELLO</div>
+  <div class="Control">
+    <label for="tooltip-position"><code>--tooltip-position</code></label>
+    <input id="tooltip-position" type="range" min="20" max="80" step="1" value="50">
+  </div>
+  <div class="Control">
+    <label for="tooltip-size"><code>--tooltip-size</code></label>
+    <input id="tooltip-size" type="range" min="0" max="100" step="1" value="30">
+  </div>
+  <div class="Control">
+    <label for="border-width"><code>--border-width</code></label>
+    <input id="border-width" type="range" min="0" max="100" step="1" value="20">
+  </div>
 </div>
 
-<style class="Code" contenteditable spellcheck="false">#el {
-  background: deeppink;
+<pre class="Code">#el {
+  background: #00c6ff;
   border-image-source: paint(tooltip);
   border-image-slice: 0 0 100% 0;
-  border-image-width: 20px;
-  border-image-outset: 20px;
-}</style>
+  border-image-width: var(--border-width);
+  border-image-outset: var(--border-width);
+  --border-width: <span id="valueborder-width">20px</span>;
+  --tooltip-position: <span id="valuetooltip-position">50%</span>;
+  --tooltip-size: <span id="valuetooltip-size">30px</span>;
+}</pre>
+

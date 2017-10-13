@@ -16,6 +16,10 @@
       "title": "Simple tooltip",
       "desc": "Draw a tooltip without extra elements nor pseudo-elements",
       "url": "tooltip",
+      "properties": [
+        ["--tooltip-position", "<percentage>", false, "50%"],
+        ["--tooltip-size", "<length>", false, "0px"]
+      ],
       "tags": ["paint", "props&val"]
     },
     {
