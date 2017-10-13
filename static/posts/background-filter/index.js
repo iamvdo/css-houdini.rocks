@@ -1,6 +1,12 @@
 module.exports = () => {
+  // force repaint
+  var bg = document.getElementById('el').style.backgroundImage
+  document.getElementById('el').style.backgroundImage = 'none'
+  setTimeout(() => {
+    document.getElementById('el').style.backgroundImage = bg
+  }, 0)
   // ranges
-  ['blur', 'grayscale', 'hue-rotate'].forEach(type => {
+  ;['blur', 'grayscale', 'hue-rotate'].forEach(type => {
     document.getElementById('background' + type).addEventListener('input', (e) => {
       let value = e.target.value
       if (type === 'blur') {
