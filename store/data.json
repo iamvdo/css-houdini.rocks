@@ -92,6 +92,17 @@
         ["--border-width", "<length>", false, "0px"]
       ],
       "tags": ["paint", "props&val"]
+    },
+    {
+      "title": "Non-rectangular separators",
+      "desc": "No more faking with pseudo-elements and CSS transforms. And it's responsive out of the box",
+      "url": "creative-separators",
+      "properties": [
+        ["--separator-size", "<length>", false, "0px"],
+        ["--separator-shadow", "<number>", false, 0.25],
+        ["--separator-shadow-color", "<color>", false, "black"]
+      ],
+      "tags": ["paint", "props&val"]
     }
   ],
   "tags": {
