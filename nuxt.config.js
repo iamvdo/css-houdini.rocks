@@ -12,7 +12,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Experimenting with CSS Houdini Paint API' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Didact+Gothic' }
     ]
   },
   /*
