@@ -8,10 +8,7 @@ pre[class*="language-"] {
   text-shadow: 0 1px rgba(0,0,0,.5);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
+  
   line-height: 1.5;
 
   -moz-tab-size: 4;
@@ -69,7 +66,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #ff82dd;
+  color: #f752ca;
 }
 
 .token.selector,

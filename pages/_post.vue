@@ -124,23 +124,38 @@ export default {
 }
 .Code {
   display: block;
-  font-family: monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   position: relative;
   background: #3d464f;
-  color: #eee;
-  padding: .5rem;
+  color: white;
+  padding: 1em;
   margin: 0 auto 25px auto;
   white-space: pre-wrap;
+  text-shadow: 0 1px rgba(0,0,0,.5);
+  text-align: left;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
-.Code[contenteditable]::after {
+.Code code {
+  outline: none;
+}
+.Code code[contenteditable]::after {
   content: 'LIVE EDIT';
   position: absolute;
+  font-family: 'Didact Gothic';
   top: 0;
   right: 0;
   background: yellow;
   color: #111;
   padding: 0 .25rem;
   font-size: .85rem;
+  text-shadow: none;
 }
 .Code mark {
   background: yellow;
