@@ -100,7 +100,7 @@
     {
       "title": "Non-rectangular separators",
       "desc": "No more faking with pseudo-elements and CSS transforms. And it's responsive out of the box",
-      "url": "creative-separators",
+      "url": "non-rectangular-separators",
       "properties": [
         ["--separator-shape", "<custom-ident>+", false, "diagonal left"],
         ["--separator-size", "<length>", false, "0px"],

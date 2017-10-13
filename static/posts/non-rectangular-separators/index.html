@@ -29,6 +29,7 @@
   background-repeat: no-repeat;
   border-bottom: 1px solid transparent;
   border-image-source: radial-gradient(closest-corner at 50% -400px, hsl(0, 100%, 62%) 100%, transparent);
+  border-image-source: paint(separator);
   border-image-slice: 0 0 100% 0;
   border-image-width: var(--separator-size);
   border-image-outset: var(--separator-size);
@@ -36,9 +37,6 @@
   --separator-size: 75px;
   --separator-shadow: .35;
   --separator-shadow-color: rgba(0,0,0,.35);
-}
-.B.loaded {
-  border-image-source: paint(separator);
 }
 .C {
   height: 150px;
