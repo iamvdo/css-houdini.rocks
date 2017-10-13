@@ -3,6 +3,7 @@ registerPaint('separator', class {
   static get inputProperties() {
     return [
       'background-color',
+      '--separator-shape',
       '--separator-size',
       '--separator-shadow',
       '--separator-shadow-color',
@@ -15,12 +16,28 @@ registerPaint('separator', class {
     const size = props.get('--separator-size').value
     const shadowFactor = this.clamp(props.get('--separator-shadow').toString(), 0, 1)
     const shadowColor = props.get('--separator-shadow-color').toString()
+    const shape = props.get('--separator-shape').toString()
 
     ctx.beginPath();
     ctx.moveTo(0, 0);
     ctx.lineTo(geom.width, 0);
-    ctx.lineTo(geom.width, geom.height * shadowFactor);
-    ctx.lineTo(0, geom.height);
+
+    if (shape === 'diagonal-left') {
+      ctx.lineTo(geom.width, geom.height * shadowFactor);
+      ctx.lineTo(0, geom.height);
+    }
+    if (shape === 'diagonal-right') {
+      ctx.lineTo(geom.width, geom.height);
+      ctx.lineTo(0, geom.height * shadowFactor);
+    }
+    if (shape === 'curve-left') {
+      ctx.lineTo(geom.width, geom.height * shadowFactor);
+      ctx.quadraticCurveTo(geom.width / 2, geom.height, 0, 0);
+    }
+    if (shape === 'curve-right') {
+      ctx.quadraticCurveTo(geom.width / 2, geom.height, 0, geom.height * shadowFactor);
+    }
+
     ctx.closePath();
 
     // fill
@@ -28,9 +45,30 @@ registerPaint('separator', class {
     ctx.fill();
 
     ctx.beginPath();
-    ctx.moveTo(geom.width, 0);
-    ctx.lineTo(geom.width, geom.height * shadowFactor);
-    ctx.lineTo(0, geom.height);
+
+    if (shape === 'diagonal-left') {
+      ctx.moveTo(geom.width, 0);
+      ctx.lineTo(geom.width, geom.height * shadowFactor);
+      ctx.lineTo(0, geom.height);
+    }
+    if (shape === 'diagonal-right') {
+      ctx.moveTo(0, 0);
+      ctx.lineTo(0, geom.height * shadowFactor);
+      ctx.lineTo(geom.width, geom.height);
+    }
+    if (shape === 'curve-left') {
+      ctx.moveTo(0, 0);
+      ctx.quadraticCurveTo(geom.width / 2, geom.height, geom.width, geom.height * shadowFactor);
+      ctx.lineTo(geom.width, 0);
+      ctx.quadraticCurveTo(geom.width / 2, geom.height, 0, 0);
+    }
+    if (shape === 'curve-right') {
+      ctx.moveTo(geom.width, 0);
+      ctx.quadraticCurveTo(geom.width / 2, geom.height, 0, geom.height * shadowFactor);
+      ctx.lineTo(0, 0);
+      ctx.quadraticCurveTo(geom.width / 2, geom.height, geom.width, 0);
+    }
+
     ctx.closePath();
 
     // fill

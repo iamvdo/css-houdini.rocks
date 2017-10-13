@@ -1,8 +1,8 @@
 module.exports = () => {
   document.getElementById('el').classList.add('loaded')
   // ranges
-  ;['separator-size', 'separator-shadow', 'separator-shadow-color'].forEach(type => {
-    document.getElementById(type).addEventListener('input', (e) => {
+  ;['separator-size', 'separator-shadow', 'separator-shadow-color', 'separator-shape'].forEach(type => {
+    document.getElementById(type).addEventListener(('input' || 'change'), (e) => {
       let value = e.target.value
       if (type === 'separator-size') {
         value += 'px'

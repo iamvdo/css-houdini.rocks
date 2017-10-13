@@ -19,7 +19,7 @@
   justify-content: flex-end;
   align-items: center;
   text-align: center;
-  font: 2em sans-serif;
+  font-size: 2em;
 }
 .B {
   height: 200px;
@@ -28,12 +28,13 @@
   background-image: linear-gradient(hsl(296, 61%, 26%), hsl(0, 100%, 62%));
   background-repeat: no-repeat;
   border-bottom: 1px solid transparent;
-  border-image-source: linear-gradient(to bottom right, hsl(0, 100%, 62%) 50%, transparent 50%);
+  border-image-source: radial-gradient(closest-corner at 50% -400px, hsl(0, 100%, 62%) 100%, transparent);
   border-image-slice: 0 0 100% 0;
   border-image-width: var(--separator-size);
   border-image-outset: var(--separator-size);
-  --separator-size: 50px;
-  --separator-shadow: .25;
+  --separator-shape: curve-left;
+  --separator-size: 75px;
+  --separator-shadow: .35;
   --separator-shadow-color: rgba(0,0,0,.35);
 }
 .B.loaded {
@@ -43,7 +44,7 @@
   height: 150px;
   color: #222;
   padding-bottom: 50px;
-  font: 1.2em sans-serif;
+  font-size: 1.2em;
 }
 .D {
   width: 80px;
@@ -66,15 +67,24 @@
   </div>
   <div class="Control">
     <label for="separator-size"><code>--separator-size</code></label>
-    <input id="separator-size" type="range" min="0" max="100" step="1" value="50">
+    <input id="separator-size" type="range" min="0" max="100" step="1" value="75">
   </div>
   <div class="Control">
     <label for="separator-shadow"><code>--separator-shadow</code></label>
-    <input id="separator-shadow" type="range" min="0" max="1" step="0.05" value="0.25">
+    <input id="separator-shadow" type="range" min="0" max="1" step="0.05" value="0.35">
   </div>
   <div class="Control">
     <label for="separator-shadow-color"><code>--separator-shadow-color</code></label>
     <input id="separator-shadow-color" type="range" min="0" max="1" step="0.01" value="0.35">
+  </div>
+  <div class="Control">
+    <label for="separator-shape"><code>--separator-shape</code></label>
+    <select id="separator-shape">
+      <option>diagonal-left</option>
+      <option>diagonal-right</option>
+      <option selected>curve-left</option>
+      <option>curve-right</option>
+    </select>
   </div>
 </div>
 
@@ -83,7 +93,8 @@
   border-image-slice: 0 0 100% 0;
   border-image-width: var(--separator-size);
   border-image-outset: var(--separator-size);
-  --separator-size: <span id="valueseparator-size">50px</span>;
-  --separator-shadow: <span id="valueseparator-shadow">0.25</span>;
+  --separator-size: <span id="valueseparator-size">75px</span>;
+  --separator-shadow: <span id="valueseparator-shadow">0.35</span>;
   --separator-shadow-color: <span id="valueseparator-shadow-color">rgba(0,0,0,0.35)</span>;
+  --separator-shape: <span id="valueseparator-shape">curve-left</span>;
 }</pre>
