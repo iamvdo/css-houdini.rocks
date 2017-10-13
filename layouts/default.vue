@@ -25,7 +25,7 @@ export default {
 
 <style>
 html {
-  font-family: "Didact Gothic", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   color: #222;
   word-spacing: 1px;
@@ -43,9 +43,8 @@ html {
 a {
   color: inherit;
 }
-
-.nuxt-progress {
-  top: 2rem;
+button {
+  font-family: "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .App {
