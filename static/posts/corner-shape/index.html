@@ -8,14 +8,15 @@
     margin: 20px auto;
     color: #fff;
     font-size: 4em;
-    background: paint(corner-shape, deeppink);
+    background: linear-gradient(hsl(20, 90%, 65%), hsl(359, 88%, 57%));
+    -webkit-mask-image: paint(corner-shape, black);
     border-radius: 20px;
   }
-  @supports (background: paint(corner-shape, deeppink)) {
+  @supports (background: paint(corner-shape, black)) {
     #el {
       border-radius: 0;
       --corner-radius: 20px;
-      --corner-shape: bevel;
+      --corner-shape: round;
     }
   }
   </style>
@@ -30,7 +31,7 @@
     <label for="cornerShape"><code>--corner-shape</code></label>
     <select name="" id="cornerShape">
       <option>round</option>
-      <option selected>bevel</option>
+      <option>bevel</option>
       <option>scoop</option>
       <option>notch</option>
       <option value="iPhoneX">Special: iPhoneX</option>
@@ -40,6 +41,6 @@
 
 <pre class="Code"><code>#el {
   --corner-radius: <mark id="valuecornerRadius">20px</mark>;
-  --corner-shape: <mark id="valuecornerShape">bevel</mark>;
+  --corner-shape: <mark id="valuecornerShape">round</mark>;
   background: paint(corner-shape, deeppink);
 }</code></pre>

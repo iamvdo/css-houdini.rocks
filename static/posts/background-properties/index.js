@@ -1,9 +1,8 @@
 module.exports = () => {
   // force repaint
-  var bg = document.getElementById('el').style.backgroundImage
   document.getElementById('el').style.backgroundImage = 'none'
   setTimeout(() => {
-    document.getElementById('el').style.backgroundImage = bg
+    document.getElementById('el').style.backgroundImage = 'paint(background)'
   }, 0)
   // ranges
   ;['opacity', 'rotate'].forEach(type => {
