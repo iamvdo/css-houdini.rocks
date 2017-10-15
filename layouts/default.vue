@@ -26,7 +26,10 @@ export default {
     if (paintWorklet) {
       const state = require('~/store/data')
       for (let i = 0; i < state.posts.length; i++) {
-        paintWorklet.addModule(`/posts/${state.posts[i].url}/paint.js`)
+        const isPaint = state.posts[i].tags.includes('paint')
+        if (isPaint) {
+          paintWorklet.addModule(`/posts/${state.posts[i].url}/paint.js`)
+        }
       }
     }
   }
