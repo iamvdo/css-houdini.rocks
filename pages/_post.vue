@@ -142,10 +142,14 @@ export default {
   -ms-hyphens: none;
   hyphens: none;
 }
+.Code + .Code {
+  margin-top: -24px;
+}
 .Code code {
   outline: none;
 }
-.Code code[contenteditable]::after {
+.Code code[contenteditable]::after,
+.Code code.language-js::after {
   content: 'LIVE EDIT';
   position: absolute;
   font-family: 'Didact Gothic';
@@ -156,6 +160,9 @@ export default {
   padding: 0 .25rem;
   font-size: .85rem;
   text-shadow: none;
+}
+.Code code.language-js::after {
+  content: 'JS';
 }
 .Code mark {
   background: yellow;
