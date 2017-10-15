@@ -3,7 +3,7 @@
     <div class="Header">
       <h1 class="Title">
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
-        <small class="Title-note">experiments by <a href="https://twitter.com">@iamvdo</a></small>
+        <small class="Title-note">very experimental by <a href="https://twitter.com">@iamvdo</a></small>
       </h1>
       <a href="https://ishoudinireadyyet.com" class="Support">Support?</a>
     </div>
@@ -56,6 +56,9 @@ html {
 a {
   color: inherit;
 }
+p {
+  margin: 1rem 0;
+}
 button {
   font-family: "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -91,7 +94,7 @@ button {
 }
 .Title-note {
   text-transform: none;
-  font-size: .55rem;
+  font-size: .7rem;
   font-weight: normal;
   vertical-align: 2px;
   color: #aaa;
