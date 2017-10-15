@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "title": "Animating a gradient",
+      "desc": "Register a custom property to set it animatable (if <code>syntax</code> type is animatable)",
+      "url": "animating-gradient",
+      "properties": [
+        ["--color-stop", "<color>", false, "transparent"]
+      ],
+      "tags": ["vars", "props&val"]
+    },
+    {
       "title": "Conic gradient",
       "desc": "Polyfill <code>conic-gradient</code> function",
       "url": "conic-gradient",

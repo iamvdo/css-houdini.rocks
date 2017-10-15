@@ -1,0 +1,32 @@
+<style>
+#el {
+  --color-stop: deeppink;
+  width: 152px;
+  height: 152px;
+  margin: 50px auto;
+  background: linear-gradient(white, var(--color-stop));
+  transition: --color-stop 1s;
+}
+#el:hover {
+  --color-stop: deepskyblue;
+}
+</style>
+
+<div class="Demo">
+  <div id="el"></div>
+</div>
+
+<pre class="Code"><code>#el {
+  --color-stop: deeppink;
+  background: linear-gradient(white, var(--color-stop))
+  transition: --color-stop 1s;
+}
+#el:hover {
+  --color-stop: deepskyblue;
+}</code></pre>
+<pre class="Code"><code class="language-js">CSS.registerProperty({
+  name: '--color-stop',
+  syntax: '&lt;color>',
+  inherits: false,
+  initialValue: 'transparent'
+})</code></pre>
