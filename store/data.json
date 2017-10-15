@@ -112,6 +112,17 @@
         ["--separator-shadow-color", "<color>", false, "black"]
       ],
       "tags": ["paint", "vars", "props&val"]
+    },
+    {
+      "title": "Rough boxes",
+      "url": "rough-boxes",
+      "properties": [
+        ["--rough-fill", "<color>", true, "black"],
+        ["--rough-stroke-width", "<length>", true, "1px"],
+        ["--rough-stroke", "<color>", true, "black"],
+        ["--rough-roughness", "<number>", true, 1]
+      ],
+      "tags": ["paint"]
     }
   ],
   "tags": {
