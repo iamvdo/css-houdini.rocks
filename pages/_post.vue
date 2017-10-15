@@ -27,7 +27,7 @@ export default {
     window.LiveCoding()
 
     // if loaded for first time
-    // registerProperties and addModule
+    // registerProperties
     if (!loaded[this.id]) {
       loaded[this.id] = true
       if (this.post.properties && CSS.registerProperty) {
@@ -39,10 +39,6 @@ export default {
             initialValue: property[3]
           })
         })
-      }
-      var paintWorklet = CSS.paintWorklet || window.paintWorklet
-      if (paintWorklet) {
-        // paintWorklet.addModule(this.registerPaintURL)
       }
     }
     // execute JS
