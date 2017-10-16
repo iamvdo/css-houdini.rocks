@@ -15,6 +15,10 @@ registerPaint('background', class {
 
         let image = properties.get('list-style-image')
 
+        // weird, but logging image value make it work all the time
+        // if no console.log, image is not always loaded
+        console.log(image)
+
         ctx.globalAlpha = opacity
         ctx.filter = filters
 

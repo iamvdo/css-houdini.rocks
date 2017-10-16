@@ -1,9 +1,4 @@
 module.exports = () => {
-  // force repaint
-  document.getElementById('el').style.backgroundImage = 'none'
-  setTimeout(() => {
-    document.getElementById('el').style.backgroundImage = 'paint(background)'
-  }, 0)
   // ranges
   ;['opacity', 'rotate'].forEach(type => {
     document.getElementById('background' + type).addEventListener('input', (e) => {
