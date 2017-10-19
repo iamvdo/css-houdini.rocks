@@ -42,6 +42,11 @@ export default {
 .Navigation-list {
   padding: .5rem;
 }
+@media (max-width: 500px) {
+  .Navigation-list {
+    text-align: center;
+  }
+}
 .Navigation-item {
   font-size: .95em;
   padding: .25rem 0;
@@ -68,6 +73,7 @@ export default {
 .Tags {
   display: inline-flex;
   margin-top: 6px;
+  margin-left: 5px;
   float: right;
   opacity: .3;
 }

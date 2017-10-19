@@ -5,7 +5,7 @@
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
         <small class="Title-note">very experimental by <a href="https://twitter.com">@iamvdo</a></small>
       </h1>
-      <a href="https://ishoudinireadyyet.com" class="Support">Support?</a>
+      <div class="Support">Need latest Chrome! <a href="https://ishoudinireadyyet.com">Support?</a></div>
     </div>
     <div class="Content">
       <Navigation/>
@@ -78,15 +78,14 @@ button {
     flex-direction: column;
   }
 }
+.Header {
+  border-bottom: 1px solid #ddd;
+}
 .Title {
   font-size: 1rem;
   padding: .5rem;
   line-height: 1;
   text-transform: uppercase;
-  //background: yellow;
-  //color: #3d464f;
-  border-bottom: 1px solid #ddd;
-  //border-right: 1px solid #ddd;
 }
 .Title-link {
   text-decoration: none;
@@ -107,11 +106,26 @@ button {
   top: .5rem;
   font-size: .75rem;
 }
+.Support a {
+  margin-left: 1rem;
+}
+@media (max-width: 500px) {
+  .Support {
+    position: static;
+    padding: .5rem;
+    text-align: center;
+  }
+}
 .Post {
   flex: 1;
   padding: .5rem 1rem;
 }
 .Post-desc {
   margin-top: 25px;
+}
+@media (max-width: 800px) {
+  .Post {
+    padding: .5rem;
+  }
 }
 </style>

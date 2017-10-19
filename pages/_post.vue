@@ -96,14 +96,20 @@ export default {
 .Demo {
   background: linear-gradient(to bottom right, #333, #111);
   color: #eee;
-  padding: 25px 0;
+  padding: 25px 0 0 0;
   margin: 25px auto 0 auto;
   overflow: hidden;
 }
 .Control {
-  //text-align: center;
   display: flex;
   justify-content: center;
+  background: rgba(0,0,0,.25);
+}
+.Demo > *:first-child + .Control {
+  padding-top: 1rem;
+}
+.Control ~ .Control:last-child {
+  padding-bottom: 1rem;
 }
 .Control label {
   width: 250px;
@@ -139,7 +145,6 @@ export default {
   padding: 1em;
   margin: 0 auto 25px auto;
   white-space: pre-wrap;
-  text-shadow: 0 1px rgba(0,0,0,.5);
   text-align: left;
   line-height: 1.5;
   -moz-tab-size: 4;
