@@ -1,7 +1,8 @@
 <template>
   <div class="Navigation">
     <ul class="Navigation-list">
-      <li v-for="post in posts" class="Navigation-item">
+      <li v-for="(post, id) in posts" class="Navigation-item">
+        <span v-if="newCategory(id)" class="Navigation-sep"></span>
         <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
         <span class="Tags">
           <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
@@ -21,6 +22,12 @@ export default {
   methods: {
     getTag (id) {
       return this.$store.getters.getTag(id)
+    },
+    newCategory (id) {
+      if (id === 0) {
+        return false
+      }
+      return this.posts[id].category !== this.posts[id - 1].category
     }
   }
 }
@@ -53,6 +60,10 @@ export default {
 }
 .Navigation-link.nuxt-link-exact-active {
   --border-color: yellow;
+}
+.Navigation-sep {
+  display: block;
+  margin-top: 1rem;
 }
 .Tags {
   display: inline-flex;
@@ -100,6 +111,10 @@ export default {
   .Navigation-item {
     display: inline-block;
     margin-right: 1rem;
+  }
+  .Navigation-sep {
+    display: inline-block;
+    margin: 0;
   }
 }
 </style>
