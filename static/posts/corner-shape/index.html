@@ -1,25 +1,25 @@
 <style>
-  .a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
-    color: #fff;
-    font-size: 4em;
-    background: linear-gradient(hsl(20, 90%, 65%), hsl(359, 88%, 57%));
-    -webkit-mask-image: paint(corner-shape, black);
-    border-radius: 20px;
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 325px;
+  height: 200px;
+  margin: 20px auto;
+  color: #fff;
+  font-size: 4em;
+  background: linear-gradient(hsl(20, 90%, 65%), hsl(359, 88%, 57%));
+  -webkit-mask-image: paint(corner-shape, black);
+  border-radius: 20px;
+}
+@supports (background: paint(corner-shape, black)) {
+  #el {
+    border-radius: 0;
+    --corner-radius: 20px;
+    --corner-shape: round;
   }
-  @supports (background: paint(corner-shape, black)) {
-    #el {
-      border-radius: 0;
-      --corner-radius: 20px;
-      --corner-shape: round;
-    }
-  }
-  </style>
+}
+</style>
 
 <div class="Demo">
   <div class="a" id="el">CSS!</div>
@@ -42,5 +42,5 @@
 <pre class="Code"><code>#el {
   --corner-radius: <mark id="valuecornerRadius">20px</mark>;
   --corner-shape: <mark id="valuecornerShape">round</mark>;
-  background: paint(corner-shape, deeppink);
+  mask-image: paint(corner-shape, black);
 }</code></pre>

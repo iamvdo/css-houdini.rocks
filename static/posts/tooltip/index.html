@@ -1,20 +1,19 @@
 <style>
 .Demo {
-  //padding: 50px 0 75px 0;
+  background: radial-gradient(white, hsl(195, 85%, 65%));
+  color: #111;
 }
 .hello {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3em;
-  color: #222;
+  color: #fff;
   height: 150px;
   width: 200px;
   margin: 50px auto;
   border-radius: 10px;
-}
-.bubble {
-  background: #00c6ff;
+  background: hsl(193, 100%, 30%);
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
   border-image-source: paint(tooltip);
@@ -28,7 +27,7 @@
 </style>
 
 <div class="Demo">
-  <div class="hello bubble" id="el">HELLO</div>
+  <div class="hello" id="el">HELLO</div>
   <div class="Control">
     <label for="tooltip-position"><code>--tooltip-position</code></label>
     <input id="tooltip-position" type="range" min="20" max="80" step="1" value="50">

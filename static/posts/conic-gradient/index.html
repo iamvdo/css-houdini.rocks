@@ -2,15 +2,11 @@
 #el {
   width: 256px;
   height: 256px;
+  background: white;
   background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
   background: paint(conic-gradient, red magenta blue cyan lime yellow red);
   border-radius: 10px;
   margin: 50px auto;
-}
-@supports (background: conic-gradient(red, green)) {
-  #el {
-    
-  }
 }
 </style>
 
@@ -21,4 +17,12 @@
 <pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>#el {
   background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
   background: paint(conic-gradient, red magenta blue cyan lime yellow red);
+}</code></pre>
+<pre class="Code"><code class="language-javascript">// Lea Verou polyfill
+var gradient = new ConicGradient({
+  stops: "red, magenta, blue, cyan, lime, yellow, red"
+});
+
+if (!CSS.supports('background', 'paint(id)')) {
+  el.style.background = 'url(' + gradient.dataURL + ')'
 }</code></pre>

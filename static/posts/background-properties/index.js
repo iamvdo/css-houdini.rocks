@@ -1,4 +1,5 @@
 module.exports = () => {
+  document.getElementById('el').style.setProperty('--background-opacity', 0.5)
   // ranges
   ;['opacity', 'rotate'].forEach(type => {
     document.getElementById('background' + type).addEventListener('input', (e) => {

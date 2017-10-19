@@ -1,4 +1,7 @@
 <style>
+.Demo {
+  background: radial-gradient(at top center, hsl(40, 100%, 55%), hsl(13, 100%, 55%));
+}
 #el {
   display: flex;
   justify-content: center;
@@ -10,13 +13,12 @@
   background: var(--rough-fill);
   border: var(--rough-stroke-width) solid var(--rough-stroke);
   --rough-fill: #0081ff;
-  --rough-stroke: white;
+  --rough-stroke: black;
   --rough-stroke-width: 2px;
   --rough-roughness: 7;
 }
 .el:nth-child(2) {
   --rough-fill: #8100ff;
-  --rough-stroke: white;
 }
 @supports (border-image-source: paint(rough-boxes)) {
   .el {
@@ -28,7 +30,7 @@
 }
 </style>
 
-<div class="Demo">
+<div class="Demo" id="Demo">
   <div id="el">
     <div class="el"></div>
     <div class="el"></div>
@@ -46,7 +48,8 @@
 <pre class="Code"><code>.el {
   background: var(--rough-fill);
   border: var(--rough-stroke-width) solid var(--rough-stroke);
-  --rough-fill: ...;
+  --rough-fill: red;
+  --rough-stroke: white;
   --rough-stroke-width: <mark id="value-rough-stroke-width">4px</mark>;
   --rough-roughness: <mark id="value-rough-roughness">7</mark>;
 }

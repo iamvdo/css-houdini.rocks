@@ -15,5 +15,7 @@
 </div>
 
 <pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>#el {
-  background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+  background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered),
+             linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
+  background: <mark>paint(corners-gradient, deeppink, cyan, orangered, yellow)</mark>;
 }</code></pre>
