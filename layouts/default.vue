@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Navigation from '~/components/Navigation.vue'
 export default {
   components: {
@@ -24,15 +25,15 @@ export default {
     // load every module
     var paintWorklet = CSS.paintWorklet || window.paintWorklet
     if (paintWorklet) {
-      const state = require('~/store/data')
-      for (let i = 0; i < state.posts.length; i++) {
-        const isPaint = state.posts[i].tags.includes('paint')
+      for (let i = 0; i < this.posts.length; i++) {
+        const isPaint = this.posts[i].tags.includes('paint')
         if (isPaint) {
-          paintWorklet.addModule(`/posts/${state.posts[i].url}/paint.js`)
+          paintWorklet.addModule(`/posts/${this.posts[i].url}/paint.js`)
         }
       }
     }
-  }
+  },
+  computed: mapGetters(['posts'])
 }
 </script>
 

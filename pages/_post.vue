@@ -12,11 +12,14 @@
 
 <script>
 
+import { mapGetters } from 'vuex'
+
+const posts = mapGetters(['posts'])
+
 const loaded = {}
 
-const state = require('~/store/data')
-for (let i = 0; i < state.posts.length; i++) {
-  loaded[state.posts[i].url] = false
+for (let i = 0; i < posts.length; i++) {
+  loaded[posts[i].url] = false
 }
 
 export default {

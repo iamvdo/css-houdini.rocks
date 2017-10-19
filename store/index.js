@@ -4,18 +4,22 @@ import state from './data.json'
 
 const getters = {
   posts: state => {
-    return state.posts.sort((a, b) => {
-      if (a.title < b.title) {
-        return -1
+    return state.categories.reduce((a, b) => {
+      b = b.posts.map(post => {
+        post.category = b.category
+        return post
+      })
+      if (a.posts) {
+        a = a.posts.map(post => {
+          post.category = a.category
+          return post
+        })
       }
-      if (a.title > b.title) {
-        return 1
-      }
-      return 0
+      return a.concat(b)
     })
   },
-  getPost: state => id => {
-    return state.posts.filter(post => {
+  getPost: (state, getters) => id => {
+    return getters.posts.filter(post => {
       return post.url === id
     })[0]
   },
