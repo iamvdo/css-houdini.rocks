@@ -25,6 +25,14 @@ const getters = {
   },
   getTag: state => id => {
     return state.tags[id]
+  },
+  getAbbrTag: state => id => {
+    if (id === 'props&val') {
+      id = 'C+'
+    } else {
+      id = id.charAt(0).toUpperCase()
+    }
+    return id
   }
 }
 

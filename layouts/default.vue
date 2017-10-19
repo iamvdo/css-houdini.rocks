@@ -109,7 +109,7 @@ button {
 }
 .Post {
   flex: 1;
-  padding: .5rem;
+  padding: .5rem 1rem;
 }
 .Post-desc {
   margin-top: 25px;

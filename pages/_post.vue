@@ -2,7 +2,10 @@
   <div class="Post">
     <h1 class="Post-title">{{post.title}}</h1>
     <ul class="Post-tags">
-      <li v-for="tag in tags" class="Post-tag">{{getTag(tag)}}</li>
+      <li v-for="tag in tags" class="Post-tag">
+        <span v-if="getAbbrTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">{{getAbbrTag(tag)}}</span>
+        {{getTag(tag)}}
+      </li>
     </ul>
     <p v-html="post.desc" class="Post-desc"></p>
     <div class="Post-content" v-html="postContent"></div>
@@ -50,6 +53,7 @@ export default {
     } catch (e) {}
   },
   computed: {
+    ...mapGetters(['getAbbrTag']),
     id () {
       return this.$route.params.post
     },
@@ -83,6 +87,11 @@ export default {
   font-size: .75rem;
   margin: 0 1rem 0 0;
   color: #aaa;
+}
+.Post-tag .Tag {
+  float: none;
+  margin: 0;
+  vertical-align: 1px;
 }
 .Demo {
   background: linear-gradient(to bottom right, #333, #111);

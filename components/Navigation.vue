@@ -3,11 +3,11 @@
     <ul class="Navigation-list">
       <li v-for="post in posts" class="Navigation-item">
         <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
-        <!--
-        <span v-for="tag in post.tags" :title="getTag(tag)" class="Navigation-tag">
-          {{getAbbrTag(tag)}}
+        <span class="Tags">
+          <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
+            
+          </span>
         </span>
-        -->
       </li>
     </ul>
   </div>
@@ -17,13 +17,8 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapGetters(['posts']),
+  computed: mapGetters(['posts', 'getAbbrTag']),
   methods: {
-    getAbbrTag (id) {
-      if (id === 'paint') {
-        return 'P'
-      }
-    },
     getTag (id) {
       return this.$store.getters.getTag(id)
     }
@@ -59,13 +54,42 @@ export default {
 .Navigation-link.nuxt-link-exact-active {
   --border-color: yellow;
 }
-.Navigation-tag {
+.Tags {
+  display: inline-flex;
+  margin-top: 6px;
+  float: right;
+  opacity: .3;
+}
+@media (max-width: 500px) {
+  .Tags {
+    display: none;
+  }
+}
+.nuxt-link-exact-active + .Tags {
+  opacity: 1;
+}
+.Tag {
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  justify-content: center;
+  align-items: center;
   font-size: .5rem;
   border-radius: 50%;
-  background: deeppink;
+  background: gray;
   color: #fff;
-  vertical-align: 2px;
   cursor: default;
+}
+.Tag--P {
+  background-color: deeppink;
+}
+.Tag--C {
+  background-color: hsl(180, 92%, 40%);
+}
+.Tag--C\+ {
+  background-color: hsl(180, 92%, 30%);
+  letter-spacing: -1px;
 }
 @media (max-width: 800px) {
   .Navigation {
