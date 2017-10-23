@@ -2,38 +2,43 @@
 .Demo {
   color: #eee;
 }
-  #el {
-    --source: url(/posts/background-properties/lowpoly.jpg);
-    box-sizing: content-box;
-    font-size: 4.1em;
-    line-height: 1;
-    text-transform: uppercase;
-    width: 190px;
-    height: 200px;
-    padding-left: 10px;
-    border: 3px solid;
-    background-color: #333;
-    margin: 50px auto;
-    background-image: url(/posts/background-properties/lowpoly.jpg);
-    background-image: paint(background);
+#el {
+  box-sizing: content-box;
+  font-size: 4.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  width: 190px;
+  height: 200px;
+  padding-left: 10px;
+  border: 3px solid;
+  background-color: #333;
+  margin: 50px auto;
 
-    /* opacity */
-    --background-opacity: 1;
+  /* source */
+  /* should be something like */
+  --background-source: var(--source);
+  /* but for now, <image> type don't download image, so */
+  --source: url(/posts/background-properties/lowpoly.jpg);
+  list-style-image: var(--source);
 
-    /* transform */
-    --background-rotate: 0deg;
+  background-image: url(/posts/background-properties/lowpoly.jpg);
+  
 
-    /* source */
-    /* should be something like */
-    --background-source: var(--source);
-    /* but for now, <image> type don't download image, so */
-    list-style-image: var(--source);
+  /* opacity */
+  --background-opacity: 1;
 
-    --background-filter: hue-rotate(var(--hue-rotate)) grayscale(var(--grayscale)) blur(var(--blur));
-    --blur: 0px;
-    --grayscale: 0%;
-    --hue-rotate: 320deg;
-  }
+  /* transform */
+  --background-rotate: 0deg;
+
+  /* filter */
+  --background-filter: hue-rotate(var(--hue-rotate)) grayscale(var(--grayscale)) blur(var(--blur));
+  --blur: 0px;
+  --grayscale: 0%;
+  --hue-rotate: 320deg;
+}
+#el.loaded {
+  background-image: paint(background);
+}
 </style>
 
 <div class="Demo">

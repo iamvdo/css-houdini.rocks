@@ -1,5 +1,8 @@
 module.exports = () => {
-  document.getElementById('el').style.setProperty('--background-opacity', 0.5)
+  document.getElementById('el').classList.remove('loaded')
+  setTimeout(() => {
+    document.getElementById('el').classList.add('loaded')
+  }, 100)
   // ranges
   ;['opacity', 'rotate'].forEach(type => {
     document.getElementById('background' + type).addEventListener('input', (e) => {
