@@ -103,6 +103,7 @@ export default {
 .Control {
   display: flex;
   justify-content: center;
+  align-items: center;
   background: rgba(0,0,0,.25);
 }
 .Demo > *:first-child + .Control {
