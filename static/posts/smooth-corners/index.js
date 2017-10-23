@@ -1,14 +1,23 @@
 module.exports = () => {
-  document.getElementById('exponent').addEventListener('input', (e) => {
+  const exponent = document.getElementById('exponent')
+  const el = document.getElementById('el')
+  const shallow = document.getElementById('shallow')
+  const shallowEl = document.getElementById('shallowEl')
+  const shallowOver = document.getElementById('shallowOver')
+
+  exponent.addEventListener('input', (e) => {
     let value = e.target.value
-    document.getElementById('el').style.setProperty('--smooth-corners', value)
+    el.style.setProperty('--smooth-corners', value)
   })
-  document.getElementById('shallow').addEventListener('click', (e) => {
-    document.getElementById('shallowEl').style.opacity = document.getElementById('shallow').checked ? 1 : 0
+  shallow.addEventListener('click', (e) => {
+    shallowEl.style.opacity = shallow.checked ? 1 : 0
   })
-  document.getElementById('exponent').addEventListener('input', (e) => {
+  shallowOver.addEventListener('change', e => {
+    shallowEl.style.zIndex = shallowOver.checked ? 1 : 'auto'
+  })
+  exponent.addEventListener('input', (e) => {
     let value = e.target.value
-    document.getElementById('el').style.setProperty('--smooth-corners', value)
+    el.style.setProperty('--smooth-corners', value)
     document.getElementById('valuesquircle').innerHTML = value
   })
 }
