@@ -9,7 +9,7 @@
     </ul>
     <p v-html="post.desc" class="Post-desc"></p>
     <div class="Post-content" v-html="postContent"></div>
-    <p><a :href="registerPaintURL">See registerPaint module</a></p>
+    <p v-if="isPaint"><a :href="registerPaintURL">See registerPaint module</a></p>
   </div>
 </template>
 
@@ -68,6 +68,11 @@ export default {
     },
     registerPaintURL () {
       return `/posts/${this.id}/paint.js`
+    },
+    isPaint () {
+      return this.tags.filter(tag => {
+        return tag === 'paint'
+      }).length
     }
   },
   methods: {
