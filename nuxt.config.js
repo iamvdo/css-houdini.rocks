@@ -1,5 +1,3 @@
-const state = require('./store/data')
-
 module.exports = {
   /*
   ** Headers of the page
@@ -59,10 +57,11 @@ module.exports = {
   css: ['@/assets/prismjs.css'],
   generate: {
     routes: function (cb) {
-      const routes = state.posts.map(post => {
-        return post.url
+      const fs = require('fs')
+      fs.readdir('./static/posts', (err, files) => {
+        const routes = files
+        cb(null, routes)
       })
-      cb(null, routes)
     }
   }
 }
