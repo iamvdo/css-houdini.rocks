@@ -17,6 +17,9 @@ $ npm start
 
 # generate static project
 $ npm run generate
+
+# deploy
+$ npm run deploy
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
