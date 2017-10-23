@@ -79,12 +79,14 @@ button {
   }
 }
 .Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
   border-bottom: 1px solid #ddd;
 }
 .Title {
   font-size: 1rem;
-  padding: .5rem;
-  line-height: 1;
   text-transform: uppercase;
 }
 .Title-link {
@@ -101,15 +103,17 @@ button {
   margin-left: .25rem;
 }
 .Support {
-  position: absolute;
-  right: .5rem;
-  top: .5rem;
   font-size: .75rem;
 }
 .Support a {
   margin-left: 1rem;
 }
 @media (max-width: 500px) {
+  .Header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
   .Support {
     position: static;
     padding: .5rem;

@@ -116,7 +116,7 @@ export default {
   }
   .Navigation-item {
     display: inline-block;
-    margin-right: 1rem;
+    margin: 0 .5rem;
   }
   .Navigation-sep {
     display: inline-block;
