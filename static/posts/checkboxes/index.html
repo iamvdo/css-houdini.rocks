@@ -11,11 +11,9 @@ label {
 	margin-bottom: 5px;
 	vertical-align: middle;
 }
-
 label:last-child {
 	margin-bottom: 0;
 }
-
 .Checkbox {
 	margin: 0 1rem 0 2rem;
 	width: 24px;
@@ -32,6 +30,15 @@ label:last-child {
 .Checkbox:checked {
 	--checkbox-tick-color: white;
 	background-color: deeppink;
+}
+@media (max-width: 600px) {
+	label {
+		display: block;
+		text-align: left
+	}
+	.Checkbox {
+		margin-left: 0;
+	}
 }
 </style>
 

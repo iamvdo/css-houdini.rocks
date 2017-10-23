@@ -1,15 +1,22 @@
 <style>
-.a, .b {
+.a {
+  position: relative;
   width: 256px;
   height: 256px;
+  max-height: 80vw;
+  max-width: 80%;
 }
 .a {
   margin: 50px auto;
 }
 .b {
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
   background: #fff;
   border-radius: 70px;
   position: absolute;
+  top: 0;
 }
 .c {
   background: linear-gradient(to bottom right, deeppink, orangered);
@@ -40,11 +47,15 @@
     <label for="shallowOver">Rounded rectangle over</label>
     <input type="checkbox" id="shallowOver">
   </div>
+  <div class="Control">
+    <label for="borderRadius"><code>border-radius</code></label>
+    <input type="range" id="borderRadius" min="0" max="100" step="1" value="70">
+  </div>
 </div>
 
 <pre class="Code"><code>#el {
   background: ...;
-  border-radius: 70px;
+  border-radius: <mark id="valueborderRadius">70px</mark>;
 }
 @supports (mask-image: paint(smooth-corners)) {
   #el {

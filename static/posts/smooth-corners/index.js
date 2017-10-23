@@ -1,5 +1,6 @@
 module.exports = () => {
   const exponent = document.getElementById('exponent')
+  const borderRadius = document.getElementById('borderRadius')
   const el = document.getElementById('el')
   const shallow = document.getElementById('shallow')
   const shallowEl = document.getElementById('shallowEl')
@@ -19,5 +20,10 @@ module.exports = () => {
     let value = e.target.value
     el.style.setProperty('--smooth-corners', value)
     document.getElementById('valuesquircle').innerHTML = value
+  })
+  borderRadius.addEventListener('input', e => {
+    let value = e.target.value + 'px'
+    shallowEl.style.setProperty('border-radius', value)
+    document.getElementById('valueborderRadius').innerHTML = value
   })
 }

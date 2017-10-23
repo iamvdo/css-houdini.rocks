@@ -9,6 +9,7 @@
 .el {
   width: 152px;
   height: 152px;
+  flex: 0 0 auto;
   margin: 50px;
   background: var(--rough-fill);
   border: var(--rough-stroke-width) solid var(--rough-stroke);
@@ -26,6 +27,11 @@
     border-image-slice: 0 fill;
     border-image-outset: 10px;
     background: none;
+  }
+}
+@media (max-width: 500px) {
+  .el:nth-child(2) {
+    display: none;
   }
 }
 </style>

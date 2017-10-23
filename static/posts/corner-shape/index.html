@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 325px;
+  max-width: 80%;
   height: 200px;
   margin: 20px auto;
   color: #fff;
@@ -16,7 +17,7 @@
   #el {
     border-radius: 0;
     --corner-radius: 20px;
-    --corner-shape: round;
+    --corner-shape: scoop;
   }
 }
 </style>
@@ -32,7 +33,7 @@
     <select name="" id="cornerShape">
       <option>round</option>
       <option>bevel</option>
-      <option>scoop</option>
+      <option selected>scoop</option>
       <option>notch</option>
       <option value="iPhoneX">Special: iPhoneX</option>
     </select>
@@ -41,6 +42,6 @@
 
 <pre class="Code"><code>#el {
   --corner-radius: <mark id="valuecornerRadius">20px</mark>;
-  --corner-shape: <mark id="valuecornerShape">round</mark>;
+  --corner-shape: <mark id="valuecornerShape">scoop</mark>;
   mask-image: paint(corner-shape, black);
 }</code></pre>
