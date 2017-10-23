@@ -135,6 +135,7 @@ export default {
 @media (max-width: 450px) {
   .Control {
     flex-direction: column;
+    align-items: stretch;
     padding: 0 1rem;
   }
   .Control input {
