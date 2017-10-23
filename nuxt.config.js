@@ -63,5 +63,8 @@ module.exports = {
         cb(null, routes)
       })
     }
-  }
+  },
+  plugins: [
+    {src: '~/plugins/ga.js', ssr: false}
+  ]
 }
