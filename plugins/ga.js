@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default ({ app }) => {
   if (process.env.NODE_ENV !== 'production') return
 
@@ -9,7 +10,6 @@ export default ({ app }) => {
   ga('create', 'UA-17376769-7', 'auto')
 
   app.router.afterEach((to, from) => {
-    console.log(ga);
     ga('set', 'page', to.fullPath)
     ga('send', 'pageview')
   })
