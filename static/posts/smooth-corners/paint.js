@@ -6,7 +6,7 @@ registerPaint('smooth-corners', class {
     }
     paint(ctx, geom, properties) {
         const c = properties.get('--smooth-corners').toString()
-        
+
         ctx.fillStyle = 'black'
 
         const n = c
@@ -20,8 +20,8 @@ registerPaint('smooth-corners', class {
         ctx.beginPath();
 
         for (let i = 0; i < (2*r+1); i++) {
-            const x = Math.round(i-r) + w
-            const y = Math.round(Math.pow(Math.abs(Math.pow(r,m)-Math.pow(Math.abs(i-r),m)),1/m)) + h
+            const x = (i-r) + w
+            const y = (Math.pow(Math.abs(Math.pow(r,m)-Math.pow(Math.abs(i-r),m)),1/m)) + h
 
             if (i == 0)
                 ctx.moveTo(x, y)
@@ -30,8 +30,8 @@ registerPaint('smooth-corners', class {
         }
 
         for (let i = (2*r); i < (4*r+1); i++) {
-            const x = Math.round(3*r-i) + w
-            const y = Math.round(-Math.pow(Math.abs(Math.pow(r,m)-Math.pow(Math.abs(3*r-i),m)),1/m)) + h
+            const x = (3*r-i) + w
+            const y = (-Math.pow(Math.abs(Math.pow(r,m)-Math.pow(Math.abs(3*r-i),m)),1/m)) + h
             ctx.lineTo(x, y)
         }
 
