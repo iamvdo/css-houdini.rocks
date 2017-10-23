@@ -67,7 +67,7 @@ export default {
       return this.post.tags
     },
     registerPaintURL () {
-      return `/posts/${this.id}/paint.js`
+      return `./posts/${this.id}/paint.js`
     },
     isPaint () {
       return this.tags.filter(tag => {

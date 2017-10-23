@@ -55,6 +55,9 @@ module.exports = {
     ]
   },
   css: ['@/assets/prismjs.css'],
+  router: {
+    base: '/houdini/'
+  },
   generate: {
     routes: function (cb) {
       const fs = require('fs')

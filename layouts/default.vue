@@ -28,7 +28,7 @@ export default {
       for (let i = 0; i < this.posts.length; i++) {
         const isPaint = this.posts[i].tags.includes('paint')
         if (isPaint) {
-          paintWorklet.addModule(`/posts/${this.posts[i].url}/paint.js`)
+          paintWorklet.addModule(`./posts/${this.posts[i].url}/paint.js`)
         }
       }
     }

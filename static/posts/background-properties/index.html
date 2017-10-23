@@ -18,11 +18,11 @@
   /* should be something like */
   --background-source: var(--source);
   /* but for now, <image> type don't download image, so */
-  --source: url(/posts/background-properties/lowpoly.jpg);
+  --source: url(./posts/background-properties/lowpoly.jpg);
   list-style-image: var(--source);
 
-  background-image: url(/posts/background-properties/lowpoly.jpg);
-  
+  background-image: var(--source);
+  background-size: 100% 100%;
 
   /* opacity */
   --background-opacity: 1;
