@@ -1,5 +1,6 @@
 module.exports = () => {
-  document.getElementById('el').classList.add('loaded')
+  const el = document.getElementById('el')
+  el.classList.add('is-loaded')
   // ranges
   ;['separator-size', 'separator-shadow', 'separator-shadow-color', 'separator-shape'].forEach(type => {
     document.getElementById(type).addEventListener(('input' || 'change'), (e) => {

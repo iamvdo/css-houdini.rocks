@@ -1,7 +1,7 @@
 module.exports = () => {
-  document.getElementById('el').classList.remove('loaded')
+  document.getElementById('el').classList.remove('is-loaded')
   setTimeout(() => {
-    document.getElementById('el').classList.add('loaded')
+    document.getElementById('el').classList.add('is-loaded')
   }, 100)
   // ranges
   ;['opacity', 'rotate'].forEach(type => {

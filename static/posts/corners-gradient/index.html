@@ -1,21 +1,29 @@
 <style>
-#el {
+.el {
   width: 256px;
   height: 256px;
   margin: 50px auto;
   border-radius: 10px;
   background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered),
               linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
-  background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+}
+@supports (background: paint(corners-gradient, deeppink, cyan, orangered, yellow)) {
+  .el.is-loaded {
+    background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+  }
 }
 </style>
 
 <div class="Demo" id="Demo">
-  <div id="el"></div>
+  <div id="el" class="el"></div>
 </div>
 
-<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>#el {
+<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>.el {
   background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered),
              linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
-  background: <mark>paint(corners-gradient, deeppink, cyan, orangered, yellow)</mark>;
+}
+@supports (background: paint(id)) {
+  .el.is-loaded {
+    background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+  }
 }</code></pre>

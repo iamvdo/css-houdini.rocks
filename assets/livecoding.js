@@ -45,17 +45,18 @@ window.LiveCoding = function() {
         // prefix code
         cssRules = autoprefixer.process(cssRules).css
       }
-
       // cleanup
       cssRules = cssRules.replace(/^\s+/g,'').replace(/\s+$/g,'')
       var reg = /(\{|\})/g
       cssRules = cssRules.split(reg)
-      for (var i = 0; i < cssRules.length - 1; i+=4) {
-        var selectors = cssRules[i].split(',')
-        for (var j = 0; j < selectors.length; j++) {
-          selectors[j] = '#' + demoElementId + ' ' + selectors[j]
+      for (var i = 0; i < cssRules.length - 1; i++) {
+        if (cssRules[i+1] === '{' && cssRules[i].indexOf('@') === -1) {
+          var selectors = cssRules[i].split(',')
+          for (var j = 0; j < selectors.length; j++) {
+            selectors[j] = '#' + demoElementId + ' ' + selectors[j]
+          }
+          cssRules[i] = selectors.join(',')
         }
-        cssRules[i] = selectors.join(',')
       }
       cssRules = cssRules.join('')
 

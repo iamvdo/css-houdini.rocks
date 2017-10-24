@@ -2,7 +2,8 @@
 #ripple {
   display: block;
   font-size: 3em;
-  background: linear-gradient(to bottom right, deeppink, orangered);
+  --gradient: linear-gradient(to bottom right, deeppink, orangered);
+  background: var(--gradient);
   border: 0;
   margin: 50px auto;
   padding: 1rem 2rem;
@@ -19,7 +20,7 @@
   outline: none;
 }
 #ripple.animating {
-  background-image: paint(ripple), linear-gradient(to bottom right, deeppink, orangered);
+  background: paint(ripple), var(--gradient);
 }
 </style>
 
@@ -29,8 +30,12 @@
   </button>
 </div>
 
-<pre class="Code"><code>#ripple {
-  background: paint(ripple), linear-gradient(to bottom right, deeppink, orangered);
+<pre class="Code"><code>.ripple {
+  --gradient: linear-gradient(to bottom right, deeppink, orangered);
+  background: var(--gradient);
+}
+.ripple.animating {
+  background: paint(ripple), var(--gradient);
 }</code></pre>
 
 <div class="Note">

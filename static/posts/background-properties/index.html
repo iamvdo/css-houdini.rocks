@@ -2,7 +2,7 @@
 .Demo {
   color: #eee;
 }
-#el {
+.el {
   box-sizing: content-box;
   font-size: 4.1em;
   line-height: 1;
@@ -36,13 +36,13 @@
   --grayscale: 0%;
   --hue-rotate: 320deg;
 }
-#el.loaded {
+.el.is-loaded {
   background-image: paint(background);
 }
 </style>
 
 <div class="Demo">
-  <div id="el">
+  <div id="el" class="el">
     CSS is awesome
   </div>
   <div class="Control">
@@ -70,7 +70,10 @@
   </div>
 </div>
 
-<pre class="Code"><code>#el {
+<pre class="Code"><code>.el {
+  background: url(...);
+}
+.el.is-loaded {
   background: paint(background);
   --background-opacity: <mark id="valueopacity">1</mark>;
   --background-rotate: <mark id="valuerotate">0deg</mark>;

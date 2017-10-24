@@ -22,7 +22,7 @@
   --rough-fill: #8100ff;
 }
 @supports (border-image-source: paint(rough-boxes)) {
-  .el {
+  .is-loaded .el {
     border-image-source: paint(rough-boxes);
     border-image-slice: 0 fill;
     border-image-outset: 10px;
@@ -60,7 +60,7 @@
   --rough-roughness: <mark id="value-rough-roughness">7</mark>;
 }
 @supports (border-image-source: paint(rough-boxes)) {
-  .el {
+  .is-loaded .el {
     border-image-source: paint(rough-boxes);
     border-image-slice: 0 fill;
     border-image-outset: 10px;

@@ -23,7 +23,7 @@ label:last-child {
 	transition: --checkbox-tick-color 500ms, background-color 500ms;
 }
 @supports (background-image: paint(checkbox)) {
-	.Checkbox {
+	.is-loaded .Checkbox {
 		-webkit-appearance: none;
 		background-image: paint(checkbox);
 	}
@@ -59,9 +59,14 @@ label:last-child {
 </div>
 
 <pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.Checkbox {
-  background-image: paint(checkbox);
   background-color: #555;
   transition: --checkbox-tick-color 500ms, background-color 500ms;
+}
+@supports (background: paint(id)) {
+  .is-loaded .Checkbox {
+    -webkit-appearance: none;
+    background-image: paint(checkbox);
+  }
 }
 .Checkbox:hover {
   --checkbox-tick-color: rgba(255,255,255,.25);

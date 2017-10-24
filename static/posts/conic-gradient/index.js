@@ -324,6 +324,9 @@ if (self.StyleFix) {
   })();
 }
 
+// loaded
+el.classList.add('is-loaded');
+
 // support old browsers
 var gradient = new ConicGradient({
     stops: "red, magenta, blue, cyan, lime, yellow, red"

@@ -6,6 +6,9 @@ module.exports = () => {
   const shallowEl = document.getElementById('shallowEl')
   const shallowOver = document.getElementById('shallowOver')
 
+  // add loaded class
+  el.classList.add('is-loaded')
+
   exponent.addEventListener('input', (e) => {
     let value = e.target.value
     el.style.setProperty('--smooth-corners', value)

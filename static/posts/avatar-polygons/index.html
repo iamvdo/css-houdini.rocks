@@ -4,10 +4,16 @@
   height: 152px;
   background: url(http://iamvdo.me/images/apple-touch-152.png);
   background-size: cover;
-  -webkit-mask-image: paint(avatar-polygon);
-  --avatar-sides: 10;
+  --avatar-sides: 12;
   --avatar-angle: 0deg;
   margin: 50px auto;
+  border-radius: 50%;
+}
+@supports (background: paint(avatar-polygon)) {
+  #el.is-loaded {
+    border-radius: 0;
+    -webkit-mask-image: paint(avatar-polygon);
+  }
 }
 </style>
 
@@ -15,7 +21,7 @@
   <div id="el"></div>
   <div class="Control">
     <label for="avatarsides"><code>--avatar-sides</code></label>
-    <input id="avatarsides" type="range" min="4" max="20" value="6">
+    <input id="avatarsides" type="range" min="4" max="20" value="12">
   </div>
   <div class="Control">
     <label for="avatarangle"><code>--avatar-angle</code></label>
@@ -23,9 +29,15 @@
   </div>
 </div>
 
-<pre class="Code"><code>#el {
+<pre class="Code"><code>.el {
   background: url(...);
-  mask-image: paint(avatar-polygon);
-  --avatar-sides: <mark id="valuesides">10</mark>;
-  --avatar-angle: <mark id="valueangle">0deg</mark>;
+  border-radius: 50%;
+}
+@supports (background: paint(id)) {
+  .el.is-loaded {
+  border-radius: 0;
+    mask-image: paint(avatar-polygon);
+    --avatar-sides: <mark id="valuesides">12</mark>;
+    --avatar-angle: <mark id="valueangle">0deg</mark>;
+  }
 }</code></pre>

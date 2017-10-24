@@ -1,4 +1,8 @@
 module.exports = () => {
+  // loaded
+  const el = document.getElementById('el')
+  el.classList.add('is-loaded')
+
   document.getElementById('cornerShape').addEventListener('change', (e) => {
     let value = e.target.value
     document.getElementById('el').style.setProperty('--corner-shape', value)

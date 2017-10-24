@@ -22,7 +22,7 @@
   background: linear-gradient(to bottom right, deeppink, orangered);
 }
 @supports (-webkit-mask-image: paint(smooth-corners)) {
-  .c {
+  .c.is-loaded {
     border-radius: 0;
     -webkit-mask-image: paint(smooth-corners);
     --smooth-corners: 4;
@@ -53,12 +53,12 @@
   </div>
 </div>
 
-<pre class="Code"><code>#el {
+<pre class="Code"><code>.el {
   background: ...;
   border-radius: <mark id="valueborderRadius">70px</mark>;
 }
 @supports (mask-image: paint(smooth-corners)) {
-  #el {
+  .el.is-loaded {
     border-radius: 0;
     mask-image: paint(smooth-corners);
     --smooth-corners: <mark id="valuesquircle">4</mark>;
