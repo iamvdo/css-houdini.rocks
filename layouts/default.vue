@@ -5,7 +5,7 @@
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
         <small class="Title-note">very experimental by <a href="https://twitter.com">@iamvdo</a></small>
       </h1>
-      <div class="Support">Need latest Chrome! <a href="https://ishoudinireadyyet.com">Support?</a></div>
+      <div class="Support">Need latest Chrome with flag! <a href="https://ishoudinireadyyet.com">Support?</a></div>
     </div>
     <div class="Content">
       <Navigation/>
@@ -108,7 +108,7 @@ button {
 .Support a {
   margin-left: 1rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .Header {
     flex-direction: column;
     align-items: stretch;
