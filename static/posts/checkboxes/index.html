@@ -18,11 +18,15 @@ label:last-child {
 	margin: 0 1rem 0 2rem;
 	width: 24px;
 	height: 24px;
-	-webkit-appearance: none;
 	border-radius: 2px;
 	background-color: #555;
-	background-image: paint(checkbox);
 	transition: --checkbox-tick-color 500ms, background-color 500ms;
+}
+@supports (background-image: paint(checkbox)) {
+	.Checkbox {
+		-webkit-appearance: none;
+		background-image: paint(checkbox);
+	}
 }
 .Checkbox:hover {
 	--checkbox-tick-color: rgba(255,255,255,.25);
