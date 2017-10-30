@@ -3,7 +3,7 @@
     <div class="Header">
       <h1 class="Title">
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
-        <small class="Title-note">very experimental by <a href="https://twitter.com">@iamvdo</a></small>
+        <small class="Title-note">very experimental by <a href="https://twitter.com/iamvdo">@iamvdo</a></small>
       </h1>
       <div class="Support">Need latest Chrome with flag! <a href="https://ishoudinireadyyet.com">Support?</a></div>
     </div>
