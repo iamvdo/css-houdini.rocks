@@ -1,8 +1,8 @@
-# houdini
+# Houdini experiments
 
-> Nuxt.js project
+See live http://lab.iamvdo.me/houdini
 
-## Build Setup
+## Build Nuxt.js project
 
 ``` bash
 # install dependencies
@@ -22,4 +22,10 @@ $ npm run generate
 $ npm run deploy
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Add new demo
+
+* Add metadata in `store/data.json`
+* Create new folder in `static/posts`
+  * `index.html` for demo content
+  * `index.js` for JS to be executed when demo is loaded
+  * `paint.js` for `registerPaint`
