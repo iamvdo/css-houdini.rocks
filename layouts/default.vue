@@ -57,7 +57,8 @@ html {
 a {
   color: inherit;
 }
-p {
+p,
+ul {
   margin: 1rem 0;
 }
 button {

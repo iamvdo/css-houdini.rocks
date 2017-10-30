@@ -41,6 +41,7 @@ export default {
 }
 .Navigation-list {
   padding: .5rem;
+  margin: 0;
 }
 @media (max-width: 500px) {
   .Navigation-list {
