@@ -122,7 +122,7 @@
         },
         {
           "title": "Smooth corners",
-          "desc": "Better rounded rectangle by drawing a superellipse",
+          "desc": "Better rounded rectangle by drawing a superellipse. <a href=\"http://iamvdo.me/en/blog/smooth-corners-with-css-houdini\">Read blog post</a>",
           "url": "smooth-corners",
           "properties": [
             ["--smooth-corners", "<number>", false, 4]
