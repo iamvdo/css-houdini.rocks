@@ -19,7 +19,7 @@ $ npm start
 $ npm run generate
 
 # deploy
-$ npm run deploy
+$ npm run deploy -- --remote=<remote>
 ```
 
 ## Add new demo
