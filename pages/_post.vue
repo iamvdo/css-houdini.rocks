@@ -26,6 +26,20 @@ for (let i = 0; i < posts.length; i++) {
 }
 
 export default {
+  head () {
+    const rex = /(<([^>]+)>)/ig
+    const post = this.post
+    let desc = ''
+    if (post.desc) {
+      desc = post.desc.replace(rex, '')
+    }
+    return {
+      title: post.title + ' with CSS Houdini - @iamvdo',
+      meta: [
+        { hid: 'description', name: 'description', content: desc }
+      ]
+    }
+  },
   mounted () {
     // Prims all the thing
     window.Prism.highlightAll()
