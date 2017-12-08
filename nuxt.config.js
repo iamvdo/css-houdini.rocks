@@ -65,6 +65,9 @@ module.exports = {
         const routes = files
         cb(null, routes)
       })
+    },
+    minify: {
+      removeOptionalTags: false,
     }
   },
   plugins: [
