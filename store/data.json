@@ -128,6 +128,17 @@
             ["--smooth-corners", "<number>", false, 4]
           ],
           "tags": ["paint", "customprops", "props&val"]
+        },
+        {
+          "title": "Dynamic hover masks",
+          "desc": "Using registered custom properties to animate a CSS mask when an image is hovered. Also, use of CSS Blend modes.",
+          "url": "dynamic-hover-masks",
+          "properties": [
+            ["--x", "<number>", true, 0],
+            ["--y", "<number>", true, 0],
+            ["--size", "<number>", true, 0]
+          ],
+          "tags": ["paint", "customprops", "props&val"]
         }
       ]
     },
