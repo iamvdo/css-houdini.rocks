@@ -1,10 +1,12 @@
 <template>
   <div class="App">
     <div class="Header">
-      <h1 class="Title">
-        <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
-        <small class="Title-note"> very experimental by <a href="https://twitter.com/iamvdo">@iamvdo</a></small>
-      </h1>
+      <div class="Header-title">
+        <h1 class="Title">
+          <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
+        </h1>
+        <h2 class="Title-note">Experimental showcase by <a href="https://twitter.com/iamvdo">@iamvdo</a></h2>
+      </div>
       <div class="Support">Need latest Chrome with flag! <a href="https://ishoudinireadyyet.com">Support?</a></div>
     </div>
     <div class="Content">
@@ -85,6 +87,12 @@ button {
   justify-content: space-between;
   padding: .5rem;
   border-bottom: 1px solid #ddd;
+}
+.Header-title {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-wrap: wrap;
 }
 .Title {
   font-size: 1rem;
