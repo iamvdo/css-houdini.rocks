@@ -54,7 +54,7 @@ registerPaint('bg', class {
   }
   paint (ctx, geom, properties, args) {
     const breakpoint = properties.get('--breakpoint').value;
-    let color = geom.width < breakpoint ? args[0] : args[1];
+    let color = geom.width &lt; breakpoint ? args[0] : args[1];
     color = color.toString();
 
     ctx.fillStyle = color;
