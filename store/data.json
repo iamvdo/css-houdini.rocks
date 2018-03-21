@@ -35,6 +35,12 @@
       "category": "Background",
       "posts": [
         {
+          "title": "Slanted backgrounds",
+          "desc": "Houdini makes slanted backgrounds so much easier. Even in multiple lines.",
+          "url": "slanted-backgrounds",
+          "tags": ["paint"]
+        },
+        {
           "title": "Checkboxes",
           "desc": "Draw your own checkbox tick",
           "url": "checkboxes",
