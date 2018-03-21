@@ -75,7 +75,7 @@ export default {
   margin-top: 1rem;
   text-transform: uppercase;
   font-size: .6rem;
-  color: hsl(286, 100%, 50%);
+  color: hsl(296, 100%, 50%);
 }
 .Navigation-sep:first-of-type {
   margin-top: 0;
