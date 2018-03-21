@@ -1,21 +1,7 @@
 {
   "categories": [
     {
-      "category": "101",
-      "posts": [
-        {
-          "title": "Animating a gradient",
-          "desc": "Register a custom property to set it animatable (if <code>syntax</code> type is animatable)",
-          "url": "animating-gradient",
-          "properties": [
-            ["--color-stop", "<color>", false, "transparent"]
-          ],
-          "tags": ["customprops", "props&val"]
-        }
-      ]
-    },
-    {
-      "category": "Arguments",
+      "category": "Backgrounds",
       "posts": [
         {
           "title": "Conic gradient",
@@ -28,12 +14,7 @@
           "desc": "Draw a gradient by specifying 4 colors for each corners",
           "url": "corners-gradient",
           "tags": ["paint"]
-        }
-      ]
-    },
-    {
-      "category": "Background",
-      "posts": [
+        },
         {
           "title": "Slanted backgrounds",
           "desc": "Houdini makes slanted backgrounds so much easier. Even in multiple lines. (see note below demo)",
@@ -151,6 +132,15 @@
     {
       "category": "Animations",
       "posts": [
+        {
+          "title": "Animating a gradient",
+          "desc": "Register a custom property to set it animatable (if <code>syntax</code> type is animatable)",
+          "url": "animating-gradient",
+          "properties": [
+            ["--color-stop", "<color>", false, "transparent"]
+          ],
+          "tags": ["customprops", "props&val"]
+        },
         {
           "title": "Ripple animation",
           "desc": "Famous Google material design effect",
