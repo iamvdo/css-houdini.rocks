@@ -12,21 +12,19 @@
   border-radius: 3px;
   overflow: hidden;
   resize: horizontal;
-
   --breakpoint: 350px;
-  background: paint(bg, hsl(190, 56%, 42%), hsl(360, 56%, 42%));
+  background: hsl(190, 56%, 42%);
 }
 .el--big {
   width: 400px;
 }
-/*
-@supports (background: paint(slanted-bg)) {
-  .el.is-loaded span {
-    padding-right: 30px;
-    background: paint(slanted-bg);
+
+@supports (background: paint(bg)) {
+  .is-loaded .el {
+    background: paint(bg, hsl(190, 56%, 42%), hsl(360, 56%, 42%));
   }
 }
-*/
+
 
 </style>
 
@@ -37,7 +35,12 @@
 
 <pre class="Code"><code>.el {
   --breakpoint: 350px;
-  background: paint(bg, hsl(190, 56%, 42%), hsl(360, 56%, 42%));
+  background: blue;
+}
+@supports (background: paint(bg)) {
+  .is-loaded .el {
+    background: paint(bg, blue, red);
+  }
 }</code></pre>
 <pre class="Code"><code class="language-js">// registerPaint worklet
 registerPaint('bg', class {
