@@ -4,7 +4,7 @@
       <template  v-for="(post, id) in posts">
         <dt v-if="newCategory(id)" class="Navigation-sep">{{post.category}}</dt>
         <dd class="Navigation-item">
-          <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
+          <nuxt-link :to="'/'+post.url" class="Navigation-link" v-html="post.title"></nuxt-link>
           <span class="Tags">
             <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
               

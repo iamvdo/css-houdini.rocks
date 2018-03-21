@@ -1,6 +1,6 @@
 <template>
   <div class="Post">
-    <h1 class="Post-title">{{post.title}}</h1>
+    <h1 class="Post-title" v-html="post.title"></h1>
     <ul class="Post-tags">
       <li v-for="tag in tags" class="Post-tag">
         <span v-if="getAbbrTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">{{getAbbrTag(tag)}}</span>
@@ -29,12 +29,13 @@ export default {
   head () {
     const rex = /(<([^>]+)>)/ig
     const post = this.post
+    const title = post.title.replace(rex, '')
     let desc = ''
     if (post.desc) {
       desc = post.desc.replace(rex, '')
     }
     return {
-      title: post.title + ' with CSS Houdini - @iamvdo',
+      title: title + ' with CSS Houdini - @iamvdo',
       meta: [
         { hid: 'description', name: 'description', content: desc }
       ]
