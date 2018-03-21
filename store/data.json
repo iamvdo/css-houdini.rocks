@@ -160,6 +160,20 @@
           "tags": ["paint", "customprops", "props&val"]
         }
       ]
+    },
+    {
+      "category": "Layout",
+      "posts": [
+        {
+          "title": "<abbr title=\"Element Queries\">EQ</abbr>: Responsive background",
+          "desc": "Proof-of-concept: changing background based on element’s width. Try resize it!",
+          "url": "eq-responsive-background",
+          "properties": [
+            ["--breakpoint","<length>", false, 0]
+          ],
+          "tags": ["paint", "customprops"]
+        }
+      ]
     }
   ],
   "tags": {

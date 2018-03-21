@@ -66,7 +66,10 @@ ul {
 button {
   font-family: "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-
+abbr {
+  text-decoration: none;
+  border-bottom: .05em solid rgba(0,0,0,.35);
+}
 .App {
   display: flex;
   flex-direction: column;
