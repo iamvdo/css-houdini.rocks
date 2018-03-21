@@ -1,16 +1,18 @@
 <template>
   <div class="Navigation">
-    <ul class="Navigation-list">
-      <li v-for="(post, id) in posts" class="Navigation-item">
-        <span v-if="newCategory(id)" class="Navigation-sep"></span>
-        <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
-        <span class="Tags">
-          <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
-            
+    <dl class="Navigation-list">
+      <template  v-for="(post, id) in posts">
+        <dt v-if="newCategory(id)" class="Navigation-sep">{{post.category}}</dt>
+        <dd class="Navigation-item">
+          <nuxt-link :to="'/'+post.url" class="Navigation-link">{{post.title}}</nuxt-link>
+          <span class="Tags">
+            <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
+              
+            </span>
           </span>
-        </span>
-      </li>
-    </ul>
+        </dd>
+      </template>
+    </dl>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ export default {
     },
     newCategory (id) {
       if (id === 0) {
-        return false
+        return true
       }
       return this.posts[id].category !== this.posts[id - 1].category
     }
@@ -52,6 +54,7 @@ export default {
   font-size: .95em;
   padding: .25rem 0;
 }
+
 .Navigation-link {
   --border-color: transparent;
   --border-size: 5px;
@@ -70,6 +73,12 @@ export default {
 .Navigation-sep {
   display: block;
   margin-top: 1rem;
+  text-transform: uppercase;
+  font-size: .6rem;
+  color: hsl(286, 100%, 50%);
+}
+.Navigation-sep:first-of-type {
+  margin-top: 0;
 }
 .Tags {
   display: inline-flex;
@@ -120,8 +129,7 @@ export default {
     margin: 0 .5rem;
   }
   .Navigation-sep {
-    display: inline-block;
-    margin: 0;
+    display: none;
   }
 }
 </style>
