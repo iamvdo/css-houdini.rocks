@@ -129,7 +129,7 @@ export default {
 .Demo > *:first-child + .Control {
   padding-top: 1rem;
 }
-.Control ~ .Control:last-child {
+.Control:last-child {
   padding-bottom: 1rem;
 }
 .Control label {
