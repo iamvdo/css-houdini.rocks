@@ -3,7 +3,8 @@
 <style>
 .Demo {
   //padding: 50px 0;
-  background: hsl(190, 10%, 22%);;
+  background: hsl(190, 10%, 22%);
+  --bubbles-size: 80;
 }
 .Demo-wrapper {
   display: flex;
@@ -19,6 +20,9 @@
   box-shadow: 0 8px 15px rgba(0,0,0,.1);
   --seed: 1;
   --seed-check: 1;
+  --bubbles: 75;
+  --bubbles-size: 0;
+  transition: --bubbles-size .4s ease-out;
 }
 .text {
   position: absolute;
@@ -31,11 +35,9 @@
   font: 2em sans-serif;
   color: #fff;
   -webkit-mask-image: paint(bubbles);
-  --bubbles-size: 0;
-  transition: --bubbles-size .4s ease-out;
 }
-.el:hover .text {
-  --bubbles-size: 80;
+.el.hover {
+  --bubbles-size: inherit; /* inherits from .Demo (useful because of JS or CSS hover state) */
   transition-timing-function: cubic-bezier(.7,.3,.9,.7);
 }
 .el:nth-child(2) {
@@ -65,21 +67,30 @@
     <label for="seed">Seeded random numbers</label>
     <input type="checkbox" id="seed" checked>
   </div>
+  <div class="Control">
+    <label for="bubbles"><code>--bubbles</code></label>
+    <input id="bubbles" type="range" min="1" max="250" value="75">
+  </div>
+  <div class="Control">
+    <label for="bubbles-size"><code>--bubbles-size</code></label>
+    <input id="bubbles-size" type="range" min="1" max="500" value="80">
+  </div>
 </div>
 
 <pre class="Code"><code>.el {
+  --bubbles: <mark id="valuebubbles">75</mark>
   --bubbles-size: 0;
   --seed: 1;
+  transition: --bubbles-size .4s ease-out;
 }
 .el:nth-child(2) {
   --seed: 2;
 }
 .text {
   mask-image: paint(bubbles);
-  transition: --bubbles-size .4s ease-out;
 }
-.el:hover .text {
-  --bubbles-size: 80;
+.el:hover {
+  --bubbles-size: <mark id="valuebubbles-size">80</mark>;
   transition-timing-function: ease-in;
 }</code></pre>
 <pre class="Code"><code class="language-js">registerPaint('bubbles', class {

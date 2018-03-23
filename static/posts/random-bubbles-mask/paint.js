@@ -6,6 +6,7 @@ registerPaint('bubbles', class {
 
   static get inputProperties() {
     return [
+        '--bubbles',
       '--bubbles-size',
       '--seed',
       '--seed-check'
@@ -20,11 +21,12 @@ registerPaint('bubbles', class {
         Math.seedrandom(seed);
     }
 
+    const bubbles = properties.get('--bubbles').value;
     const bubblesSize = properties.get('--bubbles-size').value;
     const { width, height } = geom;
 
     const particles = [];
-    for (let i = 0; i < 75; i++) {
+    for (let i = 0; i < bubbles; i++) {
 
       let size = bubblesSize * Math.random();
       let x = width * Math.random();

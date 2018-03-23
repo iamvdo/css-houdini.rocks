@@ -132,7 +132,8 @@
           "desc": "Using seeded random numbers to get random bubbles not so random :)",
           "url": "random-bubbles-mask",
           "properties": [
-            ["--bubbles-size", "<number>", false, 0]
+            ["--bubbles", "<number>", true, 0],
+            ["--bubbles-size", "<number>", true, 0]
           ],
           "tags": ["paint", "customprops", "props&val"]
         }
