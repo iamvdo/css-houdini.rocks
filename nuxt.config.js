@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'CSS Houdini Experiments · @iamvdo',
+    title: 'CSS Houdini Experiments - @iamvdo',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Experimenting with CSS Houdini Paint API' }
+      { hid: 'description', name: 'description', content: 'Showcase of simple and advanced webdesign effects with the new and shiny CSS Houdini spec.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: './favicon.png' },

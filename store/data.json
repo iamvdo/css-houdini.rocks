@@ -5,13 +5,13 @@
       "posts": [
         {
           "title": "Conic gradient",
-          "desc": "Polyfill <code>conic-gradient</code> function",
+          "desc": "Polyfill the <code>conic-gradient()</code> function from CSS Image L4",
           "url": "conic-gradient",
           "tags": ["paint"]
         },
         {
           "title": "Corners gradient",
-          "desc": "Draw a gradient by specifying 4 colors for each corners",
+          "desc": "Draw a gradient by specifying 4 colors for each corners of a box",
           "url": "corners-gradient",
           "tags": ["paint"]
         },
@@ -23,7 +23,7 @@
         },
         {
           "title": "Checkboxes",
-          "desc": "Draw your own checkbox tick",
+          "desc": "Draw your own checkbox tick without images and change colors easily from CSS",
           "url": "checkboxes",
           "properties": [
             ["--checkbox-tick-color", "<color>", false, "transparent"]
@@ -63,6 +63,7 @@
         {
           "title": "Rough boxes",
           "url": "rough-boxes",
+          "desc": "Create sketchy random borders, as if they were drawn by hand. No extra element, fully responsive",
           "properties": [
             ["--rough-fill", "<color>", true, "black"],
             ["--rough-stroke-width", "<length>", true, "1px"],
@@ -90,7 +91,7 @@
       "posts": [
         {
           "title": "Corner shapes",
-          "desc": "Polyfill <code>corner-shape</code> from CSS L4",
+          "desc": "Polyfill the <code>corner-shape</code> property from CSS L4",
           "url": "corner-shape",
           "properties": [
             ["--corner-radius", "<length-percentage>", false, "0px"],
@@ -100,6 +101,7 @@
         },
         {
           "title": "Avatar polygons",
+          "desc": "Create polygon masks, on the fly, from CSS",
           "url": "avatar-polygons",
           "properties": [
             ["--avatar-sides", "<integer>", false, 4],
@@ -109,7 +111,7 @@
         },
         {
           "title": "Smooth corners",
-          "desc": "Better rounded rectangle by drawing a superellipse. <a href=\"http://iamvdo.me/en/blog/smooth-corners-with-css-houdini\">Read blog post</a>",
+          "desc": "Slightly better rounded rectangle by drawing a superellipse",
           "url": "smooth-corners",
           "properties": [
             ["--smooth-corners", "<number>", false, 4]
@@ -129,7 +131,7 @@
         },
         {
           "title": "Random bubbles mask",
-          "desc": "Using seeded random numbers to get random bubbles not so random :)",
+          "desc": "Create a random CSS mask on the fly, right from CSS",
           "url": "random-bubbles-mask",
           "properties": [
             ["--bubbles", "<number>", true, 0],
@@ -144,7 +146,7 @@
       "posts": [
         {
           "title": "Animating a gradient",
-          "desc": "Register a custom property to set it animatable (if <code>syntax</code> type is animatable)",
+          "desc": "Register a custom property to set it animatable (if <code>syntax</code> type is animatable) with <code>CSS.registerProperty()</code> from <a href=\"https://drafts.css-houdini.org/css-properties-values-api/\">CSS Properties & Values API</a>",
           "url": "animating-gradient",
           "properties": [
             ["--color-stop", "<color>", false, "transparent"]

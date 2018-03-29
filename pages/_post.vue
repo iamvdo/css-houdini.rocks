@@ -47,7 +47,7 @@ export default {
       desc = post.desc.replace(rex, '')
     }
     return {
-      title: title + ' with CSS Houdini - @iamvdo',
+      title: title + ' - CSS Houdini - @iamvdo',
       meta: [
         { hid: 'description', name: 'description', content: desc }
       ]

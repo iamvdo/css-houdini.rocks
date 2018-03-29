@@ -31,6 +31,10 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
   background: #b3d4fc;
 }
 
+:not(pre) > code * {
+  color: inherit !important;
+}
+
 @media print {
   pre[class*="language-"] {
     text-shadow: none;
