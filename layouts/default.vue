@@ -1,12 +1,10 @@
 <template>
   <div class="App">
     <div class="Header">
-      <div class="Header-title">
-        <h1 class="Title">
-          <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
-        </h1>
-        <h2 class="Title-note">Experimental showcase by <a href="https://twitter.com/iamvdo">@iamvdo</a></h2>
-      </div>
+      <p class="Title">
+        <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
+        <small class="Title-note"> experimental showcase by <a href="https://twitter.com/iamvdo">@iamvdo</a></small>
+      </p>
       <div class="Support">Need latest Chrome with flag! <a href="https://ishoudinireadyyet.com">Support?</a></div>
     </div>
     <div class="Content">
@@ -91,15 +89,11 @@ abbr {
   padding: .5rem;
   border-bottom: 1px solid #ddd;
 }
-.Header-title {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  flex-wrap: wrap;
-}
 .Title {
   font-size: 1rem;
+  font-weight: bold;
   text-transform: uppercase;
+  margin: 0;
 }
 .Title-link {
   text-decoration: none;
