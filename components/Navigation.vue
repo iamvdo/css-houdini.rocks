@@ -5,11 +5,6 @@
         <dt v-if="newCategory(id)" class="Navigation-sep">{{post.category}}</dt>
         <dd class="Navigation-item">
           <nuxt-link :to="'/'+post.url" class="Navigation-link" v-html="post.title"></nuxt-link>
-          <span class="Tags">
-            <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
-              
-            </span>
-          </span>
         </dd>
       </template>
     </dl>
@@ -20,11 +15,8 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapGetters(['posts', 'getAbbrTag']),
+  computed: mapGetters(['posts']),
   methods: {
-    getTag (id) {
-      return this.$store.getters.getTag(id)
-    },
     newCategory (id) {
       if (id === 0) {
         return true
