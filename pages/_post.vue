@@ -1,6 +1,18 @@
 <template>
   <div class="Post">
-    <h1 class="Post-title" v-html="post.title"></h1>
+    <div class="Post-header">
+      <h1 class="Post-title" v-html="post.title"></h1>
+      <ul class="Post-prevNext">
+        <li class="Post-prevNextText">
+          <nuxt-link v-if="prevPost" :to="prevPost.url">PREV</nuxt-link>
+          <span class="Post-prevNextInactive" v-else>PREV</span>
+        </li>
+        <li class="Post-prevNextText">
+          <nuxt-link v-if="nextPost" :to="nextPost.url">NEXT</nuxt-link>
+          <span class="Post-prevNextInactive" v-else>NEXT</span>
+        </li>
+      </ul>
+    </div>
     <ul class="Post-tags">
       <li v-for="tag in tags" class="Post-tag">
         <span v-if="getAbbrTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">{{getAbbrTag(tag)}}</span>
@@ -75,6 +87,12 @@ export default {
     post () {
       return this.$store.getters.getPost(this.id)
     },
+    prevPost () {
+      return this.$store.getters.getPrevPost(this.id)
+    },
+    nextPost () {
+      return this.$store.getters.getNextPost(this.id)
+    },
     postContent () {
       return require(`~/static/posts/${this.id}/index.html`)
     },
@@ -99,6 +117,32 @@ export default {
 </script>
 
 <style>
+.Post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Post-prevNext {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  font-size: .75rem;
+}
+.Post-prevNextText + .Post-prevNextText {
+  margin-left: .5rem;
+}
+.Post-prevNextInactive {
+  opacity: .5;
+}
+@media (max-width: 575px) {
+  .Post-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .Post-prevNext {
+    align-self: flex-end;
+  }
+}
 .Post-tags {
   padding: 0;
 }
