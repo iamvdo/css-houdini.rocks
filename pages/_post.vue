@@ -4,11 +4,11 @@
       <h1 class="Post-title" v-html="post.title"></h1>
       <ul class="Post-prevNext">
         <li class="Post-prevNextText">
-          <nuxt-link v-if="prevPost" :to="prevPost.url">PREV</nuxt-link>
+          <nuxt-link v-if="prevPost" :to="'/'+prevPost.url">PREV</nuxt-link>
           <span class="Post-prevNextInactive" v-else>PREV</span>
         </li>
         <li class="Post-prevNextText">
-          <nuxt-link v-if="nextPost" :to="nextPost.url">NEXT</nuxt-link>
+          <nuxt-link v-if="nextPost" :to="'/'+nextPost.url">NEXT</nuxt-link>
           <span class="Post-prevNextInactive" v-else>NEXT</span>
         </li>
       </ul>
