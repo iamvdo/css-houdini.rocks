@@ -173,6 +173,9 @@ export default {
 .Demo > *:first-child + .Control {
   padding-top: 1rem;
 }
+.Control--first {
+  padding-top: 1rem;
+}
 .Control:last-child {
   padding-bottom: 1rem;
 }
@@ -226,6 +229,7 @@ export default {
 }
 .Code code {
   outline: none;
+  word-break: break-all;
 }
 .Code code[contenteditable]::after,
 .Code code.language-js::after {
