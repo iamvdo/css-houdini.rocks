@@ -95,7 +95,21 @@ registerPaint('highlighter', class {
       beziers.push(bz);
     }
 
-    // set intrinsicWith/height for image
+    // HOTFIX for Canary
+    // CSSImageValue no longer contains intrinsicWidth/intrinsicHeight
+    if (!img.intrinsicWidth) {
+      const splitUrl = img.toString().split('/');
+      const pen = splitUrl[splitUrl.length - 1].replace('.png")', '');
+      const intrinsicSizes = {
+        highlighter: [38, 59],
+        gelpen: [21, 21],
+        pencil: [11, 10]
+      };
+      img.intrinsicWidth = intrinsicSizes[pen][0];
+      img.intrinsicHeight = intrinsicSizes[pen][1];
+    }
+
+    // set intrinsicWidth/height for image
     let { intrinsicWidth, intrinsicHeight } = img;
     const intrinsicSize = Math.max(intrinsicWidth, intrinsicHeight);
     const intrinsicSizeRatio = intrinsicSize / paintSize;
