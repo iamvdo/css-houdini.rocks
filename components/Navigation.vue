@@ -6,8 +6,8 @@
         <dd class="Navigation-item">
           <nuxt-link :to="'/'+post.url" class="Navigation-link" v-html="post.title"></nuxt-link>
           <span class="Tags">
-            <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">
-              
+            <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--small Tag--' + getAbbrTag(tag)">
+              {{getAbbrTag(tag)}}
             </span>
           </span>
         </dd>
@@ -51,6 +51,8 @@ export default {
   }
 }
 .Navigation-item {
+  display: flex;
+  align-items: center;
   font-size: .95em;
   padding: .25rem 0;
 }
@@ -59,6 +61,9 @@ export default {
   --border-color: transparent;
   --border-size: 5px;
   padding: 0 .25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-decoration: none;
   background: linear-gradient(var(--border-color) var(--border-size), transparent var(--border-size));
   background-position: 0 calc(100% - var(--border-size));
@@ -81,11 +86,10 @@ export default {
   margin-top: 0;
 }
 .Tags {
-  display: inline-flex;
-  margin-top: 6px;
+  display: flex;
   margin-left: 5px;
-  float: right;
-  opacity: .3;
+  margin-top: 4px;
+  opacity: .5;
 }
 @media (max-width: 500px) {
   .Tags {
@@ -99,7 +103,6 @@ export default {
   display: inline-flex;
   width: 10px;
   height: 10px;
-  margin-left: -5px;
   justify-content: center;
   align-items: center;
   font-size: .5rem;
@@ -108,14 +111,19 @@ export default {
   color: #fff;
   cursor: default;
 }
+.Tag--small {
+  width: 6px;
+  height: 6px;
+  color: transparent;
+}
 .Tag--P {
   background-color: deeppink;
 }
 .Tag--C {
-  background-color: hsl(180, 92%, 40%);
+  background-color: hsl(180, 92%, 30%);
 }
 .Tag--C\+ {
-  background-color: hsl(180, 92%, 30%);
+  background-color: hsl(180, 92%, 40%);
   letter-spacing: -1px;
 }
 @media (max-width: 800px) {
@@ -125,7 +133,7 @@ export default {
     border-right: none;
   }
   .Navigation-item {
-    display: inline-block;
+    display: inline-flex;
     margin: 0 .5rem;
   }
   .Navigation-sep {

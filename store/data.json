@@ -28,7 +28,7 @@
           "properties": [
             ["--checkbox-tick-color", "<color>", false, "transparent"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Background properties",
@@ -43,7 +43,7 @@
             ["--grayscale", "<percentage>", false, "0%"],
             ["--hue", "<angle>", false, "0deg"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         }
       ]
     },
@@ -58,7 +58,7 @@
             ["--tooltip-position", "<percentage>", false, "50%"],
             ["--tooltip-size", "<length>", false, "0px"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Rough boxes",
@@ -70,7 +70,7 @@
             ["--rough-stroke", "<color>", true, "black"],
             ["--rough-roughness", "<number>", true, 1]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Non-rectangular separators",
@@ -82,7 +82,7 @@
             ["--separator-shadow", "<number>", false, 0.25],
             ["--separator-shadow-color", "<color>", false, "black"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         }
       ]
     },
@@ -97,7 +97,7 @@
             ["--corner-radius", "<length-percentage>", false, "0px"],
             ["--corner-shape", "<custom-ident>", false, "round"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Avatar polygons",
@@ -107,7 +107,7 @@
             ["--avatar-sides", "<integer>", false, 4],
             ["--avatar-angle", "<angle>", false, "0deg"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Smooth corners",
@@ -116,7 +116,7 @@
           "properties": [
             ["--smooth-corners", "<number>", false, 4]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Dynamic hover masks",
@@ -127,7 +127,7 @@
             ["--y", "<number>", true, 0],
             ["--size", "<number>", true, 0]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Random bubbles mask",
@@ -137,7 +137,7 @@
             ["--bubbles", "<number>", true, 0],
             ["--bubbles-size", "<number>", true, 0]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         }
       ]
     },
@@ -151,13 +151,13 @@
           "properties": [
             ["--color-stop", "<color>", false, "transparent"]
           ],
-          "tags": ["customprops", "props&val"]
+          "tags": ["props&val"]
         },
         {
           "title": "Ripple animation",
           "desc": "Famous Google material design effect",
           "url": "ripple",
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint"]
         },
         {
           "title": "Highlighter marker annotations",
@@ -166,7 +166,7 @@
           "properties": [
             ["--highlighter-progress", "<number>", false, 0]
           ],
-          "tags": ["paint", "customprops"]
+          "tags": ["paint", "props&val"]
         },
         {
           "title": "Wobble animation",
@@ -178,7 +178,7 @@
             ["--tick", "<number>", false, 0],
             ["--border-width", "<length>", false, "0px"]
           ],
-          "tags": ["paint", "customprops", "props&val"]
+          "tags": ["paint", "props&val"]
         }
       ]
     },
@@ -192,7 +192,7 @@
           "properties": [
             ["--breakpoint","<length>", false, 0]
           ],
-          "tags": ["paint", "customprops"]
+          "tags": ["paint", "props&val"]
         }
       ]
     }
@@ -201,7 +201,7 @@
     "layout": "CSS Layout API",
     "paint": "CSS Painting API",
     "parser": "CSS Parser API",
-    "props&val": "CSS Properties and Values API",
+    "props&val": "CSS Properties and Values API (CSS.registerProperty)",
     "animation": "CSS Animation Worklet API",
     "customprops": "CSS Custom Properties"
   }
