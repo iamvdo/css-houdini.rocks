@@ -160,6 +160,15 @@
           "tags": ["paint", "customprops", "props&val"]
         },
         {
+          "title": "Highlighter marker annotations",
+          "desc": "Recreating the iPad’s landing page annotation effect with CSS Houdini",
+          "url": "highlighter-marker-annotations",
+          "properties": [
+            ["--highlighter-progress", "<number>", false, 0]
+          ],
+          "tags": ["paint", "customprops"]
+        },
+        {
           "title": "Wobble animation",
           "desc": "Crazy (means \"don't do this\") background animation",
           "url": "wobble",
