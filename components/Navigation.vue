@@ -39,11 +39,11 @@ export default {
 .Navigation {
   width: 250px;
   flex: 0 0 auto;
-  border-right: 1px solid #ddd;
 }
 .Navigation-list {
-  padding: .5rem;
+  padding: .75rem;
   margin: 0;
+  color: hsl(210,10%,30%);
 }
 @media (max-width: 500px) {
   .Navigation-list {
@@ -54,13 +54,11 @@ export default {
   display: flex;
   align-items: center;
   font-size: .95em;
-  padding: .25rem 0;
 }
 
 .Navigation-link {
   --border-color: transparent;
-  --border-size: 5px;
-  padding: 0 .25rem;
+  --border-size: 3px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -77,10 +75,13 @@ export default {
 }
 .Navigation-sep {
   display: block;
-  margin-top: 1rem;
+  line-height: 1.3rem;
+  margin-top: 2.6rem;
   text-transform: uppercase;
-  font-size: .6rem;
-  color: hsl(296, 100%, 50%);
+  font-size: .5em;
+  font-weight: bold;
+  letter-spacing: .5px;
+  color: deeppink;
 }
 .Navigation-sep:first-of-type {
   margin-top: 0;
@@ -105,7 +106,7 @@ export default {
   height: 10px;
   justify-content: center;
   align-items: center;
-  font-size: .5rem;
+  font-size: .7em;
   border-radius: 50%;
   background: gray;
   color: #fff;
@@ -132,9 +133,12 @@ export default {
     border-bottom: 1px solid #ddd;
     border-right: none;
   }
+  .Navigation-list {
+    padding: .75rem .5rem;
+  }
   .Navigation-item {
     display: inline-flex;
-    margin: 0 .5rem;
+    margin-right: 1.5rem;
   }
   .Navigation-sep {
     display: none;

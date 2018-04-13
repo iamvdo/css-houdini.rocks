@@ -13,13 +13,13 @@
         </li>
       </ul>
     </div>
+    <h2 v-html="post.desc" class="Post-desc"></h2>
     <ul class="Post-tags">
       <li v-for="tag in tags" class="Post-tag">
         <span v-if="getAbbrTag(tag)" :class="'Tag Tag--' + getAbbrTag(tag)">{{getAbbrTag(tag)}}</span>
         {{getTag(tag)}}
       </li>
     </ul>
-    <p v-html="post.desc" class="Post-desc"></p>
     <div class="Post-content" v-html="postContent"></div>
     <p v-if="isPaint"><a :href="registerPaintURL">See registerPaint module</a></p>
   </div>
@@ -126,7 +126,8 @@ export default {
   display: flex;
   list-style-type: none;
   padding: 0;
-  font-size: .75rem;
+  margin: 0;
+  font-size: .75em;
 }
 .Post-prevNextText + .Post-prevNextText {
   margin-left: .5rem;
@@ -140,20 +141,24 @@ export default {
     align-items: flex-start;
   }
   .Post-prevNext {
+    order: -1;
     align-self: flex-end;
   }
+}
+.Post-desc {
+  line-height: 2.6rem;
+  font-size: 1.3em;
+  color: hsl(210, 10%, 50%);
 }
 .Post-tags {
   padding: 0;
 }
 .Post-tag {
   display: inline-block;
-  font-size: .75rem;
+  font-size: .75em;
   margin: 0 1rem 0 0;
-  color: #aaa;
 }
 .Post-tag .Tag {
-  float: none;
   margin: 0;
   vertical-align: 1px;
 }
@@ -253,7 +258,7 @@ export default {
   padding: 0 .25rem;
 }
 .Note {
-  font-size: .8rem;
+  font-size: .8em;
   margin: 25px 0;
 }
 </style>

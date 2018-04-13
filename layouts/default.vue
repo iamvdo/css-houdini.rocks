@@ -38,16 +38,19 @@ export default {
 </script>
 
 <style>
-html {
-  font-family: "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  color: #222;
+:root {
+  font-size: 10px;
+}
+body {
+  font: 1.6rem / 2.6rem "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: hsl(210,10%,25%);
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: radial-gradient(300px at 0 0, white, hsl(210,25%,95%));
 }
 
 *, *:before, *:after {
@@ -59,7 +62,16 @@ a {
 }
 p,
 ul {
-  margin: 1rem 0;
+  margin: 1.3rem 0 0 0;
+}
+p + ul {
+  margin-top: .75rem;
+}
+p code,
+ul code,
+h1 code,
+h2 code {
+  line-height: 0;
 }
 button {
   font-family: "Didact Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -86,11 +98,11 @@ abbr {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .5rem;
-  border-bottom: 1px solid #ddd;
+  padding: .75rem;
 }
 .Title {
-  font-size: 1rem;
+  color: hsl(210,10%,20%);
+  font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
@@ -102,14 +114,14 @@ abbr {
 }
 .Title-note {
   text-transform: none;
-  font-size: .7rem;
+  font-size: .7em;
   font-weight: normal;
   vertical-align: 2px;
-  color: #aaa;
+  color: hsl(210,10%,50%);
   margin-left: .25rem;
 }
 .Support {
-  font-size: .75rem;
+  font-size: .75em;
 }
 .Support a {
   margin-left: 1rem;
@@ -128,14 +140,23 @@ abbr {
 }
 .Post {
   flex: 1;
-  padding: .5rem 1rem;
+  padding: .75rem 1.3rem;
+  background: white;
+  box-shadow: 0 0 5px hsl(0, 0%, 80%);
 }
-.Post-desc {
-  margin-top: 25px;
+.Post-title {
+  color: hsl(210,10%,20%);
+  line-height: 5.2rem;
+}
+.Post-content h2 {
+  margin-top: 1.3rem;
 }
 @media (max-width: 800px) {
+  .Header {
+    padding: .75rem .5rem;
+  }
   .Post {
-    padding: .5rem;
+    padding: .75rem .5rem;
   }
 }
 </style>
