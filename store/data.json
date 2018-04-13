@@ -17,7 +17,7 @@
         },
         {
           "title": "Slanted backgrounds",
-          "desc": "Houdini makes slanted backgrounds so much easier. Even in multiple lines. (see note below demo)",
+          "desc": "Draw a simple shape with CSS Houdini",
           "url": "slanted-backgrounds",
           "tags": ["paint"]
         },
@@ -74,7 +74,7 @@
         },
         {
           "title": "Non-rectangular separators",
-          "desc": "No more faking with pseudo-elements and CSS transforms. And it's responsive out of the box",
+          "desc": "Creating shapes, the easy way",
           "url": "non-rectangular-separators",
           "properties": [
             ["--separator-shape", "<custom-ident>+", false, "diagonal left"],
@@ -120,7 +120,7 @@
         },
         {
           "title": "Dynamic hover masks",
-          "desc": "Using registered custom properties to animate a CSS mask when an image is hovered. Also, use of CSS Blend modes.",
+          "desc": "Using registered custom properties to create and animate a CSS mask",
           "url": "dynamic-hover-masks",
           "properties": [
             ["--x", "<number>", true, 0],
@@ -146,7 +146,7 @@
       "posts": [
         {
           "title": "Animating a gradient",
-          "desc": "Register a custom property to set it animatable (if <code>syntax</code> type is animatable) with <code>CSS.registerProperty()</code> from <a href=\"https://drafts.css-houdini.org/css-properties-values-api/\">CSS Properties & Values API</a>",
+          "desc": "Register a custom property with <code>CSS.registerProperty()</code>",
           "url": "animating-gradient",
           "properties": [
             ["--color-stop", "<color>", false, "transparent"]
@@ -187,7 +187,7 @@
       "posts": [
         {
           "title": "<abbr title=\"Element Queries\">EQ</abbr>: Responsive background",
-          "desc": "Proof-of-concept: changing background based on element’s width. Try resize it!",
+          "desc": "Proof-of-concept: changing background based on element’s width",
           "url": "eq-responsive-background",
           "properties": [
             ["--breakpoint","<length>", false, 0]
