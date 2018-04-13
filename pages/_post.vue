@@ -261,4 +261,7 @@ export default {
   font-size: .8em;
   margin: 25px 0;
 }
+.Warning {
+  color: crimson;
+}
 </style>
