@@ -193,6 +193,21 @@
             ["--breakpoint","<length>", false, 0]
           ],
           "tags": ["paint", "props&val"]
+        },
+        {
+          "title": "SVG Path layout",
+          "desc": "Elements follow an SVG path defined on parent",
+          "url": "svg-path-layout",
+          "properties": [
+            ["--layout-mode", "absolute | contain", false, "absolute"],
+            ["--path-loop", "loop | no-loop", false, "no-loop"],
+            ["--justify-items", "anchor-start | center | anchor-end", false, "anchor-start"],
+            ["--align-items", "anchor-start | center | anchor-end", false, "anchor-start"],
+            ["--justify-self", "auto | anchor-start | center | anchor-end", false, "auto"],
+            ["--align-self", "auto | anchor-start | center | anchor-end", false, "auto"]
+          ],
+          "tags": ["layout", "props&val"],
+          "modules": ["layout", "paint"]
         }
       ]
     }

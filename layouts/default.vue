@@ -76,6 +76,9 @@ ul {
 p + ul {
   margin-top: .75rem;
 }
+ul ul {
+  margin-top: 0;
+}
 p code,
 ul code,
 h1 code,

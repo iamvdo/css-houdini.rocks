@@ -178,11 +178,38 @@ export default {
   margin: 25px auto 0 auto;
   overflow: hidden;
 }
+.Controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  background: rgba(0,0,0,.25);
+}
+@media (max-width: 450px) {
+  .Controls {
+    grid-template-columns: 100%;
+  }
+}
 .Control {
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(0,0,0,.25);
+}
+@media (max-width: 450px) {
+  .Control {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+}
+.Controls .Control {
+  background: none;
+  padding: .5rem 0;
+}
+.Control--row {
+  flex-direction: row;
+}
+.Control--row-3 {
+  grid-row: span 3;
 }
 .Demo > *:first-child + .Control {
   padding-top: 1rem;
@@ -201,6 +228,13 @@ export default {
 .Control select {
   width: 150px;
 }
+@media (max-width: 450px) {
+  .Control input,
+  .Control select {
+    flex: 1;
+    width: auto;
+  }
+}
 .Control p {
   width: 400px;
   text-align: left;
@@ -208,17 +242,13 @@ export default {
 .Control * {
   vertical-align: middle;
 }
-@media (max-width: 450px) {
-  .Control {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 1rem;
-  }
-  .Control input {
-    flex: 1;
-    width: auto;
-  }
+.Control-title {
+  font-weight: bold;
 }
+.Control-title + .Control {
+  grid-column: 1;
+}
+
 .Code {
   display: block;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
