@@ -252,10 +252,10 @@ export default {
   font-family: 'Didact Gothic';
   top: 0;
   right: 0;
-  background: yellow;
-  color: #111;
+  background: deeppink;
+  color: #eee;
   padding: 0 .25rem;
-  font-size: .85rem;
+  font-size: .7em;
   text-shadow: none;
 }
 .Code code.language-js::after {
