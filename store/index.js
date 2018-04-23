@@ -7,16 +7,11 @@ const getters = {
     return state.categories.reduce((a, b) => {
       b = b.posts.map(post => {
         post.category = b.category
+        post.modules = post.modules || post.tags
         return post
       })
-      if (a.posts) {
-        a = a.posts.map(post => {
-          post.category = a.category
-          return post
-        })
-      }
       return a.concat(b)
-    })
+    }, [])
   },
   getPost: (state, getters) => id => {
     return getters.posts.filter(post => {

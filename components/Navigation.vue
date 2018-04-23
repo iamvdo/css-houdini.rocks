@@ -7,7 +7,6 @@
           <nuxt-link :to="'/'+post.url" class="Navigation-link" v-html="post.title"></nuxt-link>
           <span class="Tags">
             <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--small Tag--' + getAbbrTag(tag)">
-              {{getAbbrTag(tag)}}
             </span>
           </span>
         </dd>
@@ -120,8 +119,8 @@ export default {
 .Tag--P {
   background-color: deeppink;
 }
-.Tag--C {
-  background-color: hsl(180, 92%, 30%);
+.Tag--L {
+  background-color: hsl(90, 50%, 50%);
 }
 .Tag--C\+ {
   background-color: hsl(180, 92%, 40%);

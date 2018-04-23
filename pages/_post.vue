@@ -22,6 +22,7 @@
     </ul>
     <div class="Post-content" v-html="postContent"></div>
     <p v-if="isPaint"><a :href="registerPaintURL">See registerPaint module</a></p>
+    <p v-if="isLayout"><a :href="registerLayoutURL">See registerLayout module</a></p>
   </div>
 </template>
 
@@ -102,9 +103,17 @@ export default {
     registerPaintURL () {
       return `./posts/${this.id}/paint.js`
     },
+    registerLayoutURL () {
+      return `./posts/${this.id}/layout.js`
+    },
     isPaint () {
       return this.tags.filter(tag => {
         return tag === 'paint'
+      }).length
+    },
+    isLayout () {
+      return this.tags.filter(tag => {
+        return tag === 'layout'
       }).length
     }
   },

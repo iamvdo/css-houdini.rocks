@@ -26,9 +26,18 @@ export default {
     var paintWorklet = CSS.paintWorklet || window.paintWorklet
     if (paintWorklet) {
       for (let i = 0; i < this.posts.length; i++) {
-        const isPaint = this.posts[i].tags.includes('paint')
+        const isPaint = this.posts[i].modules.includes('paint')
         if (isPaint) {
           paintWorklet.addModule(`./posts/${this.posts[i].url}/paint.js`)
+        }
+      }
+    }
+    var layoutWorklet = CSS.layoutWorklet
+    if (layoutWorklet) {
+      for (let i = 0; i < this.posts.length; i++) {
+        const isLayout = this.posts[i].modules.includes('layout')
+        if (isLayout) {
+          layoutWorklet.addModule(`./posts/${this.posts[i].url}/layout.js`)
         }
       }
     }
