@@ -7,7 +7,7 @@ export default ({ app }) => {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-17376769-7', 'auto')
+  ga('create', 'UA-91315209-2', 'auto')
 
   app.router.afterEach((to, from) => {
     ga('set', 'page', to.fullPath)
