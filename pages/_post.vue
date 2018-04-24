@@ -101,10 +101,10 @@ export default {
       return this.post.tags
     },
     registerPaintURL () {
-      return `./posts/${this.id}/paint.js`
+      return `/posts/${this.id}/paint.js`
     },
     registerLayoutURL () {
-      return `./posts/${this.id}/layout.js`
+      return `/posts/${this.id}/layout.js`
     },
     isPaint () {
       return this.tags.filter(tag => {

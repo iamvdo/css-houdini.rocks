@@ -28,7 +28,7 @@ module.exports = () => {
       }
       let usedValue = value
       if (type === 'pen') {
-        usedValue = 'url(./posts/highlighter-marker-annotations/' + value + ')'
+        usedValue = 'url(/posts/highlighter-marker-annotations/' + value + ')'
       }
       document.querySelectorAll('.el').forEach((el, i) => {
         if (type === 'easing') {

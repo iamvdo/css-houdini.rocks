@@ -28,7 +28,7 @@ export default {
       for (let i = 0; i < this.posts.length; i++) {
         const isPaint = this.posts[i].modules.includes('paint')
         if (isPaint) {
-          paintWorklet.addModule(`./posts/${this.posts[i].url}/paint.js`)
+          paintWorklet.addModule(`/posts/${this.posts[i].url}/paint.js`)
         }
       }
     }
@@ -37,7 +37,7 @@ export default {
       for (let i = 0; i < this.posts.length; i++) {
         const isLayout = this.posts[i].modules.includes('layout')
         if (isLayout) {
-          layoutWorklet.addModule(`./posts/${this.posts[i].url}/layout.js`)
+          layoutWorklet.addModule(`/posts/${this.posts[i].url}/layout.js`)
         }
       }
     }
