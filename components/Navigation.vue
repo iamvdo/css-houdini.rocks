@@ -62,8 +62,8 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   text-decoration: none;
-  background: linear-gradient(var(--border-color) var(--border-size), transparent var(--border-size));
-  background-position: 0 calc(100% - var(--border-size));
+  background: linear-gradient(transparent calc(100% - var(--border-size)), var(--border-color) calc(100% - var(--border-size)));
+  background-repeat: no-repeat;
 }
 .Navigation-link:hover,
 .Navigation-link:focus {
