@@ -10,15 +10,22 @@ module.exports = () => {
     el.addEventListener('mouseleave', e => {
       el.classList.remove('hover')
     })
+    el.addEventListener('transitionend', e => {
+      if (
+        e.propertyName === '--bubbles-size' &&
+        getComputedStyle(el).getPropertyValue('--bubbles-size') === '0'
+      ) {
+        el.style.setProperty('--seed', String(Math.random()))
+      }
+    })
   })
 
-  seed.addEventListener('change', (e) => {
+  seed.addEventListener('change', e => {
     let value = e.target.checked ? 1 : 0
     els.forEach(el => el.style.setProperty('--seed-check', value))
   })
-
   ;['bubbles', 'bubbles-size'].forEach(type => {
-    document.getElementById(type).addEventListener('input', (e) => {
+    document.getElementById(type).addEventListener('input', e => {
       let value = e.target.value
       els.forEach(el => {
         if (type === 'bubbles-size') {
