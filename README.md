@@ -1,6 +1,6 @@
 # Houdini experiments
 
-See live http://lab.iamvdo.me/houdini
+See live https://css-houdini.rocks
 
 ## Build Nuxt.js project
 
