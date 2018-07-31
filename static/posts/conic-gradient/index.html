@@ -9,7 +9,7 @@
   border-radius: 10px;
   margin: 50px auto;
 }
-@supports (background: paint(id)) {
+@supports (background: paint(id, foo)) {
   .el.is-loaded {
     background: paint(conic-gradient, red magenta blue cyan lime yellow red);
   }
@@ -23,7 +23,7 @@
 <pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>.el {
   background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
 }
-@supports (background: paint(id)) {
+@supports (background: paint(id, foo)) {
   .el.is-loaded {
     background: paint(conic-gradient, red magenta blue cyan lime yellow red);
   }
@@ -33,6 +33,6 @@ var gradient = new ConicGradient({
   stops: "red, magenta, blue, cyan, lime, yellow, red"
 });
 
-if (!CSS.supports('background', 'paint(id)')) {
+if (!CSS.supports('background', 'paint(id, foo)')) {
   el.style.background = 'url(' + gradient.dataURL + ')'
 }</code></pre>

@@ -332,7 +332,7 @@ var gradient = new ConicGradient({
     stops: "red, magenta, blue, cyan, lime, yellow, red"
 });
 
-if (!CSS.supports('background', 'paint(id)')) {
+if (!CSS.supports('background', 'paint(id, foo)')) {
   el.style.background = 'url(' + gradient.dataURL + ')'
 }
 

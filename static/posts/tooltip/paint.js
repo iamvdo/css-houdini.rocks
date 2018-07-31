@@ -11,9 +11,9 @@ registerPaint('tooltip', class Bubble {
   paint(ctx, geom, props, args) {
 
     const color = props.get('background-color').toString()
-    const positionPercent = props.get('--tooltip-position').value
+    const positionPercent = props.get('--tooltip-position').toString().replace('%', '') * 1
     const position = geom.width * positionPercent / 100
-    const size = props.get('--tooltip-size').value
+    const size = props.get('--tooltip-size').toString().replace('px', '') * 1
 
     ctx.beginPath();
     ctx.moveTo(position - size, 0);

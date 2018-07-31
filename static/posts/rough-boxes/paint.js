@@ -141,7 +141,7 @@ registerPaint('rough-boxes', class {
     rect.fillStyle = "solid";
     rect.fill = properties.get('--rough-fill').toString();
     rect.stroke = properties.get('--rough-stroke').toString();
-    rect.strokeWidth = properties.get('--rough-stroke-width').value;
+    rect.strokeWidth = properties.get('--rough-stroke-width').toString().replace('px', '');
     rect.draw(ctx);
 
   }

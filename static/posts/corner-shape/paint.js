@@ -8,18 +8,13 @@ registerPaint('corner-shape', class {
             '--corner-shape'
         ]
     }
-    static get inputArguments() {
-        return [
-            '<color>',
-        ]
-    }
-    paint(ctx, geom, properties, args) {
-        const color = args[0]
-        let radius = properties.get('--corner-radius').value
+    paint(ctx, geom, properties) {
+        const color = 'black'
+        let radius = Number(properties.get('--corner-radius').toString().replace('px', ''))
         if (properties.get('--corner-radius').unit === 'percent') {
             radius = Math.min(radius * geom.width / 100, geom.width / 2)
         }
-        this.shape = properties.get('--corner-shape').toString().toLowerCase()
+        this.shape = properties.get('--corner-shape').toString().toLowerCase().trim()
 
         const points = [
             {x: radius, y: 0},

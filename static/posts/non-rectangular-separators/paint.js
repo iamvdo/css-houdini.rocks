@@ -13,10 +13,10 @@ registerPaint('separator', class {
   paint(ctx, geom, props, args) {
 
     const color = props.get('background-color').toString()
-    const size = props.get('--separator-size').value
+    const size = props.get('--separator-size').toString().replace('px', '')
     const shadowFactor = this.clamp(props.get('--separator-shadow').toString(), 0, 1)
     const shadowColor = props.get('--separator-shadow-color').toString()
-    const shape = props.get('--separator-shape').toString()
+    const shape = props.get('--separator-shape').toString().trim()
 
     ctx.beginPath();
     ctx.moveTo(0, 0);
