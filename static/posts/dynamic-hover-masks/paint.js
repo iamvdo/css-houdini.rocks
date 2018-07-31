@@ -10,7 +10,6 @@ registerPaint ('circle', class {
       const x = parseFloat(properties.get('--x').toString() * 1);
       const y = parseFloat(properties.get('--y').toString() * 1);
       const size = parseFloat(properties.get('--size').toString() * 1);
-
       ctx.fillStyle = 'black';
       ctx.beginPath();
       ctx.arc(

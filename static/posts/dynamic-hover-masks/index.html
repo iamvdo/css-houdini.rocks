@@ -1,5 +1,5 @@
 <p>Also, react to mouse events and set CSS custom properties accordingly to update the registered paint. See JS below.</p>
-<p><strong class="Warning">Support:</strong> Chrome with flags (paint worklet, but inherited custom properties)</p>
+<p><strong class="Warning">Support:</strong> Chrome/Opera (paint worklet), Chrome with flags (transition on custom properties)</p>
 <style>
 .Demo {
   background: radial-gradient(at center, hsl(180, 100%, 50%), hsl(180, 70%, 30%));
@@ -29,7 +29,9 @@
   --x: 150;
   --y: 100;
   --size: 0;
+  background-color: antiquewhite;
   background-image: url(/posts/dynamic-hover-masks/1.jpg);
+   background-blend-mode: luminosity;
   background-position: center;
   transition: --size .25s, --x .5s, --y .5s;
 }
@@ -37,7 +39,12 @@
   transition: --size .2s, --x .05s, --y .05s;
 }
 .img::after {
-  content: '';
+  content: attr(data-title);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: .7em;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: inherit;
@@ -86,12 +93,12 @@
 
 <div class="Demo">
   <div class="Demo-wrapper">
-    <a href="#" class="img"><span>1</span></a>
-    <a href="#" class="img"><span>2</span></a>
-    <a href="#" class="img"><span>3</span></a>
-    <a href="#" class="img"><span>4</span></a>
-    <a href="#" class="img"><span>5</span></a>
-    <a href="#" class="img"><span>6</span></a>
+    <div href="#" class="img" data-title="Giant rock"><span>1</span></div>
+    <div href="#" class="img" data-title="Peaceful boat"><span>2</span></div>
+    <div href="#" class="img" data-title="Distant fog"><span>3</span></div>
+    <div href="#" class="img" data-title="Noisy street"><span>4</span></div>
+    <div href="#" class="img" data-title="Deep forest"><span>5</span></div>
+    <div href="#" class="img" data-title="Turbulent sea"><span>6</span></div>
   </div>
 </div>
 
