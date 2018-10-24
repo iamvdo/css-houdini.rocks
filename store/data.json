@@ -195,6 +195,12 @@
           "tags": ["paint", "props&val"]
         },
         {
+          "title": "Random irregular grid",
+          "desc": "Use a single paint worklet on multiple element, with various results",
+          "url": "irregular-grid",
+          "tags": ["paint"]
+        },
+        {
           "title": "SVG Path layout",
           "desc": "Elements follow an SVG path defined on parent",
           "url": "svg-path-layout",
