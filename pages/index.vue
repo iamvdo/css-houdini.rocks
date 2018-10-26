@@ -13,6 +13,7 @@
         <li><a href="https://www.smashingmagazine.com/2016/03/houdini-maybe-the-most-exciting-development-in-css-youve-never-heard-of/">Houdini on Smashing Mag</a></li>
         <li><a href="https://codersblock.com/blog/say-hello-to-houdini-and-the-css-paint-api/">Houdini and the paint API</a></li>
         <li><a href="https://developers.google.com/web/updates/2018/03/cssom/">Working with the new CSS Typed Object Model</a></li>
+        <li><a href="https://github.com/nucliweb/awesome-css-houdini/">Awesome CSS Houdini</a></li>
       </ul>
       <h2>Specification links</h2>
       <ul>
