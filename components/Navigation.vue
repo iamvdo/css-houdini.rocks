@@ -72,6 +72,9 @@ export default {
 .Navigation-link.nuxt-link-exact-active {
   --border-color: yellow;
 }
+.Navigation-link:not(:visited) {
+  color: #0AA;
+}
 .Navigation-sep {
   display: block;
   line-height: 1.3rem;
