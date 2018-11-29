@@ -4,6 +4,7 @@
       <template  v-for="(post, id) in posts">
         <dt v-if="newCategory(id)" class="Navigation-sep">{{post.category}}</dt>
         <dd class="Navigation-item">
+          <span class="Navigation-item--featured" v-if="featured == post.url">LAST</span>
           <nuxt-link :to="'/'+post.url" class="Navigation-link" v-html="post.title"></nuxt-link>
           <span class="Tags">
             <span v-for="tag in post.tags" v-if="getAbbrTag(tag)" :title="getTag(tag)" :class="'Tag Tag--small Tag--' + getAbbrTag(tag)">
@@ -19,7 +20,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  computed: mapGetters(['posts', 'getAbbrTag']),
+  computed: mapGetters(['posts', 'getAbbrTag', 'featured']),
   methods: {
     getTag (id) {
       return this.$store.getters.getTag(id)
@@ -53,6 +54,14 @@ export default {
   display: flex;
   align-items: center;
   font-size: .95em;
+}
+.Navigation-item--featured {
+  font-size: .9rem;
+  line-height: 1;
+  height: 10px;
+  margin-right: .5rem;
+  font-weight: bold;
+  background-color: #ff0;
 }
 
 .Navigation-link {

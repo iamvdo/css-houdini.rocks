@@ -42,6 +42,9 @@ const getters = {
       id = id.charAt(0).toUpperCase()
     }
     return id
+  },
+  featured: state => {
+    return state.featured
   }
 }
 

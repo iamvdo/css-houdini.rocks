@@ -225,5 +225,6 @@
     "props&val": "CSS Properties and Values API (CSS.registerProperty)",
     "animation": "CSS Animation Worklet API",
     "customprops": "CSS Custom Properties"
-  }
+  },
+  "featured": "irregular-grid"
 }
