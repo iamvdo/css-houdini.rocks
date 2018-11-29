@@ -61,6 +61,11 @@ body {
   box-sizing: border-box;
   background: radial-gradient(300px at 0 0, white, hsl(210,25%,95%));
 }
+@media (min-width: 1300px) {
+  body {
+    overflow-y: scroll;
+  }
+}
 
 *, *:before, *:after {
   margin: 0;
@@ -96,6 +101,8 @@ abbr {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 .Content {
   display: flex;
