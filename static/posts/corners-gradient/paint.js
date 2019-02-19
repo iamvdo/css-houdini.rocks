@@ -54,7 +54,7 @@ registerPaint('corners-gradient', class {
           gradient.addColorStop(1, endColor);
         
           ctx.fillStyle = gradient;
-          ctx.fillRect(0, i, w, i);
+          ctx.fillRect(0, i, w, 1);
       }
   }
 
