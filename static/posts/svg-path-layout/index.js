@@ -186,7 +186,7 @@ module.exports = () => {
     guideControlPoints.innerHTML = '';
     guideControlPolylines.innerHTML = '';
 
-    points = pathDataToBezier(getComputedStyle(path).getPropertyValue('d').replace("path('", "").replace("'", ""));
+    points = pathDataToBezier(getComputedStyle(path).getPropertyValue('d').replace("path(\"", "").replace("\")", ""));
 
     draw(true);
 
