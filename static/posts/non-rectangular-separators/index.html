@@ -39,10 +39,8 @@
   --separator-shadow: .35;
   --separator-shadow-color: rgba(0,0,0,.35);
 }
-@supports (border-image-source: paint(separator)) {
-  .B.is-loaded {
-    border-image-source: paint(separator)
-  }
+.B.is-loaded {
+  border-image-source: paint(separator)
 }
 .C {
   height: 150px;
@@ -102,8 +100,7 @@
   --separator-shadow-color: <mark id="valueseparator-shadow-color">rgba(0,0,0,0.35)</mark>;
   --separator-shape: <mark id="valueseparator-shape">curve-left</mark>;
 }
-@supports (border-image-source: paint(separator)) {
-  .el.is-loaded {
-    border-image-source: paint(separator)
-  }
-}</code></pre>
+.el.is-loaded {
+  border-image-source: paint(separator)
+}
+</code></pre>

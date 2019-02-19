@@ -9,11 +9,10 @@
   background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered),
               linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
 }
-@supports (background: paint(corners-gradient, deeppink, cyan, orangered, yellow)) {
-  .el.is-loaded {
-    background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
-  }
+.el.is-loaded {
+  background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
 }
+
 </style>
 
 <div class="Demo" id="Demo">
@@ -24,8 +23,7 @@
   background: linear-gradient(to bottom right, deeppink, transparent 50%, orangered),
              linear-gradient(to top right, yellow, transparent 50%, cyan) #888;
 }
-@supports (background: paint(id, foo)) {
-  .el.is-loaded {
-    background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
-  }
-}</code></pre>
+.el.is-loaded {
+  background: paint(corners-gradient, deeppink, cyan, orangered, yellow);
+}
+</code></pre>

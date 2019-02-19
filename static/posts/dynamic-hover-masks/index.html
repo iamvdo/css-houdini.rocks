@@ -68,12 +68,11 @@
 .img.on::after {
   opacity: 1;
 }
-@supports (-webkit-mask-image: paint(circle)) or (mask-image: paint(circle)) {
-  .img.is-loaded::after {
-    -webkit-mask-image: paint(circle);
-    mask-image: paint(circle);
-  }
+.img.is-loaded::after {
+  -webkit-mask-image: paint(circle);
+  mask-image: paint(circle);
 }
+
 .img:nth-child(2) {
   background-image: url(/posts/dynamic-hover-masks/2.jpg);
 }
@@ -109,10 +108,8 @@
   background-color: hsla(300, 100%, 50%, .75);
   mix-blend-mode: multiply;
 }
-@supports (mask-image: paint(circle)) {
-  .el.is-loaded::after {
-    mask-image: paint(circle);
-  }
+.el.is-loaded::after {
+  mask-image: paint(circle);
 }</code></pre>
 <pre class="Code"><code class="language-js">el.addEventListener('mousemove', evt => {
   el.style.cssText = `--size: 150; --x: ${evt.offsetX}; --y: ${evt.offsetY}`

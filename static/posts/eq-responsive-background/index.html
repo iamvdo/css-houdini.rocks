@@ -19,12 +19,10 @@
 .el--big {
   width: 400px;
 }
-
-@supports (background: paint(bg)) {
-  .is-loaded .el {
-    background: paint(bg, hsl(190, 56%, 42%), hsl(360, 56%, 42%));
-  }
+.is-loaded .el {
+  background: paint(bg, hsl(190, 56%, 42%), hsl(360, 56%, 42%));
 }
+
 
 
 </style>
@@ -38,10 +36,8 @@
   --breakpoint: 350px;
   background: blue;
 }
-@supports (background: paint(bg)) {
-  .is-loaded .el {
-    background: paint(bg, blue, red);
-  }
+.is-loaded .el {
+  background: paint(bg, blue, red);
 }</code></pre>
 <pre class="Code"><code class="language-js">// registerPaint worklet
 registerPaint('bg', class {
