@@ -44,6 +44,15 @@
             ["--hue", "<angle>", false, "0deg"]
           ],
           "tags": ["paint", "props&val"]
+        },
+        {
+          "title": "JS-in-CSS",
+          "desc": "Generic worklet to be authored right from CSS",
+          "url": "js-in-css",
+          "properties": [
+            ["--multiplier", "<number>", false, 0]
+          ],
+          "tags": ["paint", "props&val"]
         }
       ]
     },
@@ -226,5 +235,5 @@
     "animation": "CSS Animation Worklet API",
     "customprops": "CSS Custom Properties"
   },
-  "featured": "irregular-grid"
+  "featured": "js-in-css"
 }

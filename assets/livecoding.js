@@ -47,7 +47,7 @@ window.LiveCoding = function() {
       }
       // cleanup
       cssRules = cssRules.replace(/^\s+/g,'').replace(/\s+$/g,'')
-      var reg = /(\{|\})/g
+      var reg = /((?<!\=\>\s)\{|\})/g
       cssRules = cssRules.split(reg)
       for (var i = 0; i < cssRules.length - 1; i++) {
         if (cssRules[i+1] === '{' && cssRules[i].indexOf('@') === -1) {
