@@ -3,7 +3,7 @@
   <li><code>ctx</code>, the 2D rendering context</li>
   <li><code>geom</code>, the geometry of the element</li>
 </ul>
-<p>You can even write your own CSS custom properties, and use them from the JS code.</p>
+<p>You can even write your own CSS custom properties, and use them from the JS code (thanks to <a href="https://twitter.com/yuanchuan23">@yuanchuan23</a> to come up with a solution using template strings)</p>
 <p><strong class="Warning">Support:</strong> Chrome with flags (transition on custom properties)</p>
 <style>
 .Demo {
@@ -22,15 +22,15 @@
   background: paint(background-canvas);
 
   --color: cyan;
-  --multiplier: 0;
+  --multiplier: 0.24;
   --pad: 30;
   --slant: 20;
 
   --background-canvas: (ctx, geom) => {
-    let multiplier = `var(--multiplier)`;
+    let multiplier = var(--multiplier);
     let c = `var(--color)`;
-    let pad = +`var(--pad)`;
-    let slant = +`var(--slant)`;
+    let pad = var(--pad);
+    let slant = var(--slant);
 
     ctx.moveTo(0, 0);
     ctx.lineTo(pad + (geom.width - slant - pad) * multiplier, 0);
@@ -55,14 +55,14 @@
 
 <pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.el {
   --color: cyan;
-  --multiplier: 0;
+  --multiplier: 0.24;
   --pad: 30;
   --slant: 20;
   <span class="token property">--background-canvas</span>: (ctx, geom) => {
-    let multiplier = `var(--multiplier)`;
+    let multiplier = var(--multiplier);
     let c = `var(--color)`;
-    let pad = +`var(--pad)`;
-    let slant = +`var(--slant)`;
+    let pad = var(--pad);
+    let slant = var(--slant);
 
     ctx.moveTo(0, 0);
     ctx.lineTo(pad + (geom.width - slant - pad) * multiplier, 0);
