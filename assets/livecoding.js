@@ -47,8 +47,12 @@ window.LiveCoding = function() {
       }
       // cleanup
       cssRules = cssRules.replace(/^\s+/g,'').replace(/\s+$/g,'')
-      var reg = /((?<!\=\>\s)\{|\})/g
+      // split { and } ( { not preceded by => )
+      // there is no lookbehind, so reverse string, use lookahead, and reverse back
+      var reg = /(\{(?!\s\>\=)|\})/g
+      cssRules = cssRules.split('').reverse().join('')
       cssRules = cssRules.split(reg)
+      cssRules = cssRules.reverse().map(r => r.split('').reverse().join(''))
       for (var i = 0; i < cssRules.length - 1; i++) {
         if (cssRules[i+1] === '{' && cssRules[i].indexOf('@') === -1) {
           var selectors = cssRules[i].split(',')
