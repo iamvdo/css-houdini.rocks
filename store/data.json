@@ -68,6 +68,12 @@
           "tags": ["paint", "props&val"]
         },
         {
+          "title": "Inner borders",
+          "url": "inner-borders",
+          "desc": "Draw borders inside the box",
+          "tags": ["paint"]
+        },
+        {
           "title": "Rough boxes",
           "url": "rough-boxes",
           "desc": "Create sketchy random borders, as if they were drawn by hand. No extra element, fully responsive",
@@ -233,5 +239,5 @@
     "animation": "CSS Animation Worklet API",
     "customprops": "CSS Custom Properties"
   },
-  "featured": "js-in-css"
+  "featured": "inner-borders"
 }
