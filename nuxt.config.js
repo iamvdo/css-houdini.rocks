@@ -68,6 +68,7 @@ module.exports = {
     routes: function (cb) {
       const fs = require('fs')
       fs.readdir('./static/posts', (err, files) => {
+        files = files.filter(file => !file.startsWith('.'))
         const routes = files
         cb(null, routes)
       })
