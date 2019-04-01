@@ -303,4 +303,27 @@ export default {
 .Warning {
   color: crimson;
 }
+.embed .Post-content .Control,
+.embed .Post-content .Code {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.embed .Demo {
+  margin-top: 5px;
+}
+.embed .Post-content > p:first-of-type,
+.embed .Post-content > ul:first-of-type,
+.embed .Post-content > p:first-of-type ~ p,
+.embed .Post-content > ul:first-of-type ~ p,
+.embed .Post-content > ul:first-of-type ~ ul {
+  display: none;
+}
+.embed .Control {
+  justify-content: space-around;
+}
+.embed .Control input,
+.embed .Control select,
+.embed .Control label {
+  width: 30%;
+}
 </style>

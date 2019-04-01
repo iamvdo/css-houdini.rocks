@@ -1,5 +1,5 @@
 <template>
-  <div class="App">
+  <div class="App" :class="{embed}">
     <div class="Header">
       <p class="Title">
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
@@ -18,10 +18,16 @@
 import { mapGetters } from 'vuex'
 import Navigation from '~/components/Navigation.vue'
 export default {
+  data () {
+    return {
+      embed: false
+    }
+  },
   components: {
     Navigation
   },
   mounted () {
+    this.embed = typeof this.$route.query.embed !== 'undefined'
     // load every module
     var paintWorklet = CSS.paintWorklet || window.paintWorklet
     if (paintWorklet) {
@@ -42,7 +48,12 @@ export default {
       }
     }
   },
-  computed: mapGetters(['posts'])
+  computed: mapGetters(['posts']),
+  watch: {
+    '$route' (to, from) {
+      this.embed = typeof to.query.embed !== 'undefined'
+    }
+  }
 }
 </script>
 
@@ -177,5 +188,11 @@ abbr {
   .Post {
     padding: .75rem .5rem;
   }
+}
+.embed .Navigation,
+.embed .Post-header,
+.embed .Post-desc,
+.embed .Post-tags {
+  display: none;
 }
 </style>
