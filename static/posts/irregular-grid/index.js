@@ -6,6 +6,10 @@ module.exports = () => {
 
   setCSSProperties()
   window.addEventListener('resize', setCSSProperties)
+  let resizeOberver = new window.ResizeObserver(entries => {
+    setCSSProperties()
+  })
+  resizeOberver.observe(grid)
 
   function setCSSProperties () {
     grid.style.setProperty('--seed', Math.random())
