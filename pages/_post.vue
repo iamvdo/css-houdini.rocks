@@ -188,6 +188,11 @@ export default {
     grid-template-columns: 100%;
   }
 }
+@media (min-width: 1240px) {
+  .Controls {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+}
 .Control {
   display: flex;
   justify-content: center;
