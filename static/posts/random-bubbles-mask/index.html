@@ -95,6 +95,10 @@
   --bubbles-size: <mark id="valuebubbles-size">80</mark>;
   transition-timing-function: ease-in;
 }</code></pre>
+<pre class="Code"><code class="language-js">// generate random seed :)
+el.addEventListener('transitionend', e => {
+  el.style.setProperty('--seed', Math.random())
+})</code></pre>
 <pre class="Code"><code class="language-js">registerPaint('bubbles', class {
   paint(ctx, geom, properties) {
     const seed = properties.get('--seed').toString();
