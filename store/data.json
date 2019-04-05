@@ -214,6 +214,12 @@
           "tags": ["paint"]
         },
         {
+          "title": "Masonry",
+          "desc": "Classic masonry layout: content automatically layed out on columns",
+          "url": "masonry",
+          "tags": ["layout"]
+        },
+        {
           "title": "SVG Path layout",
           "desc": "Elements follow an SVG path defined on parent",
           "url": "svg-path-layout",
