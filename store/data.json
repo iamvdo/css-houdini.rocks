@@ -182,6 +182,12 @@
           "tags": ["paint", "props&val"]
         },
         {
+          "title": "Double rainbow",
+          "desc": "Well well 🌈. Don’t ask",
+          "url": "double-rainbow",
+          "tags": ["paint"]
+        },
+        {
           "title": "Wobble animation",
           "desc": "Crazy (means \"don't do this\") background animation",
           "url": "wobble",
