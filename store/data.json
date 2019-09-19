@@ -186,18 +186,6 @@
           "desc": "Well well 🌈. Don’t ask",
           "url": "double-rainbow",
           "tags": ["paint"]
-        },
-        {
-          "title": "Wobble animation",
-          "desc": "Crazy (means \"don't do this\") background animation",
-          "url": "wobble",
-          "properties": [
-            ["--mouse-x", "<number>", false, 0],
-            ["--mouse-y", "<number>", false, 0],
-            ["--tick", "<number>", false, 0],
-            ["--border-width", "<length>", false, "0px"]
-          ],
-          "tags": ["paint", "props&val"]
         }
       ]
     },
