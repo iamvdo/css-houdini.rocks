@@ -149,9 +149,9 @@ registerLayout('svg-path', class {
     ]
   }
 
-  *intrinsicSizes(children, edges, styleMap) { }
+  async intrinsicSizes(children, edges, styleMap) { }
 
-  *layout(children, edges, constraints, props) {
+  async layout(children, edges, constraints, props) {
 
     const path = props.get('--path').toString().replace('path("', '').replace('")', '');
     const pathLoop = props.get('--path-loop').value;
@@ -253,9 +253,9 @@ registerLayout('svg-path', class {
     const inlineSize = constraints.fixedInlineSize;
     const scale = (inlineSize) / (bbox.width)
 
-    const childFragments = yield children.map((child) => {
+    const childFragments = await Promise.all(children.map((child) => {
         return child.layoutNextFragment({});
-    });
+    }));
 
     const autoBlockSize = bbox.height * scale;
 
