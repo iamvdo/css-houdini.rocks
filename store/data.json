@@ -56,7 +56,7 @@
             ["--multiplier", "<number>", false, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera (Animation is buggy since Chrome 78+)"
+          "support": "Chrome/Opera (Animation is buggy since Chrome 75+)"
         }
       ]
     },
@@ -165,7 +165,7 @@
             ["--bubbles-size", "<number>", true, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera (Animation is buggy since Chrome 78+)"
+          "support": "Chrome/Opera (Animation is buggy since Chrome 76+)"
         }
       ]
     },
