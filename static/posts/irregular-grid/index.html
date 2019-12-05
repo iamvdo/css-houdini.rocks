@@ -3,7 +3,6 @@
 <p>The problem is that each item have its own paint worklet, and there is no way to store a global state. So, <strong>I’m using seeded numbers to make sure the whole grid is identically and randomly generated every time</strong> in the paint worklet. Then, we only <strong>draw the specific mask for one item from the grid</strong> (each item have an <code>--id</code> property). To generate a random grid every time, we also set a <code>--seed</code> variable and send it to the worklet.</p>
 <p>The grid is fully responsive, and you can play with some CSS properties.</p>
 <p>As all other demos, if Paint API is not supported or if JS is disabled, you get a classic grid. <strong>It’s just progressive enhancement.</strong></p>
-<p><strong class="Warning">Support:</strong> Chrome/Opera (paint worklet)</p>
 <style>
 .Demo {
   background: radial-gradient(at center, #333, #555);

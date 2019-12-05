@@ -7,19 +7,22 @@
           "title": "Conic gradient",
           "desc": "Polyfill the <code>conic-gradient()</code> function from CSS Image L4",
           "url": "conic-gradient",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera with flags (paint worklet with arguments). But all browsers too (Chrome/Opera/Safari with native <code>conic-gradient</code>, other with Lea Verou’s JS polyfill)"
         },
         {
           "title": "Corners gradient",
           "desc": "Draw a gradient by specifying 4 colors for each corners of a box",
           "url": "corners-gradient",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera with flags (paint worklet with arguments). Fallback with two linear gradients."
         },
         {
           "title": "Slanted backgrounds",
           "desc": "Draw a simple shape with CSS Houdini",
           "url": "slanted-backgrounds",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Checkboxes",
@@ -28,7 +31,8 @@
           "properties": [
             ["--checkbox-tick-color", "<color>", false, "transparent"]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Background properties",
@@ -41,7 +45,8 @@
             ["--grayscale", "<percentage>", false, "0%"],
             ["--hue", "<angle>", false, "0deg"]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera (Sometimes, image won’t load)"
         },
         {
           "title": "JS-in-CSS",
@@ -50,7 +55,8 @@
           "properties": [
             ["--multiplier", "<number>", false, 0]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera (Animation is buggy since Chrome 78+)"
         }
       ]
     },
@@ -65,13 +71,15 @@
             ["--tooltip-position", "<percentage>", false, "50%"],
             ["--tooltip-size", "<length>", false, "0px"]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Inner borders",
           "url": "inner-borders",
           "desc": "Draw borders inside the box",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera with flags (paint worklet with arguments)"
         },
         {
           "title": "Rough boxes",
@@ -83,7 +91,8 @@
             ["--rough-stroke", "<color>", true, "black"],
             ["--rough-roughness", "<number>", true, 1]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Non-rectangular separators",
@@ -95,7 +104,8 @@
             ["--separator-shadow", "<number>", false, 0.25],
             ["--separator-shadow-color", "<color>", false, "black"]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         }
       ]
     },
@@ -110,7 +120,8 @@
             ["--corner-radius", "<length-percentage>", false, "0px"],
             ["--corner-shape", "<custom-ident>", false, "round"]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Avatar polygons",
@@ -120,7 +131,8 @@
             ["--avatar-sides", "<integer>", false, 4],
             ["--avatar-angle", "<angle>", false, "0deg"]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Smooth corners",
@@ -129,7 +141,8 @@
           "properties": [
             ["--smooth-corners", "<number>", false, 4]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Dynamic hover masks",
@@ -140,7 +153,8 @@
             ["--y", "<number>", true, 0],
             ["--size", "<number>", true, 0]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Random bubbles mask",
@@ -150,7 +164,8 @@
             ["--bubbles", "<number>", true, 0],
             ["--bubbles-size", "<number>", true, 0]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera (Animation is buggy since Chrome 78+)"
         }
       ]
     },
@@ -164,13 +179,15 @@
           "properties": [
             ["--color-stop", "<color>", false, "transparent"]
           ],
-          "tags": ["props&val"]
+          "tags": ["props&val"],
+          "support": "Chrome/Opera (<code>CSS.registerProperty</code> in JS)"
         },
         {
           "title": "Ripple animation",
           "desc": "Famous Google material design effect",
           "url": "ripple",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Highlighter marker annotations",
@@ -179,13 +196,15 @@
           "properties": [
             ["--highlighter-progress", "<number>", false, 0]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Double rainbow",
           "desc": "Well well 🌈. Don’t ask",
           "url": "double-rainbow",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera"
         }
       ]
     },
@@ -199,19 +218,22 @@
           "properties": [
             ["--breakpoint","<length>", false, 0]
           ],
-          "tags": ["paint", "props&val"]
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera with flags (paint worklet with arguments)"
         },
         {
           "title": "Random irregular grid",
           "desc": "Use a single paint worklet on multiple element, with various results",
           "url": "irregular-grid",
-          "tags": ["paint"]
+          "tags": ["paint"],
+          "support": "Chrome/Opera"
         },
         {
           "title": "Masonry",
           "desc": "Classic masonry layout: content automatically layed out on columns",
           "url": "masonry",
-          "tags": ["layout"]
+          "tags": ["layout"],
+          "support": "Chrome/Opera with flags (layout worklet)"
         },
         {
           "title": "SVG Path layout",
@@ -226,7 +248,8 @@
             ["--align-self", "auto | anchor-start | center | anchor-end", false, "auto"]
           ],
           "tags": ["layout", "props&val"],
-          "modules": ["layout", "paint"]
+          "modules": ["layout", "paint"],
+          "support": "Chrome/Opera with flags (layout worklet)"
         }
       ]
     }

@@ -20,6 +20,7 @@
         {{getTag(tag)}}
       </li>
     </ul>
+    <p><strong class="Warning">Support: </strong><span v-html="post.support"></span></p>
     <div class="Post-content" v-html="postContent"></div>
     <p v-if="isPaint"><a :href="registerPaintURL">See registerPaint module</a></p>
     <p v-if="isLayout"><a :href="registerLayoutURL">See registerLayout module</a></p>
