@@ -13,25 +13,27 @@ registerPaint('smooth-corners', class {
         let m = n
         if (n > 100) m = 100
         if (n < 0.00000000001) m = 0.00000000001
-        const r = geom.width / 2
-        const w = geom.width / 2
-        const h = geom.height / 2
+        
+        const a = geom.width / 2 // horizontal axis parameter
+        const b = geom.height / 2 // vertical axis parameter
 
         ctx.beginPath();
 
-        for (let i = 0; i < (2*r+1); i++) {
-            const x = (i-r) + w
-            const y = (Math.pow(Math.abs(Math.pow(r,m)-Math.pow(Math.abs(i-r),m)),1/m)) + h
+        // i < 1 for subpixel rendering
+        for (let i = -a; i < (a+0.125); i+=0.125) {
+            const x = i+a
+            const y = (Math.pow(Math.abs(Math.pow(b,m)-Math.pow(Math.abs(i*b/a),m)),1/m)) + b
 
-            if (i == 0)
+            if (i == -a)
                 ctx.moveTo(x, y)
             else
                 ctx.lineTo(x, y)
         }
 
-        for (let i = (2*r); i < (4*r+1); i++) {
-            const x = (3*r-i) + w
-            const y = (-Math.pow(Math.abs(Math.pow(r,m)-Math.pow(Math.abs(3*r-i),m)),1/m)) + h
+        for (let i = (a); i > (-a); i-=0.125) {
+            const x = i+a
+            // const y = (-Math.pow(Math.abs(Math.pow(ax,m)-Math.pow(Math.abs(3*ax-i),m)),1/m)) + ay
+            const y = (-Math.pow(Math.abs(Math.pow(b,m)-Math.pow(Math.abs(i*b/a),m)),1/m)) + b
             ctx.lineTo(x, y)
         }
 
