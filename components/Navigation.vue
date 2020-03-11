@@ -2,7 +2,7 @@
   <div class="Navigation">
     <dl class="Navigation-list">
       <template  v-for="(post, id) in posts">
-        <dt v-if="newCategory(id)" class="Navigation-sep">{{post.category}}</dt>
+        <dt v-if="newCategory(id)" class="Navigation-sep" :class="'Navigation-sep--'+post.category.toLowerCase()">{{post.category}}</dt>
         <dd class="Navigation-item">
           <span class="Navigation-item--featured" v-if="featured == post.url">LAST</span>
           <nuxt-link :to="'/'+post.url" class="Navigation-link" v-html="post.title"></nuxt-link>
@@ -96,6 +96,9 @@ export default {
 }
 .Navigation-sep:first-of-type {
   margin-top: 0;
+}
+.Navigation-sep--deprecated {
+  color: #737f8c;
 }
 .Tags {
   display: flex;

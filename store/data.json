@@ -4,13 +4,6 @@
       "category": "Backgrounds",
       "posts": [
         {
-          "title": "Conic gradient",
-          "desc": "Polyfill the <code>conic-gradient()</code> function from CSS Image L4",
-          "url": "conic-gradient",
-          "tags": ["paint"],
-          "support": "Chrome/Opera with flags (paint worklet with arguments). But all browsers too (Chrome/Opera/Safari with native <code>conic-gradient</code>, other with Lea Verou’s JS polyfill)"
-        },
-        {
           "title": "Corners gradient",
           "desc": "Draw a gradient by specifying 4 colors for each corners of a box",
           "url": "corners-gradient",
@@ -250,6 +243,18 @@
           "tags": ["layout", "props&val"],
           "modules": ["layout", "paint"],
           "support": "Chrome/Opera with flags (layout worklet)"
+        }
+      ]
+    },
+    {
+      "category": "Deprecated",
+      "posts": [
+        {
+          "title": "Conic gradient",
+          "desc": "Polyfill the <code>conic-gradient()</code> function from CSS Image L4",
+          "url": "conic-gradient",
+          "tags": ["paint"],
+          "support": "<strong>Deprecated demo (no longer applicable)</strong>, as support for <code>conic-gradient()</code> is better (and will always be) than Houdini’s <code>paint()</code> function with arguments (as of March 2020, only supported in Chrome/Opera with flags"
         }
       ]
     }
