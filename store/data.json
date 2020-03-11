@@ -8,7 +8,7 @@
           "desc": "Draw a gradient by specifying 4 colors for each corners of a box",
           "url": "corners-gradient",
           "tags": ["paint"],
-          "support": "Chrome/Opera with flags (paint worklet with arguments). Fallback with two linear gradients."
+          "support": "Chrome/Opera with flags (paint worklet with arguments). Fallback with two linear gradients and a mask."
         },
         {
           "title": "Slanted backgrounds",
