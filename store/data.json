@@ -8,14 +8,14 @@
           "desc": "Draw a gradient by specifying 4 colors for each corners of a box",
           "url": "corners-gradient",
           "tags": ["paint"],
-          "support": "Chrome/Opera with flags (paint worklet with arguments). Fallback with two linear gradients and a mask."
+          "support": "Chrome/Opera/Edge with flags (paint worklet with arguments). Fallback with two linear gradients and a mask."
         },
         {
           "title": "Slanted backgrounds",
           "desc": "Draw a simple shape with CSS Houdini",
           "url": "slanted-backgrounds",
           "tags": ["paint"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Checkboxes",
@@ -25,7 +25,7 @@
             ["--checkbox-tick-color", "<color>", false, "transparent"]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Background properties",
@@ -39,7 +39,7 @@
             ["--hue", "<angle>", false, "0deg"]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera (Sometimes, image won’t load)"
+          "support": "Chrome/Opera/Edge (Sometimes, image won’t load)"
         },
         {
           "title": "JS-in-CSS",
@@ -49,7 +49,7 @@
             ["--multiplier", "<number>", false, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera (Animation is buggy since Chrome 75+)"
+          "support": "Chrome/Opera/Edge (Animation is buggy since Chrome 75+)"
         }
       ]
     },
@@ -65,14 +65,14 @@
             ["--tooltip-size", "<length>", false, "0px"]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Inner borders",
           "url": "inner-borders",
           "desc": "Draw borders inside the box",
           "tags": ["paint"],
-          "support": "Chrome/Opera with flags (paint worklet with arguments)"
+          "support": "Chrome/Opera/Edge with flags (paint worklet with arguments)"
         },
         {
           "title": "Rough boxes",
@@ -85,7 +85,7 @@
             ["--rough-roughness", "<number>", true, 1]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Non-rectangular separators",
@@ -98,7 +98,7 @@
             ["--separator-shadow-color", "<color>", false, "black"]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         }
       ]
     },
@@ -114,7 +114,7 @@
             ["--corner-shape", "<custom-ident>", false, "round"]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Avatar polygons",
@@ -125,7 +125,7 @@
             ["--avatar-angle", "<angle>", false, "0deg"]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Smooth corners",
@@ -135,7 +135,7 @@
             ["--smooth-corners", "<number>", false, 4]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Dynamic hover masks",
@@ -147,7 +147,7 @@
             ["--size", "<number>", true, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Random bubbles mask",
@@ -158,7 +158,7 @@
             ["--bubbles-size", "<number>", true, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera (Animation is buggy since Chrome 76+)"
+          "support": "Chrome/Opera/Edge (Animation is buggy since Chrome 76+)"
         }
       ]
     },
@@ -173,14 +173,14 @@
             ["--color-stop", "<color>", false, "transparent"]
           ],
           "tags": ["props&val"],
-          "support": "Chrome/Opera (<code>CSS.registerProperty</code> in JS)"
+          "support": "Chrome/Opera/Edge (<code>CSS.registerProperty</code> in JS)"
         },
         {
           "title": "Ripple animation",
           "desc": "Famous Google material design effect",
           "url": "ripple",
           "tags": ["paint"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Highlighter marker annotations",
@@ -190,14 +190,14 @@
             ["--highlighter-progress", "<number>", false, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Double rainbow",
           "desc": "Well well 🌈. Don’t ask",
           "url": "double-rainbow",
           "tags": ["paint"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         }
       ]
     },
@@ -212,21 +212,21 @@
             ["--breakpoint","<length>", false, 0]
           ],
           "tags": ["paint", "props&val"],
-          "support": "Chrome/Opera with flags (paint worklet with arguments)"
+          "support": "Chrome/Opera/Edge with flags (paint worklet with arguments)"
         },
         {
           "title": "Random irregular grid",
           "desc": "Use a single paint worklet on multiple element, with various results",
           "url": "irregular-grid",
           "tags": ["paint"],
-          "support": "Chrome/Opera"
+          "support": "Chrome/Opera/Edge"
         },
         {
           "title": "Masonry",
           "desc": "Classic masonry layout: content automatically layed out on columns",
           "url": "masonry",
           "tags": ["layout"],
-          "support": "Chrome/Opera with flags (layout worklet)"
+          "support": "Chrome/Opera/Edge with flags (layout worklet)"
         },
         {
           "title": "SVG Path layout",
@@ -242,7 +242,7 @@
           ],
           "tags": ["layout", "props&val"],
           "modules": ["layout", "paint"],
-          "support": "Chrome/Opera with flags (layout worklet)"
+          "support": "Chrome/Opera/Edge with flags (layout worklet)"
         }
       ]
     },
@@ -254,7 +254,7 @@
           "desc": "Polyfill the <code>conic-gradient()</code> function from CSS Image L4",
           "url": "conic-gradient",
           "tags": ["paint"],
-          "support": "<strong>Deprecated demo (no longer applicable)</strong>, as support for <code>conic-gradient()</code> is better (and will always be) than Houdini’s <code>paint()</code> function with arguments (as of March 2020, only supported in Chrome/Opera with flags"
+          "support": "<strong>Deprecated demo (no longer applicable)</strong>, as support for <code>conic-gradient()</code> is better (and will always be) than Houdini’s <code>paint()</code> function with arguments (as of March 2020, only supported in Chrome/Opera/Edge with flags)"
         }
       ]
     }
