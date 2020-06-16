@@ -5,7 +5,7 @@
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
         <small class="Title-note"> experimental showcase by <a href="https://twitter.com/iamvdo">@iamvdo</a></small>
       </p>
-      <div class="Support">Need latest Chrome with flag! <a href="https://ishoudinireadyyet.com">Support?</a></div>
+      <div class="Support"><a href="https://ishoudinireadyyet.com">Support?</a></div>
     </div>
     <div class="Content">
       <Navigation/>
