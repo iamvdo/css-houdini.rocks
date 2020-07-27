@@ -5,7 +5,10 @@
         <nuxt-link to="/" class="Title-link">CSS Houdini</nuxt-link>
         <small class="Title-note"> experimental showcase by <a href="https://twitter.com/iamvdo">@iamvdo</a></small>
       </p>
-      <div class="Support"><a href="https://ishoudinireadyyet.com">Support?</a></div>
+      <div class="Links">
+        <a class="Bmac" href="https://buymeacoffee.com/iamvdo">Buy me a coffee!</a>
+        <a class="Support" href="https://ishoudinireadyyet.com">Houdini Support?</a>
+      </div>
     </div>
     <div class="Content">
       <Navigation/>
@@ -156,14 +159,22 @@ abbr {
 .Support a {
   margin-left: 1rem;
 }
+.Bmac {
+  color: #f03d36;
+  margin-right: 1rem;
+}
 @media (max-width: 550px) {
   .Header {
     flex-direction: column;
     align-items: stretch;
     padding: 0;
   }
-  .Support {
-    position: static;
+  .Links {
+    display: flex;
+    justify-content: space-around;
+  }
+  .Support,
+  .Bmac {
     padding: .5rem;
     text-align: center;
   }
