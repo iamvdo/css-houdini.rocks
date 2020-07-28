@@ -5,7 +5,7 @@ registerPaint('smooth-corners', class {
 
     superellipse(a, b, n) {
         const n2 = 2 / n
-        const steps = 64
+        const steps = 360
         const step = (2 * Math.PI) / steps
         const points = t => {
             const cosT = Math.cos(t)
