@@ -3,7 +3,7 @@ registerPaint('smooth-corners', class {
         return ['--smooth-corners']
     }
 
-    superecllipse(a, b, n) {
+    superellipse(a, b, n) {
         const n2 = 2 / n
         const steps = 64
         const step = (2 * Math.PI) / steps
@@ -26,7 +26,7 @@ registerPaint('smooth-corners', class {
 
         const width = geom.width / 2
         const height = geom.height / 2
-        const smooth = this.superecllipse(width, height, n)
+        const smooth = this.superellipse(width, height, n)
 
         ctx.fillStyle = "black"
         ctx.setTransform(1, 0, 0, 1, width, height)
