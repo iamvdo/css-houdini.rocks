@@ -190,7 +190,7 @@ abbr {
   line-height: 5.2rem;
 }
 .Post-content h2 {
-  margin-top: 1.3rem;
+  margin-top: 3.3rem;
 }
 @media (max-width: 800px) {
   .Header {

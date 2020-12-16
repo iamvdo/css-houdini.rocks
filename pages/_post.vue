@@ -172,6 +172,10 @@ export default {
   margin: 0;
   vertical-align: 1px;
 }
+.Post-content {
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+}
 .Demo {
   background: linear-gradient(to bottom right, #333, #111);
   color: #eee;
