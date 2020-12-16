@@ -1,0 +1,42 @@
+<p>Houdini makes slanted backgrounds so much easier. Even in multiple lines.</p>
+<p>The drawback here is that background colors are “correct” only on first paint, as there is no way to handle lines specifically and no way to store state. This demo is facing similar problems that the <a href="/rough-boxes">Rough boxes</a> one.</p>
+<style>
+.Demo {
+  padding-bottom: 25px;
+  font-size: 2em;
+}
+.el {
+  padding-right: 30px;
+  max-width: 600px;
+}
+.el span {
+  line-height: 1.83;
+  padding: .25em 10px;
+  -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  background: hsl(276, 100%, 50%);
+}
+
+@supports (background: paint(slanted-bg)) {
+  .el.is-loaded span {
+    padding-right: 30px;
+    background: paint(slanted-bg);
+  }
+}
+
+</style>
+
+<div class="Demo" id="Demo">
+  <p class="el" id="el"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id tempore repudiandae iusto odio adipisci, quidem consectetur ullam, itaque alias qui?</span></p>
+</div>
+
+<pre class="Code"><code>.el span {
+  box-decoration-break: clone;
+  background: hsl(276, 100%, 50%);
+}
+@supports (background: paint(slanted-bg)) {
+  .el.is-loaded span {
+    padding-right: 30px;
+    background: paint(slanted-bg);
+  }
+}</code></pre>

@@ -1,0 +1,62 @@
+<style>
+.Demo {
+  padding-bottom: 25px;
+  font-size: 2em;
+}
+.el {
+  overflow: hidden;
+  text-align: center;
+  width: 250px;
+  padding: 2em 0;
+  margin: 50px auto;
+  border-radius: 3px;
+  overflow: hidden;
+  resize: horizontal;
+  --breakpoint: 350px;
+  background: hsl(190, 56%, 42%);
+}
+.el--big {
+  width: 400px;
+}
+.is-loaded .el {
+  background: paint(bg, hsl(190, 56%, 42%), hsl(360, 56%, 42%));
+}
+
+
+
+</style>
+
+<div class="Demo" id="Demo">
+  <div class="el">Resize me!</div>
+  <div class="el el--big">Resize me!</div>
+</div>
+
+<pre class="Code"><code>.el {
+  --breakpoint: 350px;
+  background: blue;
+}
+.is-loaded .el {
+  background: paint(bg, blue, red);
+}</code></pre>
+<pre class="Code"><code class="language-js">// registerPaint worklet
+registerPaint('bg', class {
+  static get inputProperties() {
+    return [
+      '--breakpoint'
+    ]
+  }
+  static get inputArguments() {
+    return [
+      '&lt;color>',
+      '&lt;color>'
+    ];
+  }
+  paint (ctx, geom, properties, args) {
+    const breakpoint = properties.get('--breakpoint').value;
+    let color = geom.width &lt; breakpoint ? args[0] : args[1];
+    color = color.toString();
+
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, geom.width, geom.height);
+  }
+})</code></pre>

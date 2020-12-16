@@ -1,0 +1,121 @@
+<p>Also, react to mouse events and set CSS custom properties accordingly to update the registered paint. See JS below.</p>
+<style>
+.Demo {
+  background: radial-gradient(at center, hsl(180, 100%, 50%), hsl(180, 70%, 30%));
+  display: grid;
+  grid-template-columns: auto minmax(auto, 600px) auto;
+}
+.Demo-wrapper {
+  grid-column: 2 / -2;
+  display:  grid;
+  grid-template: auto / 1fr 1fr;
+  padding: 25px 0
+}
+.img {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font: 2em Montserrat, monospace;
+  color: hsl(210, 32%, 24%);
+  text-shadow: 0 2px 4px rgba(0,0,0,.2);
+  text-decoration: none;
+  width: 100%;
+  height: 200px;
+  padding-right: .2em;
+  --x: 150;
+  --y: 100;
+  --size: 0;
+  background-color: antiquewhite;
+  background-image: url(/posts/dynamic-hover-masks/1.jpg);
+   background-blend-mode: luminosity;
+  background-position: center;
+  transition: --size .25s, --x .5s, --y .5s;
+}
+.img.on {
+  transition: --size .2s, --x .05s, --y .05s;
+}
+.img::after {
+  content: attr(data-title);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: .7em;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: inherit;
+  background-color: hsla(300, 100%, 50%, .75);
+  background-position: inherit;
+  background-blend-mode: multiply;
+  mix-blend-mode: hard-light;
+  opacity: 0;
+  transition: opacity .25s;
+}
+.img span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: hsl(210, 32%, 24%);
+  color: #fff;
+  mix-blend-mode: hard-light;
+}
+.img.on::after {
+  opacity: 1;
+}
+.img.is-loaded::after {
+  -webkit-mask-image: paint(circle);
+  mask-image: paint(circle);
+}
+
+.img:nth-child(2) {
+  background-image: url(/posts/dynamic-hover-masks/2.jpg);
+}
+.img:nth-child(3) {
+  background-image: url(/posts/dynamic-hover-masks/3.jpg);
+}
+.img:nth-child(4) {
+  background-image: url(/posts/dynamic-hover-masks/4.jpg);
+}
+.img:nth-child(5) {
+  background-image: url(/posts/dynamic-hover-masks/5.jpg);
+}
+.img:nth-child(6) {
+  background-image: url(/posts/dynamic-hover-masks/6.jpg);
+}
+</style>
+
+<div class="Demo">
+  <div class="Demo-wrapper">
+    <div href="#" class="img" data-title="Giant rock"><span>1</span></div>
+    <div href="#" class="img" data-title="Peaceful boat"><span>2</span></div>
+    <div href="#" class="img" data-title="Distant fog"><span>3</span></div>
+    <div href="#" class="img" data-title="Noisy street"><span>4</span></div>
+    <div href="#" class="img" data-title="Deep forest"><span>5</span></div>
+    <div href="#" class="img" data-title="Turbulent sea"><span>6</span></div>
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  background-image: url(...);
+}
+.el::after {
+  background-color: hsla(300, 100%, 50%, .75);
+  mix-blend-mode: multiply;
+}
+.el.is-loaded::after {
+  mask-image: paint(circle);
+}</code></pre>
+<pre class="Code"><code class="language-js">el.addEventListener('mousemove', evt => {
+  el.style.cssText = `--size: 150; --x: ${evt.offsetX}; --y: ${evt.offsetY}`
+})
+el.addEventListener('mouseenter', evt => {
+  el.style.cssText = `--size: 150; --x: ${evt.offsetX}; --y: ${evt.offsetY}`
+})
+el.addEventListener('mouseleave', evt => {
+  el.style.cssText = `--size: 0; --x: ${evt.offsetX}; --y: ${evt.offsetY}`
+})</code></pre>

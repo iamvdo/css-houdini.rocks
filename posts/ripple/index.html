@@ -1,0 +1,41 @@
+<p>Draw a circle (at mouse position), and update radius over time. <strong>CSS Houdini Paint API at its best</strong></p>
+<p>Code mostly from <a href="https://github.com/GoogleChromeLabs/houdini-samples">https://github.com/GoogleChromeLabs/houdini-samples</a></p>
+<style>
+#ripple {
+  display: block;
+  font-size: 3em;
+  --gradient: linear-gradient(to bottom right, deeppink, orangered);
+  background: var(--gradient);
+  border: 0;
+  margin: 50px auto;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
+  color: white;
+  border-radius: 5px;
+
+  --ripple-x: 0;
+  --ripple-y: 0;
+  --ripple-color: rgba(255,255,255,0.5);
+  --animation-tick: 0;
+}
+#ripple:focus {
+  outline: none;
+}
+#ripple.animating {
+  background: paint(ripple), var(--gradient);
+}
+</style>
+
+<div class="Demo">
+  <button id="ripple">
+    Click me!
+  </button>
+</div>
+
+<pre class="Code"><code>.ripple {
+  --gradient: linear-gradient(to bottom right, deeppink, orangered);
+  background: var(--gradient);
+}
+.ripple.animating {
+  background: paint(ripple), var(--gradient);
+}</code></pre>

@@ -1,0 +1,42 @@
+<p>Registering a new property can make it animatable (if <code>syntax</code> type is animatable). It is defined in <a href="https://drafts.css-houdini.org/css-properties-values-api/">CSS Properties & Values API</a></p>
+<p>Available in JS with <code>CSS.registerProperty()</code> and in CSS with <code>@property</code></p>
+<style>
+#el {
+  --color-stop: deeppink;
+  width: 152px;
+  height: 152px;
+  margin: 50px auto;
+  border-radius: 10px;
+  background: linear-gradient(white, var(--color-stop));
+  transition: --color-stop 1s;
+}
+#el:hover {
+  --color-stop: deepskyblue;
+}
+</style>
+
+<div class="Demo">
+  <div id="el"></div>
+</div>
+
+<pre class="Code"><code>#el {
+  --color-stop: deeppink;
+  background: linear-gradient(white, var(--color-stop))
+  transition: --color-stop 1s;
+}
+#el:hover {
+  --color-stop: deepskyblue;
+}</code></pre>
+<pre class="Code"><code class="language-css">/* in CSS */
+@property --color-stop {
+  syntax: '&lt;color>';
+  inherits: false;
+  initial-value: transparent;
+}</code></pre>
+<pre class="Code"><code class="language-js">/* or, in JS */
+CSS.registerProperty({
+  name: '--color-stop',
+  syntax: '&lt;color>',
+  inherits: false,
+  initialValue: 'transparent'
+})</code></pre>

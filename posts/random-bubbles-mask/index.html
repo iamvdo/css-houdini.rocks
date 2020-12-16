@@ -1,0 +1,108 @@
+<p>This demo makes use of seeded random numbers to get random bubbles not so random :)</p>
+<p>Interesting part here is that each image as its own random bubbles, but its randomness is “saved” during animation, thanks to seeded random numbers inside paint worklet.</p>
+<p>Uncheck option to see the difference. Without seeded ramdom numbers, each repaint generates random bubbles</p>
+<style>
+.Demo {
+  //padding: 50px 0;
+  background: hsl(190, 10%, 22%);
+  --bubbles-size: 80;
+}
+.Demo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+.el {
+  width: 200px;
+  height: 200px;
+  margin: 15px;
+  border: 5px solid hsl(190, 56%, 42%);
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  --seed: 1;
+  --seed-check: 1;
+  --bubbles: 75;
+  --bubbles-size: 0;
+  transition: --bubbles-size .4s ease-out;
+}
+.text {
+  position: absolute;
+  width: 200px;height: 200px;
+  background: hsl(190, 56%, 42%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font: 2em sans-serif;
+  color: #fff;
+  -webkit-mask-image: paint(bubbles);
+}
+.el.hover {
+  --bubbles-size: inherit; /* inherits from .Demo (useful because of JS or CSS hover state) */
+  transition-timing-function: cubic-bezier(.7,.3,.9,.7);
+}
+.el:nth-child(2) {
+  --seed: 2;
+}
+.el:nth-child(3) {
+  --seed: 3;
+}
+</style>
+
+<div class="Demo" id="Demo">
+  <div class="Demo-wrapper">
+    <div class="el">
+      <div class="text">Such Wow.</div>
+      <img src="1.jpg" alt="">
+    </div>
+    <div class="el">
+      <div class="text">Very Awesome.</div>
+      <img src="2.jpg" alt="">
+    </div>
+    <div class="el">
+      <div class="text">So CSS!</div>
+      <img src="3.jpg" alt="">
+    </div>
+  </div>
+  <div class="Control">
+    <label for="seed">Seeded random numbers</label>
+    <input type="checkbox" id="seed" checked>
+  </div>
+  <div class="Control">
+    <label for="bubbles"><code>--bubbles</code></label>
+    <input id="bubbles" type="range" min="1" max="250" value="75">
+  </div>
+  <div class="Control">
+    <label for="bubbles-size"><code>--bubbles-size</code></label>
+    <input id="bubbles-size" type="range" min="1" max="500" value="80">
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  --bubbles: <mark id="valuebubbles">75</mark>
+  --bubbles-size: 0;
+  --seed: 1;
+  transition: --bubbles-size .4s ease-out;
+}
+.el:nth-child(2) {
+  --seed: 2;
+}
+.text {
+  mask-image: paint(bubbles);
+}
+.el:hover {
+  --bubbles-size: <mark id="valuebubbles-size">80</mark>;
+  transition-timing-function: ease-in;
+}</code></pre>
+<pre class="Code"><code class="language-js">// generate random seed :)
+el.addEventListener('transitionend', e => {
+  el.style.setProperty('--seed', Math.random())
+})</code></pre>
+<pre class="Code"><code class="language-js">registerPaint('bubbles', class {
+  paint(ctx, geom, properties) {
+    const seed = properties.get('--seed').toString();
+    Math.seedrandom(seed);
+
+    // do random things now
+  }
+}</code></pre>

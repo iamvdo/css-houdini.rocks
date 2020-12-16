@@ -1,0 +1,38 @@
+<p>The <code>registerPaint()</code> draw a conical gradient using the Lea Verou’s polyfill from the worklet. We are using colors from the arguments’ <code>paint()</code> function</p>
+<p>For progressive enhancement, we also use speced <code>conic-gradient()</code> from CSS, and use Lea Verou’s polyfill from the client.</p>
+<style>
+.el {
+  width: 256px;
+  height: 256px;
+  background: white;
+  background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
+  border-radius: 10px;
+  margin: 50px auto;
+}
+@supports (background: paint(id, foo)) {
+  .el.is-loaded {
+    background: paint(conic-gradient, red magenta blue cyan lime yellow red);
+  }
+}
+</style>
+
+<div class="Demo" id="Demo">
+  <div id="el" class="el"></div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>.el {
+  background: conic-gradient(red, magenta, blue, cyan, lime, yellow, red);
+}
+@supports (background: paint(id, foo)) {
+  .el.is-loaded {
+    background: paint(conic-gradient, red magenta blue cyan lime yellow red);
+  }
+}</code></pre>
+<pre class="Code"><code class="language-js">// Lea Verou polyfill
+var gradient = new ConicGradient({
+  stops: "red, magenta, blue, cyan, lime, yellow, red"
+});
+
+if (!CSS.supports('background', 'paint(id, foo)')) {
+  el.style.background = 'url(' + gradient.dataURL + ')'
+}</code></pre>

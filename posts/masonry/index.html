@@ -1,0 +1,51 @@
+<p>Demo from <a href="https://github.com/GoogleChromeLabs/houdini-samples">Google Chrome samples</a>. Content <strike>is</strike> was editable (Chrome 78+ is failing it).</p>
+<style>
+.Demo {
+  padding-top: 0;
+}
+#masonry {
+  display: layout(masonry);
+  --padding: 20;
+  --columns: 3;
+}
+#masonry > div {
+  background: #ff0;
+  color: #111;
+  font: 1em sans-serif;
+  padding: 20px;
+}
+#masonry > div:nth-child(odd) {
+  background: #08c4c4;
+}
+#masonry > div::first-letter {
+  font-size: 200%;
+}
+</style>
+
+<div class="Demo">
+  <div class="Control">
+    <label for="masonrycolumns"><code>--columns</code></label>
+    <input id="masonrycolumns" type="range" min="1" max="10" value="3">
+  </div>
+  <div class="Control">
+    <label for="masonrypadding"><code>--padding</code></label>
+    <input id="masonrypadding" type="range" min="0" max="100" value="20">
+  </div>
+  <div id="masonry">
+    <div>1 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret. Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+    <div>2 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+    <div>3 Lorem ipsum dolor sit amet.</div>
+    <div>4 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+    <div>5 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an.</div>
+    <div>6 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea.</div>
+    <div>7 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea. Eam saperet fierent luptatum no. Ius ei dicunt detracto elaboraret.</div>
+    <div>8 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix.</div>
+    <div>9 Lorem ipsum dolor sit amet, consul disputando ne his, et vim accumsan ponderum. Rebum deseruisse ex vix. Vix stet honestatis definitionem an, et natum ocurreret cum, semper interpretaris cu mea..</div>
+  </div>
+</div>
+
+<pre class="Code"><code>#masonry {
+  display: layout(masonry);
+  --padding: <mark id="valuepadding">20</mark>;
+  --columns: <mark id="valuecolumns">3</mark>;
+}</code></pre>

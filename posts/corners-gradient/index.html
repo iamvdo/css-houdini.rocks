@@ -1,0 +1,40 @@
+<p>This function is not in CSS spec, but works as the same principle as the <a href="/conic-gradient">conic-gradient demo</a>.</p>
+<style>
+.el {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+.el::before {
+  -webkit-mask: linear-gradient(#0000, #000);
+}
+
+
+</style>
+
+<div class="Demo" id="Demo">
+  <div id="el" class="el"></div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>.el {
+  background: linear-gradient(to right, deeppink, cyan);
+}
+.el::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(to right, yellow, orangered);
+  mask: linear-gradient(#0000, #000);
+}
+@supports (background: paint(id, foo)) {
+  .el.is-loaded {
+    background: <mark>paint(corners-gradient, deeppink, cyan, orangered, yellow)</mark>;
+  }
+  .el.is-loaded::before {
+    opacity: 0;
+  }
+}
+</code></pre>

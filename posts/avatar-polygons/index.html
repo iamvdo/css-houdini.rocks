@@ -1,0 +1,44 @@
+<p>As the <a href="/corner-shape">corner shapes demo</a>, let’s end with rounded avatars. Build your own regular polygon, right from CSS.</p>
+<style>
+#el {
+  width: 152px;
+  height: 152px;
+  background: url(https://iamvdo.me/images/apple-touch-152.png);
+  background-size: cover;
+  --avatar-sides: 12;
+  --avatar-angle: 0deg;
+  margin: 50px auto;
+  border-radius: 50%;
+}
+@supports (background: paint(avatar-polygon)) {
+  #el.is-loaded {
+    border-radius: 0;
+    -webkit-mask-image: paint(avatar-polygon);
+  }
+}
+</style>
+
+<div class="Demo">
+  <div id="el"></div>
+  <div class="Control">
+    <label for="avatarsides"><code>--avatar-sides</code></label>
+    <input id="avatarsides" type="range" min="4" max="20" value="12">
+  </div>
+  <div class="Control">
+    <label for="avatarangle"><code>--avatar-angle</code></label>
+    <input id="avatarangle" type="range" min="0" max="360" value="0" step="10">
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  background: url(...);
+  border-radius: 50%;
+}
+@supports (background: paint(id)) {
+  .el.is-loaded {
+    border-radius: 0;
+    mask-image: paint(avatar-polygon);
+    --avatar-sides: <mark id="valuesides">12</mark>;
+    --avatar-angle: <mark id="valueangle">0deg</mark>;
+  }
+}</code></pre>

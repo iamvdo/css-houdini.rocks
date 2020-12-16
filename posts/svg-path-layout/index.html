@@ -1,0 +1,209 @@
+<p>The new CSS Layout API (Houdini) let you define your own custom layout. Here’s a quick attempt at making an SVG path layout.</p>
+<p>As you can see, add <code>display: layout(svg-path)</code> and set custom properties:</p>
+<ul>
+  <li><code>--path</code>, an SVG path as defined in CSS, eg <code>--path: path('...')</code></li>
+  <li><code>--viewbox</code>, an SVG viewbox, eg <code>--viewbox: 0 0 1000 400</code>. If no viewbox is defined (or set to <code>none</code>), viewbox will be computed from SVG path (best fitted). If a fixed <code>height</code> is set, viewbox will be scaled accordingly and no longer respect aspect-ratio</li></li>
+  <li>Alignments
+    <ul>
+      <li><code>--justify-items</code> | <code>--align-items</code>: <code>anchor-start</code> | <code>center</code> | <code>anchor-end</code></li>
+      <li><code>--justify-self</code> | <code>--align-self</code>: <code>anchor-start</code> | <code>center</code> | <code>anchor-end</code></li>
+      <li>current CSS properties coul have been used (but new custom value couldn’t be created right now)</li>
+    </ul>
+  </li>
+</ul>
+<p>Also, two properties exist:</p>
+<ul>
+  <li><code>--layout-mode: absolute (default) | contain</code>. <code>contain</code> sets elements’ position as they will not overflow (fixed width needed)</li>
+  <li><code>--path-loop: no-loop (default) | loop</code> (automatically set to <code>loop</code> if path ends with letter ‘Z’). Helps if first and last element should not be at the same position</li>
+</ul>
+<style>
+.Demo {
+  padding: 0;
+  overflow: visible;
+  position: relative;
+}
+.Demo-title {
+  position: absolute;
+  z-index: 1;
+  top: 6rem;
+  left: 3rem;
+  color: #666;
+  font-weight: bold;
+  font-size: 2rem;
+  background: none;
+}
+.buttons {
+  font-size: .65em;
+  margin-top: 1em;
+}
+.el {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 400px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" preserveAspectRatio="none"><defs><linearGradient id="g"><stop offset="0%" stop-color="rgb(255,0,0)" stop-opacity="1" /><stop offset="100%" stop-color="rgb(255,255,0)" stop-opacity="1" /></linearGradient></defs><path d="M-26.8,395.1c50.6-64.7,170.1-163.6,274.1-175.3c104.7-11.8,177.6,44.7,323.5,42.4c100-1.6,187.1-31.8,343.5-272.9l100,0L1000,400L0,400" stroke="none" fill="url(%23g)" /><path d="M-26.8,395.1c50.6-64.7,170.1-163.6,274.1-175.3c104.7-11.8,177.6,44.7,323.5,42.4c100-1.6,187.1-31.8,343.5-272.9s184.7-25.9,184.7-25.9S895.4,362.2,541.4,345.7c-125.9-5.9-210.6-70.6-300-72.9s-252.9,140-252.9,140L-26.8,395.1z" stroke="none" fill="white" /></svg>'), linear-gradient(to bottom right, white -100px, hsl(180, 100%, 70%));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.el > div {
+  color: hsl(0, 80%, 95%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  margin-bottom: 75px;
+}
+
+.el > div div {
+  border: solid 10px transparent;
+  border-image-source: paint(polygon);
+  border-image-outset: 10px;
+  border-image-width: 10px;
+  border-image-slice: 0 fill;
+  background: #000;
+  background-clip: padding-box;
+  border-radius: 3px;
+  padding: 1.5rem;
+  white-space: nowrap;
+}
+@media (max-width: 450px) {
+  .el > div {
+    font-size: 1em;
+  }
+  .el > div div {
+    padding: .75rem;
+  }
+}
+.el > div::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  background: #000;
+  border-radius: 50%;
+}
+.el > div div strong {
+  display: block;
+  font-size: .75em;
+}
+#svg {
+  background: rgba(255,255,255,.1);
+  flex: 0 1 400px;
+}
+#svg-path {
+  d: path("M112,298.6c62.4-43.5,112.9-68.2,309.4-28.2c214.5,43.7,320,17.6,452.9-138.8");
+}
+@media (max-width: 450px) {
+  #svg-path {
+    d: path("M115.05810397553518,362.82018348623853C201.92293577981656,349.90122324159086,304.41070336391437,328.25932721712564,540.6660550458714,270.40000000000003C617.551376146789,271.2865443425077,637.4244648318041,239.07033639143725,865.1256880733944,104.07706422018339");
+  }
+}
+#points circle:hover,
+#controlPoints circle:hover {
+  fill: cyan;
+  stroke: white;
+  stroke-width: 5px;
+}
+
+@supports (display: layout(svg-path)) {
+  .is-loaded > div {
+    margin-bottom: 0;
+  }
+}
+
+</style>
+
+<div class="Demo" id="Demo">
+  <div class="Demo-title">Your next big idea.
+    <div class="buttons">
+      <button id="buttonAdd">Add</button>
+      <button id="buttonRemove">Remove</button>
+      fake items
+    </div>
+  </div>
+  <div class="el" id="el">
+    <div class="item"><div><strong>1.</strong>EXPLORE</div></div>
+    <div class="item"><div><strong>2.</strong>GROW</div></div>
+    <div class="item"><div><strong>3.</strong>INNOVATE</div></div>
+    <div class="item"><div><strong>4.</strong>ACCELERATE</div></div>
+    <div class="item"><div><strong>5.</strong>NO LIMITS</div></div>
+  </div>
+  <div class="Controls">
+    <div class="Control Control--first">
+      <label for="justify-items"><code>--justify-items</code></label>
+      <select name="" id="justify-items">
+        <option>anchor-start</option>
+        <option selected>center</option>
+        <option>anchor-end</option>
+      </select>
+    </div>
+    <div class="Control">
+      <label for="align-items"><code>--align-items</code></label>
+      <select name="" id="align-items">
+        <option>anchor-start</option>
+        <option>center</option>
+        <option selected>anchor-end</option>
+      </select>
+    </div>
+    <div class="Control Control-title">
+      <p>The 3rd element</p>
+    </div>
+    <div class="Control">
+      <label for="justify-self"><code>--justify-self</code></label>
+      <select name="" id="justify-self">
+        <option>anchor-start</option>
+        <option selected>center</option>
+        <option>anchor-end</option>
+      </select>
+    </div>
+    <div class="Control">
+      <label for="align-self"><code>--align-self</code></label>
+      <select name="" id="align-self">
+        <option>anchor-start</option>
+        <option>center</option>
+        <option selected>anchor-end</option>
+      </select>
+    </div>
+    <div class="Control Control-title">
+      <p>SVG Path</p>
+    </div>
+    <div class="Control">
+      <label for="path"><code>--path</code></label>
+      <select name="" id="path">
+        <option value="M112,298.6c62.4-43.5,112.9-68.2,309.4-28.2c214.5,43.7,320,17.6,452.9-138.8">Initial curve</option>
+        <option value="M0,300C200,200,300,200,500,300C700,400,800,400,1000,300">Oscilloscope</option>
+        <option value="M500,200a100,100,0,0,0,300,0a100,100,0,0,0,-300,0z">Circle</option>
+      </select>
+    </div>
+    <div class="Control Control--row Control--row-3">
+      <svg viewBox="0 0 1000 400" id="svg">
+        <path id="svg-path" fill="none" stroke="white" stroke-width="5px"></path>
+        <g id="controlPolylines" fill="deeppink" stroke="deeppink" stroke-width="2px"></g>
+        <g id="controlPoints" fill="deeppink" stroke="deeppink"></g>
+        <g id="points" fill="white"></g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>@supports (display: layout(id)) {
+  .el.is-loaded {
+    display: layout(svg-path);
+    --justify-items: <mark id="valuejustify-items">center</mark>;
+    --align-items: <mark id="valuealign-items">anchor-end</mark>;
+    --path: <mark id="valuepath">path("M112,298.6c62.4-43.5,112.9-68.2,309.4-28.2c214.5,43.7,320,17.6,452.9-138.8")</mark>;
+    --viewbox: 0 0 1000 400;
+  }
+  .is-loaded > div:nth-child(3) {
+    --justify-self: <mark id="valuejustify-self">center</mark>;
+    --align-self: <mark id="valuealign-self">anchor-end</mark>;
+  }
+}</code></pre>
+

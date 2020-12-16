@@ -1,0 +1,56 @@
+<p>The tooltip is drawn in the bottom border, outside of the box, thanks to <code>border-image-outset</code></p>
+<style>
+.Demo {
+  background: radial-gradient(white, hsl(195, 85%, 65%));
+  color: #111;
+}
+.hello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: #fff;
+  height: 150px;
+  width: 200px;
+  margin: 50px auto;
+  border-radius: 10px;
+  background: hsl(193, 100%, 30%);
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-image-source: paint(tooltip);
+  border-image-slice: 0 0 100% 0;
+  border-image-width: var(--border-width);
+  border-image-outset: var(--border-width);
+  --tooltip-position: 50%;
+  --tooltip-size: 30px;
+  --border-width: 20px;
+}
+</style>
+
+<div class="Demo">
+  <div class="hello" id="el">HELLO</div>
+  <div class="Control">
+    <label for="tooltip-position"><code>--tooltip-position</code></label>
+    <input id="tooltip-position" type="range" min="20" max="80" step="1" value="50">
+  </div>
+  <div class="Control">
+    <label for="tooltip-size"><code>--tooltip-size</code></label>
+    <input id="tooltip-size" type="range" min="0" max="100" step="1" value="30">
+  </div>
+  <div class="Control">
+    <label for="border-width"><code>--border-width</code></label>
+    <input id="border-width" type="range" min="0" max="100" step="1" value="20">
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  background: #00c6ff;
+  border-image-source: paint(tooltip);
+  border-image-slice: 0 0 100% 0;
+  border-image-width: var(--border-width);
+  border-image-outset: var(--border-width);
+  --border-width: <mark id="valueborder-width">20px</mark>;
+  --tooltip-position: <mark id="valuetooltip-position">50%</mark>;
+  --tooltip-size: <mark id="valuetooltip-size">30px</mark>;
+}</code></pre>
+

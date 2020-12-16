@@ -1,0 +1,54 @@
+<p>Let’s stop with classic rounded corners. Draw beveled, scooped or notched corners.</p>
+<style>
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 325px;
+  max-width: 80%;
+  height: 200px;
+  margin: 20px auto;
+  color: #fff;
+  font-size: 4em;
+  background: linear-gradient(hsl(20, 90%, 65%), hsl(359, 88%, 57%));
+  border-radius: 20px;
+}
+@supports (background: paint(corner-shape)) {
+  #el.is-loaded {
+    -webkit-mask-image: paint(corner-shape);
+    border-radius: 0;
+    --corner-radius: 20px;
+    --corner-shape: scoop;
+  }
+}
+</style>
+
+<div class="Demo">
+  <div class="a" id="el">CSS!</div>
+  <div class="Control">
+    <label for="cornerRadius"><code>--corner-radius</code></label>
+    <input type="range" min="0" max="100" value="20" id="cornerRadius">
+  </div>
+  <div class="Control">
+    <label for="cornerShape"><code>--corner-shape</code></label>
+    <select name="" id="cornerShape">
+      <option>round</option>
+      <option>bevel</option>
+      <option selected>scoop</option>
+      <option>notch</option>
+      <option value="iPhoneX">Special: iPhoneX</option>
+    </select>
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  border-radius: 20px;
+}
+@supports (background: paint(id)) {
+  .el.is-loaded {
+    border-radius: 0;
+    mask-image: paint(corner-shape);
+    --corner-radius: <mark id="valuecornerRadius">20px</mark>;
+    --corner-shape: <mark id="valuecornerShape">scoop</mark>;
+  }
+}</code></pre>

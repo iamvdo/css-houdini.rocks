@@ -1,0 +1,105 @@
+<p>No more faking with pseudo-elements and CSS transforms. And it’s responsive out of the box.</p>
+<style>
+.Demo {
+  background: radial-gradient(at center, hsl(180, 100%, 50%), hsl(180, 70%, 30%));
+}
+.A {
+  width: 250px;
+  height: 350px;
+  margin: 50px auto;
+  background: linear-gradient(#fff 50%, #eee);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2px 3px rgba(0,0,0,.5), 0 5px 15px rgba(0,0,0,.4);
+  resize:  both;
+}
+.B, .C {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+.B {
+  height: 200px;
+  padding-bottom: 30px;
+  background-color: hsl(0, 100%, 62%);
+  background-image: linear-gradient(hsl(296, 61%, 26%), hsl(0, 100%, 62%));
+  background-repeat: no-repeat;
+  border-bottom: 1px solid transparent;
+  border-image-source: radial-gradient(closest-corner at 50% -400px, hsl(0, 100%, 62%) 100%, transparent);
+  border-image-slice: 0 0 100% 0;
+  border-image-width: var(--separator-size);
+  border-image-outset: var(--separator-size);
+  --separator-shape: curve-left;
+  --separator-size: 75px;
+  --separator-shadow: .35;
+  --separator-shadow-color: rgba(0,0,0,.35);
+}
+.B.is-loaded {
+  border-image-source: paint(separator)
+}
+.C {
+  height: 150px;
+  color: #222;
+  padding-bottom: 50px;
+  font-size: 1.2em;
+}
+.D {
+  width: 80px;
+  height: 80px;
+  background: rgba(0,0,0,.35);
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+</style>
+
+<div class="Demo">
+  <div class="A">
+    <div class="B" id="el">
+      <div class="D"></div>
+      We do things.
+    </div>
+    <div class="C">
+      Very wow.
+    </div>
+  </div>
+  <div class="Control">
+    <label for="separator-size"><code>--separator-size</code></label>
+    <input id="separator-size" type="range" min="0" max="100" step="1" value="75">
+  </div>
+  <div class="Control">
+    <label for="separator-shadow"><code>--separator-shadow</code></label>
+    <input id="separator-shadow" type="range" min="0" max="1" step="0.05" value="0.35">
+  </div>
+  <div class="Control">
+    <label for="separator-shadow-color"><code>--separator-shadow-color</code></label>
+    <input id="separator-shadow-color" type="range" min="0" max="1" step="0.01" value="0.35">
+  </div>
+  <div class="Control">
+    <label for="separator-shape"><code>--separator-shape</code></label>
+    <select id="separator-shape">
+      <option>diagonal-left</option>
+      <option>diagonal-right</option>
+      <option selected>curve-left</option>
+      <option>curve-right</option>
+    </select>
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  border-image-source: radial-gradient(...);
+  border-image-slice: 0 0 100% 0;
+  border-image-width: var(--separator-size);
+  border-image-outset: var(--separator-size);
+  --separator-size: <mark id="valueseparator-size">75px</mark>;
+  --separator-shadow: <mark id="valueseparator-shadow">0.35</mark>;
+  --separator-shadow-color: <mark id="valueseparator-shadow-color">rgba(0,0,0,0.35)</mark>;
+  --separator-shape: <mark id="valueseparator-shape">curve-left</mark>;
+}
+.el.is-loaded {
+  border-image-source: paint(separator)
+}
+</code></pre>

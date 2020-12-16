@@ -1,0 +1,79 @@
+<p>Code mostly from <a href="https://github.com/MatteoWebDesigner/css-paint-worklet">https://github.com/MatteoWebDesigner/css-paint-worklet</a></p>
+<style>
+.Demo {
+	text-align: center;
+	padding: 50px;
+}
+input {
+	outline: 0;
+	vertical-align: middle;
+}
+label {
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+label:last-child {
+	margin-bottom: 0;
+}
+.Checkbox {
+	margin: 0 1rem 0 2rem;
+	width: 24px;
+	height: 24px;
+	border-radius: 2px;
+	background-color: #555;
+	--checkbox-tick-color: transparent;
+	transition: --checkbox-tick-color 500ms, background-color 500ms;
+}
+@supports (background-image: paint(checkbox)) {
+	.is-loaded .Checkbox {
+		-webkit-appearance: none;
+		background-image: paint(checkbox);
+	}
+}
+.Checkbox:hover {
+	--checkbox-tick-color: rgba(255,255,255,.25);
+}
+.Checkbox:checked {
+	--checkbox-tick-color: white;
+	background-color: deeppink;
+}
+@media (max-width: 600px) {
+	label {
+		display: block;
+		text-align: left
+	}
+	.Checkbox {
+		margin-left: 0;
+	}
+}
+</style>
+
+<div class="Demo" id="Demo">
+	<label>
+		<input type="checkbox" class="Checkbox">Such wow
+	</label>
+	<label>
+		<input type="checkbox" class="Checkbox">Very awesome
+	</label>
+	<label>
+		<input type="checkbox" class="Checkbox">Much huge
+	</label>
+</div>
+
+<pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.Checkbox {
+  background-color: #555;
+  transition: --checkbox-tick-color 500ms, background-color 500ms;
+}
+@supports (background: paint(id)) {
+  .is-loaded .Checkbox {
+    -webkit-appearance: none;
+    background-image: paint(checkbox);
+  }
+}
+.Checkbox:hover {
+  --checkbox-tick-color: rgba(255,255,255,.25);
+}
+.Checkbox:checked {
+  --checkbox-tick-color: white;
+  background-color: deeppink;
+}</code></pre>

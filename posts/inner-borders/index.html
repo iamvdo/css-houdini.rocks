@@ -1,0 +1,98 @@
+<p>A quick and simple paint worklet to draw borders inside the element. Use it with arguments instead of custom properties to apply many inner borders to one element</p>
+<p><code>paint(inner-border, &lt;width>, &lt;color>, &lt;offset>, &lt;angle>)</code></p>
+<style>
+.Demo {
+  background: linear-gradient(to bottom right, deeppink, orange);
+}
+.Demo-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 276px);
+  justify-items: center;
+  grid-gap: 30px;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+@media (max-width: 570px) {
+  .Demo-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+.el {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 1em sans-serif;
+  color: white;
+  width: 256px;
+  height: 256px;
+  text-shadow: 0 2px 2px rgba(0,0,0,.5);
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,.5))
+}
+.el--1 {
+  background: url(https://picsum.photos/256/256?image=62);
+}
+.el--2 {
+  background: url(https://picsum.photos/256/256?image=154);
+}
+.el--3 {
+  background: url(https://picsum.photos/300/300?image=201);
+}
+.el--4 {
+  background: url(https://picsum.photos/256/256?image=14);
+  -webkit-mask-image: paint(inner-border, 5px, white, 10px, 0deg), linear-gradient(black, black);
+  -webkit-mask-composite: xor;
+  mask-image: paint(inner-border, 5px, white, 10px, 0deg), linear-gradient(black, black);
+  mask-composite: exclude;
+}
+.el--5 {
+  box-sizing: border-box;
+  background: #2785b8;
+  padding: 30px;
+}
+.el--6 {
+  background:  url(https://picsum.photos/256/256?image=41);
+}
+</style>
+
+<div class="Demo" id="Demo">
+  <div class="Demo-wrapper">
+    <div class="el el--1"></div>
+    <div class="el el--2"></div>
+    <div class="el el--3"></div>
+    <div class="el el--4"></div>
+    <div class="el el--5">
+      Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Did he just throw my cat out of the window? Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Life finds a way. What do they got in there? King Kong?
+    </div>
+    <div class="el el--6"></div>
+  </div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>.el--1 {
+  background: paint(inner-border, 2px, white, 10px, 0deg),
+             url(https://picsum.photos/256/256?image=62);
+}
+.el--2 {
+  background: paint(inner-border, 2px, white, 10px, 0deg),
+             paint(inner-border, 1px, white, 14px, 0deg),
+             url(https://picsum.photos/256/256?image=154);
+}
+.el--3 {
+  background: paint(inner-border, 2px, black, 10px, -2deg),
+             paint(inner-border, 2px, black, 10px, 0deg),
+             paint(inner-border, 2px, black, 10px, 3deg),
+             url(https://picsum.photos/300/300?image=201);
+}
+.el--4 {
+  background: url(https://picsum.photos/256/256?image=14);
+  -webkit-mask-image: paint(inner-border, 5px, white, 10px, 0deg), linear-gradient(black, black);
+  -webkit-mask-composite: xor;
+  mask-image: paint(inner-border, 5px, white, 10px, 0deg), linear-gradient(black, black);
+  mask-composite: exclude;
+}
+.el--5 {
+  background: paint(inner-border, 2px, white, 10px, 0deg) #2785b8;
+}
+.el--6 {
+  background: paint(inner-border, 10px, white, 0, -10deg),
+             url(https://picsum.photos/256/256?image=41);
+}</code></pre>

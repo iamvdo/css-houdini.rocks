@@ -1,0 +1,88 @@
+<p>Don’t get me wrong with the title: <strong>Houdini is JS-in-CSS</strong> (allow JS scripts to be called from CSS). Here, it is more like JS-inside-CSS. You can write the <code>registerPaint</code>’s <code>paint</code> function, directly from CSS. You have access to:</p>
+<ul>
+  <li><code>ctx</code>, the 2D rendering context</li>
+  <li><code>geom</code>, the geometry of the element</li>
+</ul>
+<p>You can even write your own CSS custom properties, and use them from the JS code (thanks to <a href="https://twitter.com/yuanchuan23">@yuanchuan23</a> that come up with a solution using template strings: <strong>the backtick trick!</strong>)</p>
+<style>
+.Demo {
+  background: #1108a0;
+  padding: 50px 0;
+}
+.el {
+  font: bold 6em sans-serif;
+  color: yellow;
+  text-shadow: 0 3px 1px cyan;
+  line-height: 1.5em;
+  width: max-content;
+  padding-left: 30px;
+  padding-right: 50px;
+  isolation: isolate;
+  background: paint(background-canvas);
+
+  --color: cyan;
+  --multiplier: 0.24;
+  --pad: 30;
+  --slant: 20;
+
+  --background-canvas: (ctx, geom) => {
+    let multiplier = var(--multiplier);
+    let c = `var(--color)`;
+    let pad = var(--pad);
+    let slant = var(--slant);
+
+    ctx.moveTo(0, 0);
+    ctx.lineTo(pad + (geom.width - slant - pad) * multiplier, 0);
+    ctx.lineTo(pad + (geom.width - slant - pad) * multiplier + slant, geom.height);
+    ctx.lineTo(0, geom.height);
+    ctx.fillStyle = c;
+    ctx.fill();
+  };
+  transition: --multiplier .4s, --color .4s;
+}
+@media (max-width: 900px) {
+  .el {
+    font-size: 4em;
+  }
+}
+@media (max-width: 500px) {
+  .el {
+    font-size: 2.4em;
+  }
+}
+.el:hover {
+  --multiplier: 1;
+}
+.el span {
+  mix-blend-mode: exclusion;
+}
+</style>
+
+<div class="Demo" id="Demo">
+  <div class="el"><span>JS-in-CSS.</span></div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.el {
+  --color: cyan;
+  --multiplier: 0.24;
+  --pad: 30;
+  --slant: 20;
+  <span class="token property">--background-canvas</span>: (ctx, geom) => {
+    let multiplier = var(--multiplier);
+    let c = `var(--color)`;
+    let pad = var(--pad);
+    let slant = var(--slant);
+
+    ctx.moveTo(0, 0);
+    ctx.lineTo(pad + (geom.width - slant - pad) * multiplier, 0);
+    ctx.lineTo(pad + (geom.width - slant - pad) * multiplier + slant, geom.height);
+    ctx.lineTo(0, geom.height);
+    ctx.fillStyle = c;
+    ctx.fill();
+  };
+  background: paint(background-canvas);
+  transition: --multiplier .4s;
+}
+.el:hover {
+  --multiplier: 1;
+}</code></pre>

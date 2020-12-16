@@ -1,0 +1,80 @@
+<p>This demo produces different result on each repaints (resize browser, zoom, play with controls, etc.), as there is no way to store state inside the registered paint. More info in this <a href="https://github.com/tc39/proposal-seeded-random">TC39 proposal about Seeded Random numbers</a> from Tab Atkins.</p>
+<p>A solution could be used, see the <a href="/random-bubbles-mask">Random bubbles mask</a> demo</p>
+<p>Code adapted from <a href="https://roughjs.com/">Rough.js</a></p>
+<style>
+.Demo {
+  display: flex;
+  flex-direction: column;
+  resize: both;
+  background: radial-gradient(at top center, hsl(40, 100%, 55%), hsl(13, 100%, 55%));
+}
+#el {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.el {
+  width: 152px;
+  height: 152px;
+  flex: 0 0 auto;
+  margin: 50px;
+  background: var(--rough-fill);
+  border: var(--rough-stroke-width) solid var(--rough-stroke);
+  --rough-fill: #0081ff;
+  --rough-stroke: black;
+  --rough-stroke-width: 2px;
+  --rough-roughness: 7;
+}
+.el:nth-child(2) {
+  --rough-fill: #8100ff;
+}
+@supports (border-image-source: paint(rough-boxes)) {
+  .is-loaded .el {
+    border-image-source: paint(rough-boxes);
+    border-image-slice: 0 fill;
+    border-image-outset: 10px;
+    background: none;
+  }
+}
+@media (max-width: 500px) {
+  .el:nth-child(2) {
+    display: none;
+  }
+}
+</style>
+
+<div class="Demo" id="Demo">
+  <div id="el">
+    <div class="el"></div>
+    <div class="el"></div>
+  </div>
+  <div class="Control">
+    <label for="rough-stroke-width"><code>--rough-stroke-width</code></label>
+    <input id="rough-stroke-width" type="range" min="1" max="10" value="2">
+  </div>
+  <div class="Control">
+    <label for="rough-roughness"><code>--rough-roughness</code></label>
+    <input id="rough-roughness" type="range" min="0" max="10" value="5" step=".2">
+  </div>
+</div>
+
+<pre class="Code"><code>.el {
+  background: var(--rough-fill);
+  border: var(--rough-stroke-width) solid var(--rough-stroke);
+  --rough-fill: #0081ff;
+  --rough-stroke: black;
+  --rough-stroke-width: <mark id="value-rough-stroke-width">4px</mark>;
+  --rough-roughness: <mark id="value-rough-roughness">7</mark>;
+}
+.el:nth-child(2) {
+  --rough-fill: #8100ff;
+}
+@supports (border-image-source: paint(rough-boxes)) {
+  .is-loaded .el {
+    border-image-source: paint(rough-boxes);
+    border-image-slice: 0 fill;
+    border-image-outset: 10px;
+    background: none;
+  }
+}</code></pre>

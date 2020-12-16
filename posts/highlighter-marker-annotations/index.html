@@ -1,0 +1,124 @@
+<p>You can play with all CSS (custom) properties available for the demo</p>
+<ul>
+  <li><code>--highlighter-pen</code>, the type of pen (Highlighter marker, Gel pen or pencil)</li>
+  <li><code>--highlighter-size</code>, <code>--highlighter-opacity</code></li>
+  <li><code>--highlighter-smooth</code>, for repetitions of pen images (slow when using too high values)</li>
+  <li><code>transition-timing-function</code>, <code>transition-duration</code> for animation controls</li>
+</ul>
+<p>Also, live-edit code directly</p>
+<ul>
+  <li><code>--highlighter-color</code></li>
+  <li><code>--highlighter-path</code>, SVG path(s) of the pen’s shape (awesome!)</li>
+</ul>
+<style>
+@import "https://fonts.googleapis.com/css?family=Caveat";
+
+.Demo {
+  background: #eee;
+  text-align: center;
+}
+.Control {
+  background: rgba(0,0,0,.65);
+}
+button {
+  display: block;
+  margin: 20px;
+  margin-left: auto;
+}
+.el {
+  position: relative;
+  display: inline-block;
+  font: 3em Caveat, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 50px;
+
+  background: paint(highlighter);
+  border-image-source: var(--highlighter-pen);
+  --highlighter-pen: url('/posts/highlighter-marker-annotations/highlighter.png');
+  --highlighter-color: cyan;
+  --highlighter-opacity: 1;
+  --highlighter-path: path("m46.83,230.9c24.41,-51.06 455.28,-6.72 465.09,-16.82");
+  --highlighter-size: 35;
+  --highlighter-smooth: 1;
+  --highlighter-progress: 0;
+  transition: --highlighter-progress 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.el span {
+  color: black;
+}
+.el2 {
+  --highlighter-color: lime;
+  --highlighter-opacity: 1;
+  --highlighter-path: path("M0,46L50,50"), path("M0,52L50,44");
+}
+.el3 {
+  --highlighter-color: deeppink;
+  --highlighter-path: path("M202,-62C188.217,-64.702,148.528,-73.550,119.300,-78.211C90.071,-82.873,59.023,-88.031,26.628,-89.969C-5.767,-91.908,-46.984,-90.904,-75.070,-89.840C-103.156,-88.777,-116.423,-87.753,-141.889,-83.590C-167.356,-79.428,-205.198,-71.744,-227.868,-64.864C-250.538,-57.984,-264.974,-51.285,-277.907,-42.311C-290.839,-33.337,-302.215,-22.697,-305.461,-11.021C-308.707,0.654,-306.092,14.116,-297.385,27.742C-288.678,41.368,-271.468,58.288,-253.218,70.734C-234.969,83.179,-213.221,93.155,-187.886,102.414C-162.551,111.672,-133.151,119.456,-101.209,126.285C-69.268,133.114,-29.440,139.841,3.762,143.387C36.965,146.934,68.146,148.981,98.004,147.566C127.863,146.151,160.802,141.849,182.911,134.898C205.021,127.947,219.750,116.644,230.660,105.860C241.570,95.076,248.007,83.292,248.373,70.195C248.738,57.099,242.991,41.648,232.854,27.281C222.716,12.914,210.334,-1.959,187.546,-16.008C164.758,-30.058,127.627,-45.437,96.123,-57.016C64.619,-68.595,34.039,-79.363,-1.478,-85.481C-36.996,-91.600,-80.660,-94.398,-116.983,-93.728C-153.307,-93.059,-203.584,-86.586,-219.420,-81.465C-235.256,-76.343,-213.237,-66.077,-212,-63");
+}
+.no-transition {
+  transition: none !important;
+}
+
+</style>
+
+<div class="Demo" id="Demo">
+  <div class="el"><span>CSS</span></div>
+  <div class="el el2"><span>Sooooo</span></div>
+  <div class="el el3"><span>HUGE!?</span></div>
+  <button id="button">Replay animation</button>
+  <div class="Control Control--first">
+    <label for="highlighter-pen"><code>--highlighter-pen</code></label>
+    <select name="" id="highlighter-pen">
+      <option value="highlighter.png">Highlighter marker</option>
+      <option value="pencil.png">Pencil</option>
+      <option value="gelpen.png">Gel pen</option>
+    </select>
+  </div>
+  <div class="Control">
+    <label for="highlighter-size"><code>--highlighter-size</code></label>
+    <input id="highlighter-size" type="range" min="1" max="60" step="1" value="35">
+  </div>
+  <div class="Control">
+    <label for="highlighter-opacity"><code>--highlighter-opacity</code></label>
+    <input id="highlighter-opacity" type="range" min="0" max="1" step="0.05" value="1">
+  </div>
+  <div class="Control">
+    <label for="highlighter-smooth"><code>--highlighter-smooth</code></label>
+    <input id="highlighter-smooth" type="range" min="0" max="10" step=".1" value="1">
+  </div>
+  <div class="Control">
+    <label for="highlighter-easing"><code>transition-timing-function</code></label>
+    <select name="" id="highlighter-easing">
+      <option>linear</option>
+      <option value="cubic-bezier(0.55, 0.085, 0.68, 0.53)">ease-in-quad</option>
+      <option value="cubic-bezier(0.55, 0.055, 0.675, 0.19)" selected>ease-in-cubic</option>
+      <option value="cubic-bezier(0.895, 0.03, 0.685, 0.22)">ease-in-quart</option>
+      <option value="cubic-bezier(0.755, 0.05, 0.855, 0.06)">ease-in-quint</option>
+    </select>
+  </div>
+  <div class="Control">
+    <label for="highlighter-duration"><code>transition-duration</code></label>
+    <input id="highlighter-duration" type="range" min="0" max="5000" step="50" value="500">
+  </div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" data-livecoding-id="Demo" contenteditable>.el {
+  --highlighter-pen: url('/posts/highlighter-marker-annotations/<mark id="valuehighlighter-pen">highlighter.png</mark>');
+  --highlighter-color: cyan;
+  --highlighter-path: path("M46.83,230.9c24.41,-51.06 455.28,-6.72 465.09,-16.82");
+  --highlighter-size: <mark id="valuehighlighter-size">35</mark>;
+  --highlighter-opacity: <mark id="valuehighlighter-opacity">1</mark>;
+  --highlighter-smooth: <mark id="valuehighlighter-smooth">1</mark>;
+  --highlighter-progress: 0;
+  transition: --highlighter-progress <mark id="valuehighlighter-duration">500ms</mark> <mark id="valuehighlighter-easing">cubic-bezier(0.55, 0.055, 0.675, 0.19)</mark>;
+  background: paint(highlighter);
+}
+.el2 {
+  --highlighter-color: lime;
+  --highlighter-path: path("M0,46L50,50"), path("M0,52L50,44");
+}
+.el3 {
+  --highlighter-color: deeppink;
+  --highlighter-path: path("M202,-62C188.217,-64.702,148.528,-73.550,119.3,-78.211C90.071,-82.873,59.023,-88.031,26.628,-89.969C-5.767,-91.908,-46.984,-90.904,-75.070,-89.840C-103.156,-88.777,-116.423,-87.753,-141.889,-83.590C-167.356,-79.428,-205.198,-71.744,-227.868,-64.864C-250.538,-57.984,-264.974,-51.285,-277.907,-42.311C-290.839,-33.337,-302.215,-22.697,-305.461,-11.021C-308.707,0.654,-306.092,14.116,-297.385,27.742C-288.678,41.368,-271.468,58.288,-253.218,70.734C-234.969,83.179,-213.221,93.155,-187.886,102.414C-162.551,111.672,-133.151,119.456,-101.209,126.285C-69.268,133.114,-29.440,139.841,3.762,143.387C36.965,146.934,68.146,148.981,98.004,147.566C127.863,146.151,160.802,141.849,182.911,134.898C205.021,127.947,219.750,116.644,230.660,105.860C241.570,95.076,248.007,83.292,248.373,70.195C248.738,57.099,242.991,41.648,232.854,27.281C222.716,12.914,210.334,-1.959,187.546,-16.008C164.758,-30.058,127.627,-45.437,96.123,-57.016C64.619,-68.595,34.039,-79.363,-1.478,-85.481C-36.996,-91.6,-80.660,-94.398,-116.983,-93.728C-153.307,-93.059,-203.584,-86.586,-219.420,-81.465C-235.256,-76.343,-213.237,-66.077,-212,-63");
+}</code></pre>
