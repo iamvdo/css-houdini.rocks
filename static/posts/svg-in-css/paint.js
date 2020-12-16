@@ -12,10 +12,11 @@ registerPaint('svg-in-css', class {
       let viewbox = String(properties.get('--svg-viewbox')).trim() || '0 0 100 100';
       viewbox = viewbox.split(' ').map(Number);
 
-      let path = String(properties.get('--svg-path')).trim();
-      // parse SVG path :(
-      path = path.replace('path(', '').replace(')', '');
-      path = path.substring(1, path.length - 1);
+      let path = String(properties.get('--svg-path')).trim() || 'path("M0,0")';
+      // get only SVG path values :(
+      // = everything between quotes
+      let search = /['"`]([^'"`]+)/;
+      path = path.match(search)[1].trim();
 
       let fill = String(properties.get('--svg-fill'));
       let stroke = String(properties.get('--svg-stroke'));
