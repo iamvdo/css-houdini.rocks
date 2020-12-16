@@ -42,6 +42,21 @@
           "support": "Chrome/Opera/Edge (Sometimes, image won’t load)"
         },
         {
+          "title": "SVG-in-CSS",
+          "desc": "Generic worklet to draw SVG shapes inside paint worklet",
+          "url": "svg-in-css",
+          "properties": [
+            ["--svg-fill", "<color>", false, "black"],
+            ["--svg-stroke", "<color>", false, "transparent"],
+            ["--svg-stroke-width", "<number>", false, 0],
+            ["--pos", "<number>", false, 0],
+            ["--y-low", "<number>", false, 0],
+            ["--y-high", "<number>", false, 0]
+          ],
+          "tags": ["paint", "props&val"],
+          "support": "Chrome/Opera/Edge. Other browsers use the css-paint-polyfill (not perfect)."
+        },
+        {
           "title": "JS-in-CSS",
           "desc": "Generic worklet to be authored right from CSS",
           "url": "js-in-css",
@@ -267,5 +282,5 @@
     "animation": "CSS Animation Worklet API",
     "customprops": "CSS Custom Properties"
   },
-  "featured": "inner-borders"
+  "featured": "svg-in-css"
 }

@@ -1,0 +1,240 @@
+<p>Most demos using the Paint worklet from Houdini are using shapes, as in <a href="/slanted-backgrounds">slanted backgrounds</a>, <a href="/tooltip">simple tooltip</a>, <a href="/corner-shape">corner shapes</a> and so on.</p>
+
+<p><strong>This SVG-in-CSS worklet is a generic paint worklet that draw an SVG path, authored right from the CSS.</strong></p>
+
+<p>It needs some custom properties:</p>
+
+<ul>
+  <li><code>--svg-path: path()</code> containing an SVG path</li>
+  <li><code>--svg-viewbox</code> to define the SVG <code>viewBox</code> (default <code>0 0 100 100</code>)</li>
+  <li><code>--svg-fill</code> the fill color (default black)</li>
+  <li><code>--svg-stroke</code> the stroke color (default transparent)</li>
+  <li><code>--svg-stroke-width</code> the stroke width</li>
+</ul>
+
+<p>I don’t add <code>--svg-preserve-aspect-ratio</code> because it complexifies the worklet, and above all, behaviour is already different between CSS and SVG. So, it’s better to play with background properties to deal with background size, position, repetition, etc.</p>
+
+<p><b>Code samples below are live editable!</b></p>
+
+<style>
+.Demo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  padding: 50px 0;
+}
+.el {
+  text-align: center;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+  font-size: 2em;
+  padding: 50px;
+  width: 200px;
+  background: paint(svg-in-css);
+}
+.el--1 {
+  --svg-path: path('M 10 63 H 50');
+  --svg-fill: transparent;
+  --svg-stroke: gold;
+  --svg-stroke-width: 10;
+}
+.el--2 {
+  --svg-viewbox: -50 -50 100 150;
+  --svg-path: path('M -20 -20 l 50 30 l -60 50');
+  --svg-fill: deeppink;
+}
+.el--3 {
+  --svg-path: path('m70.94524,13.02567c13.16825,0.06846 23.82763,11.45054 23.89174,25.51214c0,25.76204 -43.91839,51.27419 -43.91839,51.27419s-43.91861,-25.88724 -43.91861,-51.27419c0,-14.08984 10.69659,-25.51214 23.89174,-25.51214l0,0c8.07719,-0.06726 15.62849,4.27085 20.02687,11.50536c4.42842,-7.19932 11.96022,-11.52618 20.02665,-11.50536z');
+  --svg-fill: limegreen;
+  background-size: 80px 80px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.el--4 {
+  --svg-path: path('M71 19a12 12 0 0110 10l5 34a12 12 0 01-6 12l-31 16A12 12 0 0135 90L10 65a12 12 0 01-2-14l16-31a12 12 0 0112-6');
+  --svg-fill: #00d0f5;
+  background-size: 100px 100px;
+  background-position: 15% 40%;
+  background-repeat: no-repeat;
+}
+.el--5 {
+  --svg-path: path('M40 0L0 100h20L60 0zm30 0L30 100h20L90 0z');
+  --svg-fill: #ff6100;
+  background-size: 60px 60px;
+  background-position: 40PX;
+  background-repeat: no-repeat;
+}
+.el--6 {
+  display: grid;
+}
+.el--6 * {
+  grid-area: 1 / 1;
+  z-index: 1;
+  margin: -50px;
+}
+.el--6 .bg {
+  background: linear-gradient(#ff3030, #490080);
+  -webkit-mask: paint(svg-in-css);
+  -webkit-mask-size: 120px 120px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 80%;
+  mask: paint(svg-in-css);
+  mask-size: 120px 120px;
+  mask-repeat: no-repeat;
+  mask-position: 80%;
+  --svg-path: path('m27,12c17,-5 27,-4 30,7c4,11 -8,26 -1,35c7,9 16,-11 32,-7c16,3 7,28 -9,38c-16,10 -25,10 -26,-11c-1,-21 -36,-5 -45,-21c-9,-16 2,-35 19,-41z');
+}
+.el--6 .txt {
+  align-self: center;
+  justify-self: center;
+}
+
+.el--8 {
+  /* set custom properties */
+  --y-low: 75;
+  --y-high: 25;
+  /* define SVG path based on these values */
+  --svg-path: path(`M 0 var(--y-low) C 25 var(--y-low) 25 var(--y-high) 50 var(--y-high) S 75 var(--y-low) 100 var(--y-low)`);
+  /* set stroke */
+  --svg-stroke: #00ff8f;
+  --svg-stroke-width: 10;
+  /* set background */
+  background-repeat: repeat-x;
+  background-position: 0 80%;
+  background-size: 50px 30px;
+  /* use animation */
+  animation: waves 2s alternate infinite ease-in-out;
+}
+
+@keyframes waves {
+  to {
+    --y-low: 25;
+    --y-high: 75;
+  }
+}
+</style>
+
+
+<h2>Basic shapes</h2>
+<p>Viewbox will adapt to element’s size, with default to <code>0 0 100 100</code>.</p>
+<div class="Demo" id="Demo">
+  <div class="el el--1">SVG-in-CSS</div>
+  <div class="el el--2">SVG-in-CSS</div>
+</div>
+<pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.el {
+  background-image: paint(svg-in-css);
+}
+.el--1 {
+  --svg-path: path('M 10,63 H 50');
+  --svg-stroke: gold;
+  --svg-stroke-width: 10;
+}
+.el--2 {
+  --svg-viewbox: 0 0 10 12;
+  --svg-path: path('M 3,3 L 8,5 L 2,9');
+  --svg-fill: deeppink;
+}</code></pre>
+
+<p>Play with <code>background-*</code> properties to control how shape is rendered (fixed ratio for example).</p>
+<div class="Demo" id="Demo">
+  <div class="el el--3">SVG-in-CSS</div>
+  <div class="el el--4">SVG-in-CSS</div>
+  <div class="el el--5">SVG-in-CSS</div>
+</div>
+<pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo">.el--3 {
+  --svg-path: path('m 71,13 c 13,0 24,11 24,26 c 0,26 -44,51 -44,51 s -44,-26 -44,-51 c 0,-14 11,-26 24,-26 l 0,0 c 8,0 16,4 20,12 c 4,-7 12,-12 20,-12 z');
+  --svg-fill: limegreen;
+  background-size: 80px 80px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.el--4 {
+  --svg-path: path('M 71,19 a 12,12,0,0,1,10,10 l 5,34 a 12,12,0,0,1,-6,12 l -31,16 A 12,12,0,0,1,35,90 L 10,65 a 12,12,0,0,1,-2,-14 l 16,-31 a 12,12,0,0,1,12,-6');
+  --svg-fill: deepskyblue;
+  background-size: 100px 100px;
+  background-position: 15% 40%;
+  background-repeat: no-repeat;
+}
+.el--5 {
+  --svg-path: path('M 40,0 L 0,100 h 20 L 60,0 z m 30,0 L 30,100 h 20 L 90,0 z');
+  --svg-fill: orangered;
+  background-size: 60px 60px;
+  background-position: 40PX;
+  background-repeat: no-repeat;
+}</code></pre>
+
+
+
+<h2>Using as CSS masks</h2>
+<p>As the SVG path is drawn on a canvas inside the worklet, you can’t really use CSS gradients from your CSS. Or we need to convert CSS gradients to canvas gradients.</p>
+
+<p>Instead, <strong> set the <code>paint()</code> to a CSS mask on an element with a gradient!</strong> (because we don’t have <code>background-mask</code> neither)</p>
+<div class="Demo" id="Demo2">
+  <div class="el el--6">
+    <span class="bg"></span>
+    <span class="txt">SVG-in-CSS</span>
+  </div>
+</div>
+
+<pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo2">.bg {
+  /* apply a gradient to a background element */
+  background: linear-gradient(#ff3030, #490080);
+
+  /* create path */
+  --svg-path: path('m27,12c17,-5 27,-4 30,7c4,11 -8,26 -1,35c7,9 16,-11 32,-7c16,3 7,28 -9,38c-16,10 -25,10 -26,-11c-1,-21 -36,-5 -45,-21c-9,-16 2,-35 19,-41z');
+  /* and use as mask (sorry, Chrome still need prefixes :( ) */
+  -webkit-mask: paint(svg-in-css);
+         mask: paint(svg-in-css);
+  -webkit-mask-size: 120px 120px;
+         mask-size: 120px 120px;
+  -webkit-mask-repeat: no-repeat;
+         mask-repeat: no-repeat;
+  -webkit-mask-position: 80%;
+         mask-position: 80%;
+}</code></pre>
+
+<h2>With animations</h2>
+<p>As I said before, <a href="https://drafts.css-houdini.org/css-properties-values-api/#supported-names">there is no defined SVG path data type in Properties & Values spec</a>. Thus, you can’t <a href="/animating-gradient">register new properties</a> with <code>@property</code> to make them animatable.</p>
+
+<p>As a workaround, you can register simple custom properties (aka numbers), then combine them inside <code>path()</code> function! It uses the <a href="/js-in-css">backtick trick explained in the JS-in-CSS demo</a>. <strong>Not very convenient, but you can use raw CSS transitions and animations on these properties.</strong></p>
+
+<p><strong>And this is fun!</strong></p>
+
+<p>Hover the first sample to see transition on path (click on it if on mobile) and see code below. The second one is using a CSS animation.</p>
+
+<div class="Demo"  id="Demo3">
+  <div class="el el--7" id="animate">SVG-in-CSS</div>
+  <div class="el el--8">SVG-in-CSS</div>
+</div>
+
+<pre class="Code"><code class="css">/* custom property for x position */
+@property --pos {
+  syntax: '&lt;number>';
+  inherits: false;
+  initial-value: 0;
+}</code></pre>
+<pre class="Code"><code class="liveCoding css" contenteditable data-livecoding-id="Demo3">.el--7{
+  /* set initial position */
+  --pos: 30;
+  /* use inside path */
+  --svg-path: path(`M 10,63 H var(--pos)`);
+  --svg-stroke: gold;
+  --svg-stroke-width: 10;
+  /* animate it on hover! */
+  transition: --pos 1s;
+}
+.el--7:hover {
+  --pos: 60;
+}</code></pre>
+
+<h2>Some notes</h2>
+
+<p><code>--svg-path</code> and <code>--svg-viewbox</code> can’t be registered as valid properties. For the first one, <a href="https://drafts.css-houdini.org/css-properties-values-api/#supported-names">there is no SVG path data type</a>, and for the second, it seems that <code>&lt;number>+</code> is not supported in any browsers (unless <a href="https://ishoudinireadyyet.com/">https://ishoudinireadyyet.com</a> is saying the opposite).</p>
+
+<p>The main limitation of this approach is that only one path can be drawn, no full SVG. <strong>Imagine how cool it would be if we could use the full power of SVG that way!</strong> 🤩</p>
+
+<p>A workaround could be to allow multiple paths, using arguments from the <code>paint()</code> function (to set color, size, etc.) instead of custom properties. <strong>That would have enabled us to draw multiple path using different values on one unique element</strong>. The point is, support is not great (again, ishoudinireadyyet.com is misleading). See the <a href="/inner-borders">inner borders demo</a> for an example (check your browser and your flags)</p>
+
+
+
