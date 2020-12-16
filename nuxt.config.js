@@ -58,6 +58,7 @@ module.exports = {
       })
     },
     vendor: [
+      'css-paint-polyfill',
       'prismjs',
       '~/plugins/prismjs-keep-markup',
       '~/assets/livecoding.js'
