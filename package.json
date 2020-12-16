@@ -17,7 +17,7 @@
     "axios": "^0.16.2",
     "css-paint-polyfill": "^2.0.0",
     "nuxt": "^1.0.0-rc11",
-    "prismjs": "^1.8.1",
+    "prismjs": "^1.21.0",
     "vue-async-computed": "^3.3.1"
   },
   "devDependencies": {
