@@ -14,7 +14,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "css-paint-polyfill": "^2.0.0",
     "nuxt": "^1.0.0-rc11",
     "prismjs": "^1.8.1",
