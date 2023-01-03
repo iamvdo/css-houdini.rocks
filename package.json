@@ -16,7 +16,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "css-paint-polyfill": "^2.0.0",
-    "nuxt": "^1.0.0-rc11",
+    "nuxt": "^3.0.0",
     "prismjs": "^1.8.1",
     "vue-async-computed": "^3.3.1"
   },
